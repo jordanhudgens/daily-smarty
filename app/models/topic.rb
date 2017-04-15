@@ -4,4 +4,6 @@ class Topic < ApplicationRecord
 
   extend FriendlyId
   friendly_id :title, use: :slugged
+
+  validates_presence_of :title, :user_id
 end
