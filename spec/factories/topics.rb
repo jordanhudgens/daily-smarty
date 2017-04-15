@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :topic do
-    title "MyString"
-    slug "MyString"
+    title "My Topic"
+    slug "my-topic"
   end
 end

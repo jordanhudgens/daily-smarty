@@ -1,8 +1,8 @@
 FactoryGirl.define do
   factory :post do
-    title "MyString"
-    content "MyText"
-    user nil
-    topic nil
+    title "My Post"
+    content "The post for my content"
+    user
+    topic
   end
 end
