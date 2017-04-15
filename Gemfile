@@ -33,3 +33,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'slim-rails', '~> 3.1', '>= 3.1.2'
 gem 'friendly_id', '~> 5.2', '>= 5.2.1'
+gem 'devise', '~> 4.2', '>= 4.2.1'
+gem 'devise_invitable', '~> 1.7', '>= 1.7.2'
