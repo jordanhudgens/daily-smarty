@@ -4,6 +4,7 @@ ActionMailer::Base.smtp_settings = {
   user_name:            ENV.fetch('SPARKPOST_USERNAME'),
   password:             ENV.fetch('SPARKPOST_PW'),
   authentication:       :login,
-  enable_starttls_auto: true
+  enable_starttls_auto: true,
+  domain:               'dailysmarty.com'
 }
 ActionMailer::Base.delivery_method = :smtp
