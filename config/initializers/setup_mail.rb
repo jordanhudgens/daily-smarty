@@ -1,10 +1,9 @@
 ActionMailer::Base.smtp_settings = {
-  port:                 ENV.fetch('SPARKPOST_PORT'),
-  address:              ENV.fetch('SPARKPOST_HOST'),
   user_name:            ENV.fetch('SPARKPOST_USERNAME'),
   password:             ENV.fetch('SPARKPOST_PW'),
-  authentication:       :login,
+  address:              ENV.fetch('SPARKPOST_HOST'),
+  port:                 ENV.fetch('SPARKPOST_PORT'),
   enable_starttls_auto: true,
-  domain:               'dailysmarty.com'
+  format: :html,
+  from: 'support@dailysmarty.com'
 }
-ActionMailer::Base.delivery_method = :smtp
