@@ -13,6 +13,6 @@
     = f.label :content
     = f.text_area :content
   .field
-    = f.label :topic
-    = f.text_field :topic
+    = f.label :topic_id
+    = f.collection_select(:topic_id, Topic.all, :id, :title, { include_blank: true })
   .actions = f.submit

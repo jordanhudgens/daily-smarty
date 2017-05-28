@@ -1,2 +1,12 @@
-h1 Static#homepage
-p Find me in app/views/static/homepage.html.slim
+h2 Popular Posts
+
+div.row
+  div.col-md-3
+  - @posts.each do |post|
+    div.col-md-6
+      p
+        = link_to post.title, post
+      em
+        = post.topic.title
+
+  div.col-md-3
