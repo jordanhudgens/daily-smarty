@@ -3,6 +3,6 @@
     .tag_from_list.dropdowns style="display: inline;"
       = f.select :topic_id, Topic.all.collect {|p| [ p.title, p.id ] }, { include_blank: true, class: 'form-control topic-dropdowns' }
       hr
-    = link_to_add_association 'or create a new one', f, :topic, class: 'add-topic'
+    = link_to_add_association 'or create a new one', f, :topic, class: 'add-custom-topic'
     = link_to_remove_association f, class: 'remove-topic btn btn-default btn-xs' do
       .glyphicon.glyphicon-remove

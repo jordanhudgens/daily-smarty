@@ -15,5 +15,6 @@
   .field
     = f.fields_for :themes do |theme|
       = render 'theme_fields', :f => theme
-    = link_to_add_association 'Add a Topic', f, :themes
+    .custom-fields
+    = link_to_add_association 'Add a Topic', f, :themes, class: 'add-topic', 'data-association-insertion-method' => 'append', 'data-association-insertion-node' => '.custom-fields'
   .actions = f.submit
