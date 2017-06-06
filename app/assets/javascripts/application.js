@@ -15,6 +15,8 @@
 //= require cocoon
 //= require turbolinks
 //= require_tree .
+//= require popper
+//= require bootstrap-sprockets
 
 $(document).ready(function() {
     $("#owner a.add_fields").
@@ -75,5 +77,5 @@ $(document).ready(function() {
         task.fadeOut('slow');
     })
 
-    //$('body').tabs();
+    $(".dropdowns select").select2();
 });
