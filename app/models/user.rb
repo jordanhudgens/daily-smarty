@@ -5,7 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable,
          :invitable
 
-  has_many :topics
   has_many :posts
 
   validates_presence_of :full_name

@@ -9,9 +9,10 @@ p
 p
   strong User:
   = @post.user
-p
-  strong Topic:
-  = @post.topic
+
+p 
+  strong Topics
+  = @post.themes.inspect
 
 = link_to 'Edit', edit_post_path(@post)
 '  |

@@ -1,9 +1,9 @@
 class Topic < ApplicationRecord
-  belongs_to :user
-  has_many :posts
+  has_many :themes, inverse_of: :topic
+  has_many :posts, through: :themes
 
   extend FriendlyId
   friendly_id :title, use: :slugged
 
-  validates_presence_of :title, :user_id
+  validates_presence_of :title
 end

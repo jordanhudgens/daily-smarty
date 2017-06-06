@@ -60,6 +60,10 @@ class PostsController < ApplicationController
     end
 
     def post_params
-      params.require(:post).permit(:title, :content, :user_id, :topic_id)
+      params.require(:post).permit(
+        :title,
+        :content,
+        :user_id,
+        themes_attributes: [:id, :_destroy, :topic_id, topic_attributes: [:id, :_destroy, :title]])
     end
 end
