@@ -5,7 +5,7 @@ p
   = @post.title
 p
   strong Content:
-  = @post.content
+  = markdown(@post.content)
 p
   strong User:
   = @post.user
