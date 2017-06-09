@@ -1,0 +1,8 @@
+.full-width-div
+  .card
+    .col-md-12
+      = @topic.title
+
+    - @topic.posts.each do |post|
+      div
+        = link_to post.title, post_path(post)

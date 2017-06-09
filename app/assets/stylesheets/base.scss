@@ -1,0 +1,149 @@
+body {
+  background-color: #F7F7F7;
+  font-family: 'Roboto', sans-serif !important;
+}
+
+.block-background {
+  background-color: white;
+  padding: 20px 10px 20px 10px;
+  border-radius: 15px;
+}
+
+.btn-primary {
+  background-color: #3AE39F;
+  border-color: #3AE39F;
+}
+.btn-primary:hover {
+  background-color: #00cb79;
+  border-color: #00cb79;
+}
+
+.btn-outline-secondary {
+  color: lightgrey;
+}
+
+.border-test {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.main-border-test {
+  border: 2px solid lightgrey;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+.take-next-btn {
+padding: 20px 0px 20px 0px;
+}
+
+.resolved-btn {
+  margin-left: 15px;
+}
+
+.resolved-btn a {
+  color: white;
+}
+
+.unresolved-btn a {
+  color: lightgrey;
+}
+
+.unresolved-btn:hover a {
+  color: white;
+}
+
+.ticket-info {
+  margin: 15px;
+}
+
+.ticket-box {
+  margin-top: 15px;
+}
+
+.timer-position {
+  margin-top: 15px;
+}
+
+.ticket-titles {
+  font-weight: bold;
+}
+
+.active-ticket {
+  margin-top: 8px;
+}
+
+.toggle-feature:hover {
+  background-color: white;
+  border-radius: 5px;
+}
+
+.back {
+  color: #9297a0;
+  border: 1px solid black;
+  border-radius: 3px;
+}
+
+.user_queue {
+  border: 2px solid black;
+}
+
+.queue-block-sizing {
+  padding: 10px 0px 10px 0px;
+}
+
+.auth-pages {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+}
+
+.login-img-section {
+  height: 100vh;
+  width: 100vw;
+}
+
+.login-img-section img {
+  height: 100vh;
+}
+
+.auth-form-fields {
+  height: 100vh;
+  padding-top: 30vh !important;
+  padding-left: 142px;
+  padding-right: 142px;
+  background-color: #F7F7F7;
+}
+
+.auth-logo img {
+  margin-bottom: 42px;
+  width: 9.5rem;
+}
+
+.login-title {
+  color: #3AE39F;
+  font-size: 1.5em;
+  font-weight: 900;
+}
+
+.auth-links {
+  margin-top: 21px;
+}
+
+.auth-links a {
+  color: #3AE39F;
+}
+
+.full-width-div {
+  width: 100% !important;
+
+  .card {
+    padding: 42px;
+  }
+}
+
+.topic-link {
+  margin-top: 21px !important;
+}

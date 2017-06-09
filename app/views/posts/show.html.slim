@@ -1,19 +1,20 @@
-p#notice = notice
+.full-width-div
+  .card
+    .col-md-12
+      div
+        strong Title:
+        = @post.title
+      div
+        strong Content:
+        = markdown(@post.content)
+      div
+        = @post.user.full_name
 
-p
-  strong Title:
-  = @post.title
-p
-  strong Content:
-  = markdown(@post.content)
-p
-  strong User:
-  = @post.user
+      p 
+        h3 Topics
+        - @post.topics.each do |topic|
+          div
+            = link_to topic.title, topic_path(topic)
 
-p 
-  strong Topics
-  = @post.themes.inspect
-
-= link_to 'Edit', edit_post_path(@post)
-'  |
-= link_to 'Back', posts_path
+      - if policy(@post).update?
+        = link_to 'Edit', edit_post_path(@post)
