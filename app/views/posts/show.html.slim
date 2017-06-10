@@ -1,20 +1,22 @@
 .full-width-div
   .card
-    .col-md-12
-      div
-        strong Title:
-        = @post.title
-      div
-        strong Content:
+    .row
+      .col-md-6
+        h1
+          = @post.title
+
+        h3
+          = @post.user.full_name
+      .col-md-6
+        .pull-right
+          - @post.topics.each do |topic|
+            div
+              = link_to topic.title, topic_path(topic)
+
+          - if current_user && policy(@post).update?
+            = link_to "<i class='fa fa-pencil' aria-hidden='true'></i>".html_safe, edit_post_path(@post)
+
+      .col-md-12
         = markdown(@post.content)
-      div
-        = @post.user.full_name
 
-      p 
-        h3 Topics
-        - @post.topics.each do |topic|
-          div
-            = link_to topic.title, topic_path(topic)
 
-      - if policy(@post).update?
-        = link_to 'Edit', edit_post_path(@post)

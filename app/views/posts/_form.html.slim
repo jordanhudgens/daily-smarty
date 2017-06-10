@@ -1,20 +1,23 @@
-= form_for @post do |f|
-  - if @post.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@post.errors.count, "error")} prohibited this post from being saved:"
-      ul
-        - @post.errors.full_messages.each do |message|
-          li = message
+.row
+  .col-md-12
+    = form_for @post, class: 'form-horizontal' do |f|
+      - if @post.errors.any?
+        #error_explanation
+          h2 = "#{pluralize(@post.errors.count, "error")} prohibited this post from being saved:"
+          ul
+            - @post.errors.full_messages.each do |message|
+              li = message
 
-  .field
-    = f.label :title
-    = f.text_field :title
-  .field
-    = f.label :content
-    = f.text_area :content
-  .field
-    = f.fields_for :themes do |theme|
-      = render 'theme_fields', :f => theme
-    .custom-fields
-    = link_to_add_association 'Add a Topic', f, :themes, class: 'add-topic', 'data-association-insertion-method' => 'append', 'data-association-insertion-node' => '.custom-fields'
-  .actions = f.submit
+      .form-group
+        = f.label :title, class: 'form-label'
+        = f.text_field :title, class: 'form-control'
+      .form-group
+        = f.label :content, class: 'form-label'
+        = f.text_area :content, class: 'form-control', rows: 21
+      .form-group
+        = f.fields_for :themes do |theme|
+          = render 'theme_fields', :f => theme
+        .custom-fields
+        = link_to_add_association 'Add a Topic', f, :themes, class: 'add-topic', 'data-association-insertion-method' => 'append', 'data-association-insertion-node' => '.custom-fields'
+      .actions
+        = f.submit 'Submit', class: 'btn btn-primary'

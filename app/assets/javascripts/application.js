@@ -26,6 +26,7 @@ function ready() {
     });
 
     $(document).on('click', '.add-custom-topic', function(event) {
+      $(this).find('selection').hide();
       $(this).hide();
     });
 };
