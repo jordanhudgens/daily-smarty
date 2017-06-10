@@ -2,5 +2,11 @@ nav.navbar.navbar-toggleable-md.navbar-light.bg-faded
   .container
     = link_to image_tag('nav_logo.png', width: '42%'), root_path, class: 'navbar-brand logo'
     .nav-links
-      = link_to "Topics", topics_path
-      = link_to "Firehose", root_path
+      = link_to "<i class='fa fa-random' aria-hidden='true'></i>".html_safe, post_path(Post.all.sample)
+      = link_to "<i class='fa fa-line-chart' aria-hidden='true'></i>".html_safe, root_path
+      = link_to "<i class='fa fa-globe' aria-hidden='true'></i>".html_safe, posts_path
+      - if current_user
+        = link_to "<i class='fa fa-address-card-o' aria-hidden='true'></i>".html_safe, edit_user_registration_path
+        = link_to "<i class='fa fa-sign-out' aria-hidden='true'></i>".html_safe, destroy_user_session_path, method: :delete
+      - else
+        = link_to "<i class='fa fa-sign-in' aria-hidden='true'></i>".html_safe, new_user_session_path

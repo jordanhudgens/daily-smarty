@@ -9,7 +9,6 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
   body
-    - if user_signed_in?
-      = render 'static/nav'
+    = render 'static/nav'
     .container
       = yield
