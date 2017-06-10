@@ -16,6 +16,7 @@
           - if current_user && policy(@post).update?
             = link_to "<i class='fa fa-pencil' aria-hidden='true'></i>".html_safe, edit_post_path(@post)
 
+    .row
       .col-md-12
         = markdown(@post.content)
 

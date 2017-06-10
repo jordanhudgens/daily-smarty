@@ -44,3 +44,4 @@ gem 'coderay', '~> 1.1', '>= 1.1.1'
 gem 'gritter', '~> 1.2'
 gem "font-awesome-rails"
 gem 'compass-rails'
+gem 'kaminari', '~> 1.0', '>= 1.0.1'

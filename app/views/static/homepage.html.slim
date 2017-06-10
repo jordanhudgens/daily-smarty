@@ -1,10 +1,14 @@
-h2 Popular Posts
+.full-width-div
+  .card
+    .row
+      .col-md-12
+          h2 Popular Posts
 
-div.row
-  div.col-md-3
-  - @posts.each do |post|
-    div.col-md-6
-      p
-        = link_to post.title, post
+          div.row
+            - @posts.each do |post|
+              div.col-md-12
+                = link_to post.title, post
 
-  div.col-md-3
+            = paginate @posts
+
+            div.col-md-3
