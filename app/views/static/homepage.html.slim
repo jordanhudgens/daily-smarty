@@ -2,13 +2,13 @@
   .card
     .row
       .col-md-12
-          h2 Popular Posts
-
-          div.row
-            - @posts.each do |post|
-              div.col-md-12
-                = link_to post.title, post
-
-            = paginate @posts
-
-            div.col-md-3
+        div.row
+          .col-md-12
+            - @topics.each do |topic|
+              - if topic.posts.any?
+                h2
+                  = link_to topic.title, topic
+                .row.topic-grouping
+                  - topic.posts.limit(9).each do |post|
+                    .col-md-4
+                      = link_to post.title, post
