@@ -3,3 +3,13 @@
   border-bottom: 1px solid #ededed;
   padding-bottom: 42px;
 }
+
+.post-img {
+  margin: 21px 0px 21px 0px;
+  border-radius: 3px;
+  border: 1px solid $dailysmarty-green;
+
+  img {
+    width: 100%;
+  }
+}
