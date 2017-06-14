@@ -18,6 +18,8 @@
 
     .row
       .col-md-12
+        - if @post.img
+          = image_tag(@post.img.feature_thumb)
         = markdown(@post.content)
 
 

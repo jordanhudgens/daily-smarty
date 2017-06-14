@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby "2.3.1"
+
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
@@ -45,3 +47,8 @@ gem 'gritter', '~> 1.2'
 gem "font-awesome-rails"
 gem 'compass-rails'
 gem 'kaminari', '~> 1.0', '>= 1.0.1'
+gem 'carrierwave', '~> 1.0'
+gem 'rmagick', '~> 2.16'
+gem 'mini_magick', '~> 4.6'
+gem 'carrierwave-aws', '~> 1.0', '>= 1.0.2'
+gem 'hirb'

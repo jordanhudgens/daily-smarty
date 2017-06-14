@@ -15,6 +15,9 @@
         = f.label :content, class: 'form-label'
         = f.text_area :content, class: 'form-control', rows: 21
       .form-group
+        = f.label 'Image upload (optional)', class: 'form-label'
+        = f.file_field :img, class: 'form-control'
+      .form-group
         = f.fields_for :themes do |theme|
           = render 'theme_fields', :f => theme
         .custom-fields

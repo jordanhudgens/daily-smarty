@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
+  mount_uploader :img, PostImageUploader
   belongs_to :user
   has_many :themes, inverse_of: :post
   has_many :topics, through: :themes
