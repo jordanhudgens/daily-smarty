@@ -4,4 +4,8 @@ class StaticController < ApplicationController
     #@posts = Post.page(params[:page]).per(5)
     @topics = Topic.top_ten
   end
+
+  def profile
+    @user = User.friendly.find(params[:id])
+  end
 end

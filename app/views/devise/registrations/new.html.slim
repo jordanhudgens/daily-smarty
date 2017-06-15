@@ -11,6 +11,10 @@ h2
     br
     = f.text_field :full_name
   .field
+    = f.label :username
+    br
+    = f.text_field :username
+  .field
     = f.label :password
     - if @minimum_password_length
       em
