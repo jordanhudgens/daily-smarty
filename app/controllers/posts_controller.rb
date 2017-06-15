@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
 
   def index
-    @posts = Post.all
+    @posts = Post.page(params[:page]).per(42)
   end
 
   def show
