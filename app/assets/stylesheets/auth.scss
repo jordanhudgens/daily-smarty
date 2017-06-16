@@ -1,0 +1,55 @@
+
+.registration-card-wrapper {
+  width: 42vw;
+  margin-left: auto;
+  margin-right: auto;
+
+  .card {
+    padding: 80px 130px 80px 130px;
+  }
+}
+
+@media #{$phone-query} {
+  .registration-card-wrapper {
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+
+    .card {
+      padding: 21px;
+    }
+  }
+}
+
+.submit-button-wrapper {
+  margin-top: 15px;
+
+  .btn {
+    background-color: $dailysmarty-green !important;
+    border: 1px solid $dailysmarty-green !important;
+    width: 180px !important;
+
+    &:hover {
+      background-color: $dailysmarty-hover-green !important;
+      border: 1px solid $dailysmarty-hover-green !important;
+    }
+  }
+}
+
+.registration-heading {
+  font-size: 15px;
+  color: $dark-charcoal;
+  margin-top: 21px;
+  margin-bottom: 21px;
+  font-weight: 900;
+}
+
+.devise-links {
+  margin-top: 21px;
+}
+
+.registration-line-break {
+  margin-top: 42px;
+  margin-bottom: 42px;
+  border-top: 1px solid $light-charcoal;
+}
