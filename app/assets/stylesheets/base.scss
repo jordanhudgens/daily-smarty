@@ -14,12 +14,12 @@ a {
 }
 
 .btn-primary {
-  background-color: #3AE39F;
-  border-color: #3AE39F;
+  background-color: $dailysmarty-green;
+  border-color: $dailysmarty-green;
 }
 .btn-primary:hover {
-  background-color: #00cb79;
-  border-color: #00cb79;
+  background-color: $dailysmarty-hover-green;
+  border-color: $dailysmarty-hover-green;
 }
 
 .btn-outline-secondary {

@@ -1,6 +1,15 @@
-
 .registration-card-wrapper {
   width: 42vw;
+  margin-left: auto;
+  margin-right: auto;
+
+  .card {
+    padding: 80px 130px 80px 130px;
+  }
+}
+
+.edit-registration-card-wrapper {
+  width: 65vw;
   margin-left: auto;
   margin-right: auto;
 
@@ -36,6 +45,21 @@
   }
 }
 
+.submit-button-password-reset-wrapper {
+  margin-top: 15px;
+
+  .btn {
+    background-color: $dailysmarty-green !important;
+    border: 1px solid $dailysmarty-green !important;
+    width: 225px !important;
+
+    &:hover {
+      background-color: $dailysmarty-hover-green !important;
+      border: 1px solid $dailysmarty-hover-green !important;
+    }
+  }
+}
+
 .registration-heading {
   font-size: 15px;
   color: $dark-charcoal;
@@ -52,4 +76,8 @@
   margin-top: 42px;
   margin-bottom: 42px;
   border-top: 1px solid $light-charcoal;
+}
+
+.take-me-back-btn {
+  margin-top: 21px;
 }
