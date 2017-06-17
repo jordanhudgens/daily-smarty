@@ -3,3 +3,10 @@
     .col-md-12
       h1
         = "@#{@user.username}"
+    .col-md-12
+      - if @user.posts.any?
+        - @user.posts.each do |post|
+          .post
+            = link_to post.title, post
+      - else
+        'There are no posts for this user'

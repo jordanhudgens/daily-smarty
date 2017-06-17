@@ -6,6 +6,7 @@ nav.navbar.navbar-toggleable-md.navbar-light.bg-faded
       = link_to "<i class='fa fa-line-chart' aria-hidden='true'></i>".html_safe, root_path
       = link_to "<i class='fa fa-globe' aria-hidden='true'></i>".html_safe, posts_path
       - if current_user
+        = link_to "<i class='fa fa-rss' aria-hidden='true'></i>".html_safe, profile_path(current_user)
         = link_to "<i class='fa fa-plus-circle' aria-hidden='true'></i>".html_safe, new_post_path
         = link_to "<i class='fa fa-address-card-o' aria-hidden='true'></i>".html_safe, edit_user_registration_path
         = link_to "<i class='fa fa-sign-out' aria-hidden='true'></i>".html_safe, destroy_user_session_path, method: :delete
