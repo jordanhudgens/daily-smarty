@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
   resources :posts
   resources :topics, only: [:index, :show]
   devise_for :users

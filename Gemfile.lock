@@ -1,4 +1,12 @@
 GIT
+  remote: https://github.com/galetahub/ckeditor.git
+  revision: d0194ccd3f181be603f419c233ca7d4ce657b09a
+  specs:
+    ckeditor (4.2.3)
+      cocaine
+      orm_adapter (~> 0.5.0)
+
+GIT
   remote: https://github.com/twbs/bootstrap-rubygem
   revision: e92f95fb42ab938fd6f4d59e7b3b243e297ef58f
   specs:
@@ -79,6 +87,9 @@ GEM
       aws-sdk (~> 2.0)
       carrierwave (>= 0.7, < 2.0)
     chunky_png (1.3.8)
+    climate_control (0.2.0)
+    cocaine (0.5.8)
+      climate_control (>= 0.0.3, < 1.0)
     cocoon (1.2.10)
     coderay (1.1.1)
     coffee-rails (4.2.1)
@@ -244,7 +255,7 @@ GEM
     slim (3.0.8)
       temple (>= 0.7.6, < 0.9)
       tilt (>= 1.3.3, < 2.1)
-    slim-rails (3.1.2)
+    slim-rails (3.1.1)
       actionpack (>= 3.1)
       railties (>= 3.1)
       slim (~> 3.0)
@@ -293,6 +304,7 @@ DEPENDENCIES
   capybara (~> 2.13)
   carrierwave (~> 1.0)
   carrierwave-aws (~> 1.0, >= 1.0.2)
+  ckeditor!
   cocoon (~> 1.2, >= 1.2.10)
   coderay (~> 1.1, >= 1.1.1)
   coffee-rails (~> 4.2)
@@ -319,7 +331,7 @@ DEPENDENCIES
   rmagick (~> 2.16)
   rspec-rails (~> 3.5, >= 3.5.2)
   sass-rails (~> 5.0)
-  slim-rails (~> 3.1, >= 3.1.2)
+  slim-rails (= 3.1.1)
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)

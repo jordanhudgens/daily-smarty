@@ -21,6 +21,6 @@
         - if !@post.img.blank?
           .post-img
             = image_tag(@post.img.feature_thumb)
-        = markdown(@post.content)
+        = @post.content.html_safe
 
 
