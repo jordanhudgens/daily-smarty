@@ -1,7 +1,7 @@
 .full-width-div
   .card
     .row
-      .col-md-6
+      .col-md-12
         .row
           - if !@post.img.blank?
             .col-md-4.post-headline
@@ -14,14 +14,17 @@
             .col-md-12
               h1
                 = @post.title
-      .col-md-6
-        .pull-right
-          - @post.topics.each do |topic|
-            div
-              = link_to topic.title, topic_path(topic)
+        .row
+          .col-md-12
+            .breadcrumbs
+              - @post.topics.each do |topic|
+                - if @post.topics.last != topic
+                  = link_to "#{topic.title}, ", topic_path(topic)
+                - else
+                  = link_to topic.title, topic_path(topic)
 
-          - if current_user && policy(@post).update?
-            = link_to "<i class='fa fa-pencil' aria-hidden='true'></i>".html_safe, edit_post_path(@post)
+              - if current_user && policy(@post).update?
+                = link_to "<i class='fa fa-pencil' aria-hidden='true'></i>".html_safe, edit_post_path(@post)
 
     .row
       .col-md-12
