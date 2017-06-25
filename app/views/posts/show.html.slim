@@ -20,7 +20,7 @@
               li
                 = link_to '<i class="fa fa-home" aria-hidden="true"></i>'.html_safe, root_path
               li
-                = link_to "<i class='fa fa-fire' aria-hidden='true'></i> #{@post.impressionist_count}".html_safe, '#'
+                = link_to "<i class='fa fa-fire' aria-hidden='true'></i> #{@post.impressions_count}".html_safe, '#'
               - if current_user && policy(@post).update?
                 li
                   = link_to '<i class="fa fa-pencil" aria-hidden="true"></i>'.html_safe, edit_post_path(@post)
