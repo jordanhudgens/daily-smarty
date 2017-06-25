@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
+  is_impressionable counter_cache: true
   mount_uploader :img, PostImageUploader
   belongs_to :user
   has_many :themes, inverse_of: :post

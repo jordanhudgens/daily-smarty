@@ -7,6 +7,13 @@ GIT
       orm_adapter (~> 0.5.0)
 
 GIT
+  remote: https://github.com/jordanhudgens/impressionist
+  revision: ec0491110f7a34f6c9a4c2d82e50c1161e9b65b0
+  specs:
+    impressionist (1.6.0)
+      nokogiri (~> 1)
+
+GIT
   remote: https://github.com/twbs/bootstrap-rubygem
   revision: e92f95fb42ab938fd6f4d59e7b3b243e297ef58f
   specs:
@@ -318,6 +325,7 @@ DEPENDENCIES
   friendly_id (~> 5.2, >= 5.2.1)
   gritter (~> 1.2)
   hirb
+  impressionist!
   jbuilder (~> 2.5)
   jquery-rails
   kaminari (~> 1.0, >= 1.0.1)

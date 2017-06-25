@@ -1,12 +1,14 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
+  impressionist actions: [:show]
 
   def index
     @posts = Post.page(params[:page]).per(42)
   end
 
   def show
+    impressionist @post
   end
 
   def new
