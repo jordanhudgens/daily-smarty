@@ -54,3 +54,7 @@ gem 'carrierwave-aws', '~> 1.0', '>= 1.0.2'
 gem 'hirb'
 gem 'ckeditor', github: 'galetahub/ckeditor'
 gem 'impressionist', git: 'https://github.com/jordanhudgens/impressionist'
+gem 'rack-mini-profiler', require: false
+gem 'memory_profiler'
+gem 'flamegraph'
+gem 'stackprof'
