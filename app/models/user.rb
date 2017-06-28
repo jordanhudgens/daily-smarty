@@ -7,6 +7,9 @@ class User < ApplicationRecord
   friendly_id :username, use: :slugged
   has_many :posts
 
+  has_many :followings
+  has_many :followers, through: :followings
+
   validates_uniqueness_of :username, :slug
   validates_presence_of :full_name, :username, :slug
 end
