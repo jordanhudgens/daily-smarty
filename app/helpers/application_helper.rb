@@ -12,4 +12,37 @@ module ApplicationHelper
 
     javascript_tag(tracking_code)
   end
+
+  def quantcast_javascript
+    tracking_code = <<~JS
+      var _qevents = _qevents || [];
+
+      (function() {
+      var elem = document.createElement('script');
+      elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+      elem.async = true;
+      elem.type = "text/javascript";
+      var scpt = document.getElementsByTagName('script')[0];
+      scpt.parentNode.insertBefore(elem, scpt);
+      })();
+
+      _qevents.push({
+      qacct:"p-zqHus5X-ax9jb"
+      });
+    JS
+
+    javascript_tag(tracking_code)
+  end
+
+  def quantcast_tracking_pixel
+    tracking_pixel = <<~HTML
+      <noscript>
+      <div style="display:none;">
+      <img src="//pixel.quantserve.com/pixel/p-zqHus5X-ax9jb.gif" border="0" height="1" width="1" alt="Quantcast"/>
+      </div>
+      </noscript>
+    HTML
+
+    tracking_pixel.html_safe
+  end
 end
