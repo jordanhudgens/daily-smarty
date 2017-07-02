@@ -2,13 +2,20 @@ nav.navbar.navbar-toggleable-md.navbar-light.bg-faded
   .container
     = link_to image_tag('nav_logo.png', width: '42%'), root_path, class: 'navbar-brand logo'
     .nav-links
-      = link_to "<i class='fa fa-random' aria-hidden='true'></i>".html_safe, post_path(Post.all.sample)
-      = link_to "<i class='fa fa-line-chart' aria-hidden='true'></i>".html_safe, root_path
-      = link_to "<i class='fa fa-globe' aria-hidden='true'></i>".html_safe, posts_path
       - if current_user
+        = link_to "<i class='fa fa-random' aria-hidden='true'></i>".html_safe, post_path(Post.all.sample)
+        = link_to "<i class='fa fa-line-chart' aria-hidden='true'></i>".html_safe, root_path
+        = link_to "<i class='fa fa-globe' aria-hidden='true'></i>".html_safe, posts_path
         = link_to "<i class='fa fa-rss' aria-hidden='true'></i>".html_safe, profile_path(current_user)
         = link_to "<i class='fa fa-plus-circle' aria-hidden='true'></i>".html_safe, new_post_path
         = link_to "<i class='fa fa-address-card-o' aria-hidden='true'></i>".html_safe, edit_user_registration_path
         = link_to "<i class='fa fa-sign-out' aria-hidden='true'></i>".html_safe, destroy_user_session_path, method: :delete
       - else
-        = link_to "<i class='fa fa-sign-in' aria-hidden='true'></i>".html_safe, new_user_session_path
+        = form_tag session_path(:user) do
+          = text_field_tag 'user[email]', nil, placeholder: 'Email', class: 'nav-text-box'
+          = password_field_tag 'user[password]', nil, placeholder: 'Password', class: 'nav-text-box'
+          = submit_tag 'Sign In', class: 'btn btn-primary btn-sm-as-input'
+          .nav-forgot-password
+            .pull-right
+              = link_to "Reset password", new_password_path(:user)
+              = link_to "Sign Up", new_user_registration_path
