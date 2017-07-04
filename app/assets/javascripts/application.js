@@ -18,27 +18,3 @@
 //= require_tree .
 //= require popper
 //= require bootstrap-sprockets
-
-function ready() {
-    $(".dropdowns select").select2();
-
-    $(document).keypress(function( event ) {
-      if ( event.which == 70 ) {
-        event.preventDefault();
-        $('#q').focus();
-      }
-    });
-
-    $(document).on('click', '.add-topic', function(event) {
-      $(this).parent().find('.dropdowns select').select2();
-    });
-
-    $(document).on('click', '.add-custom-topic', function(event) {
-      $(this).find('selection').hide();
-      $(this).hide();
-    });
-};
-
-$(document).ready(ready);
-$(document).on('turbolinks:load', ready);
-
