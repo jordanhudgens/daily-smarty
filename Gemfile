@@ -58,4 +58,3 @@ gem 'rack-mini-profiler', require: false
 gem 'memory_profiler'
 gem 'flamegraph'
 gem 'stackprof'
-gem 'bonsai-elasticsearch-rails'
