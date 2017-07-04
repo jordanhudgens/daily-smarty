@@ -3,6 +3,6 @@ nav.navbar.navbar-toggleable-md.navbar-light.bg-faded
     = link_to image_tag('nav_logo.png', width: '42%'), root_path, class: 'navbar-brand logo'
     .nav-links
       - if current_user
-        = render 'signed_in_links'
+        = render 'static/signed_in_links'
       - else
-        = render 'nav_sign_in_form'
+        = render 'static/nav_sign_in_form'
