@@ -58,3 +58,5 @@ gem 'rack-mini-profiler', require: false
 gem 'memory_profiler'
 gem 'flamegraph'
 gem 'stackprof'
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
