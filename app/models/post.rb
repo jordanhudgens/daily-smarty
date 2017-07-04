@@ -1,4 +1,6 @@
 class Post < ApplicationRecord
+  include Elasticsearch::Model
+  include Elasticsearch::Model::Callbacks
   is_impressionable counter_cache: true
   mount_uploader :img, PostImageUploader
   belongs_to :user
@@ -13,3 +15,5 @@ class Post < ApplicationRecord
 
   validates_presence_of :title, :content, :user_id
 end
+
+Post.import

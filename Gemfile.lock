@@ -77,6 +77,9 @@ GEM
     aws-sigv4 (1.0.0)
     bcrypt (3.1.11)
     bindex (0.5.0)
+    bonsai-elasticsearch-rails (0.2.0)
+      elasticsearch-model (~> 0)
+      elasticsearch-rails (~> 0)
     builder (3.2.3)
     byebug (9.0.6)
     capybara (2.14.0)
@@ -138,6 +141,19 @@ GEM
     dotenv-rails (2.2.1)
       dotenv (= 2.2.1)
       railties (>= 3.2, < 5.2)
+    elasticsearch (5.0.4)
+      elasticsearch-api (= 5.0.4)
+      elasticsearch-transport (= 5.0.4)
+    elasticsearch-api (5.0.4)
+      multi_json
+    elasticsearch-model (0.1.9)
+      activesupport (> 3)
+      elasticsearch (> 0.4)
+      hashie
+    elasticsearch-rails (0.1.9)
+    elasticsearch-transport (5.0.4)
+      faraday
+      multi_json
     erubi (1.6.0)
     execjs (2.7.0)
     factory_girl (4.8.0)
@@ -145,6 +161,8 @@ GEM
     factory_girl_rails (4.8.0)
       factory_girl (~> 4.8.0)
       railties (>= 3.0.0)
+    faraday (0.12.1)
+      multipart-post (>= 1.2, < 3)
     ffi (1.9.18)
     flamegraph (0.9.5)
     font-awesome-rails (4.7.0.2)
@@ -154,6 +172,7 @@ GEM
     globalid (0.4.0)
       activesupport (>= 4.2.0)
     gritter (1.2.0)
+    hashie (3.5.5)
     hirb (0.7.3)
     i18n (0.8.1)
     jbuilder (2.6.4)
@@ -192,6 +211,7 @@ GEM
     mini_portile2 (2.1.0)
     minitest (5.10.2)
     multi_json (1.12.1)
+    multipart-post (2.0.0)
     nio4r (2.0.0)
     nokogiri (1.7.2)
       mini_portile2 (~> 2.1.0)
@@ -311,6 +331,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bonsai-elasticsearch-rails
   bootstrap!
   byebug
   capybara (~> 2.13)
