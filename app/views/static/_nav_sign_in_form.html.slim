@@ -1,0 +1,8 @@
+= form_tag session_path(:user) do
+  = text_field_tag 'user[email]', nil, placeholder: 'Email', class: 'nav-text-box'
+  = password_field_tag 'user[password]', nil, placeholder: 'Password', class: 'nav-text-box'
+  = submit_tag 'Sign In', class: 'btn btn-primary btn-sm-as-input'
+  .nav-forgot-password
+    .pull-right
+      = link_to "Reset password", new_password_path(:user)
+      = link_to "Sign Up", new_user_registration_path
