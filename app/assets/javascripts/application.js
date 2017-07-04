@@ -22,6 +22,13 @@
 function ready() {
     $(".dropdowns select").select2();
 
+    $(document).keypress(function( event ) {
+      if ( event.which == 70 ) {
+        event.preventDefault();
+        $('#q').focus();
+      }
+    });
+
     $(document).on('click', '.add-topic', function(event) {
       $(this).parent().find('.dropdowns select').select2();
     });
