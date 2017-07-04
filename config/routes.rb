@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'query', to: 'search#query', as: 'search_query'
+
   mount Ckeditor::Engine => '/ckeditor'
   resources :posts
   resources :topics, only: [:index, :show]
