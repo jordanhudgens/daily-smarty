@@ -5,7 +5,7 @@ ready = ->
       $('#q').focus()
     if event.which == 78
       event.preventDefault()
-      location.href = 'posts/new'
+      location.href = 'http://' + window.location.host + '/' + 'posts/new'
     return
 
 $(document).ready ready
