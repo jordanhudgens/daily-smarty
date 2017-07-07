@@ -1,0 +1,8 @@
+.post-item-wrapper
+  .card
+    .row
+      .col-md-9
+        h2
+          = link_to "@#{user.username}", profile_path(user.slug)
+      .col-md-3
+        = "#{user.posts.count} posts"

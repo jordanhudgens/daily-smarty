@@ -8,4 +8,4 @@
         - @user.posts.each do |post|
           = render partial: 'posts/post', locals: { post: post }
       - else
-        'There are no posts for this user'
+        = 'There are no posts for this user'

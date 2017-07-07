@@ -1,0 +1,10 @@
+.full-width-div
+  .card
+    .col-md-12
+      h1
+        = 'All Users'
+
+    .col-md-12
+      = render partial: 'users/user', collection: @users
+
+      = paginate @users

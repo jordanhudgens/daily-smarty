@@ -5,11 +5,13 @@
         .col-md-3
           = image_tag(post.img.post_thumb)
         .col-md-6
-          = link_to post.title, post_path(post)
+          h2
+            = link_to post.title, post_path(post)
         .col-md-3
-          = link_to 'Future icons', root_path
+          = link_to "@#{post.user.username}", profile_path(post.user.slug)
       - else
         .col-md-9
-          = link_to post.title, post_path(post)
+          h2
+            = link_to post.title, post_path(post)
         .col-md-3
-          = link_to 'Future icons', root_path
+          = link_to "@#{post.user.username}", profile_path(post.user.slug)
