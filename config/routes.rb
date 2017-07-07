@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :topics, only: [:index, :show]
   devise_for :users
   get 'smarties', to: 'users#index', as: 'smarties'
+  get 'follow/:following_id', to: 'users#follow', as: 'follow'
   get ':id', to: 'static#profile', as: 'profile'
   root to: 'static#homepage'
 end

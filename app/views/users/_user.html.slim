@@ -1,8 +1,14 @@
 .post-item-wrapper
   .card
     .row
-      .col-md-9
+      .col-md-7
         h2
           = link_to "@#{user.username}", profile_path(user.slug)
-      .col-md-3
+      .col-md-2
         = "#{user.posts.count} posts"
+      .col-md-3
+        - if current_user
+          - if user.followings.pluck(:follower_id).include?(current_user.id)
+            = 'Following'
+          - else
+            = link_to 'Follow', follow_path(user.id), class: 'follow-link', remote: true
