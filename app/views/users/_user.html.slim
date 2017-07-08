@@ -8,7 +8,7 @@
         = "#{user.posts.count} posts"
       .col-md-3
         - if current_user
-          - if user.followings.pluck(:follower_id).include?(current_user.id)
+          - if user.followings.any? && user.followings.pluck(:follower_id).include?(current_user.id)
             = 'Following'
           - else
             = link_to 'Follow', follow_path(user.id), class: 'follow-link', remote: true
