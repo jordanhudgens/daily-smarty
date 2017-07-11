@@ -48,7 +48,7 @@ module ApplicationHelper
 
   def follow_buttons(user_to_follow: user, logged_in_user: current_user)
     if logged_in_user
-      if user_to_follow.followings.any? && user_to_follow.followings.pluck(:follower_id).include?(logged_in_user.id)
+      if current_user.following.any? && current_user.following_ids.include?(user_to_follow.id)
         link_to 'Unfollow', follow_toggle_path(user_to_follow.id), class: 'unfollow-link btn btn-danger', remote: true
       else
         link_to 'Follow', follow_toggle_path(user_to_follow.id), class: 'follow-link btn btn-primary', remote: true

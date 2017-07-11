@@ -7,8 +7,19 @@ class User < ApplicationRecord
   friendly_id :username, use: :slugged
   has_many :posts, dependent: :destroy
 
-  has_many :followings, dependent: :destroy
-  has_many :followers, through: :followings
+  has_many :users_are_following_this_user, class_name:  "Following",
+                                          foreign_key: "followed_id",
+                                          dependent:   :destroy
+
+  has_many :followers, through: :users_are_following_this_user,
+                       source: :follower
+
+  has_many :this_user_is_following_other_users, class_name:  "Following",
+                                                foreign_key: "follower_id",
+                                                dependent:   :destroy
+
+  has_many :following, through: :this_user_is_following_other_users,
+                       source: :followed
 
   validates_uniqueness_of :username, :slug
   validates_presence_of :full_name, :username, :slug

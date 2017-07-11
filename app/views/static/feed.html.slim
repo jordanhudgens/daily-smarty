@@ -5,6 +5,12 @@
         = 'Feed'
 
     .col-md-12
-      = render @posts
+      - if @posts.any?
+        = render @posts
 
-      = paginate @posts
+        = paginate @posts
+      - else
+        h2
+          = 'There are no posts from the users that you follow'
+        p
+          = link_to 'Find other users to follow', smarties_path
