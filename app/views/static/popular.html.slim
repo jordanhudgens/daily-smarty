@@ -1,0 +1,10 @@
+.full-width-div
+  .card
+    .col-md-12
+      h1
+        = 'Popular Posts'
+
+    .col-md-12
+      = render @posts
+
+      = paginate @posts

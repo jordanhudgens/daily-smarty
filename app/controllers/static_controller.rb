@@ -17,4 +17,11 @@ class StaticController < ApplicationController
   def profile
     @user = User.friendly.find(params[:id])
   end
+
+  def popular
+    @posts = Post.where.not(impressions_count: nil)
+               .order('impressions_count DESC')
+               .page(params[:page])
+               .per(42)
+  end
 end
