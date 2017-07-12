@@ -23,4 +23,13 @@ class User < ApplicationRecord
 
   validates_uniqueness_of :username, :slug
   validates_presence_of :full_name, :username, :slug
+
+  after_create :auto_follow_account
+
+  private def auto_follow_account
+    Following.create(
+      follower_id: self.id,
+      followed_id: self.id
+    )
+  end
 end
