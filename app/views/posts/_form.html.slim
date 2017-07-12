@@ -10,7 +10,7 @@
 
       .form-group
         = f.label :title, class: 'form-label'
-        = f.text_field :title, class: 'form-control'
+        = f.text_field :title, class: 'form-control', autofocus: true
       .form-group
         = f.label :content, class: 'form-label'
         = cktext_area :post, :content, cols: 40
