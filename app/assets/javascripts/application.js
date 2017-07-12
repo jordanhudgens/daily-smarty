@@ -15,6 +15,7 @@
 //= require cocoon
 //= require turbolinks
 //= require ckeditor/init
+//= require popover_config
 //= require_tree .
 //= require popper
 //= require bootstrap-sprockets

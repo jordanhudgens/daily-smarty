@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   impressionist actions: [:show]
 
   def index
-    @posts = Post.page(params[:page]).per(42)
+    @posts = Post.order('created_at desc').page(params[:page]).per(42)
   end
 
   def show

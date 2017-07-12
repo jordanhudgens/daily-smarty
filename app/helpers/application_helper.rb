@@ -57,4 +57,8 @@ module ApplicationHelper
       link_to 'Sign Up to Follow', new_user_registration_path, class: 'btn btn-primary'
     end
   end
+
+  def nav_popover(content)
+    "data-toggle='popover' data-trigger='hover' data-placement='bottom' data-content='#{content}'"
+  end
 end
