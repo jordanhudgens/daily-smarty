@@ -20,6 +20,7 @@ class StaticController < ApplicationController
 
   def popular
     @posts = Post.where.not(impressions_count: nil)
+               .where(created_at: (Date.today - 7.days)..Date.today)
                .order('impressions_count DESC')
                .page(params[:page])
                .per(42)

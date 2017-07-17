@@ -8,10 +8,18 @@
           h2
             = link_to post.title, post_path(post)
         .col-md-3
-          = link_to "@#{post.user.username}", profile_path(post.user.slug)
+          .row
+            .col-md-12
+              = link_to "@#{post.user.username}", profile_path(post.user.slug)
+            .col-md-12
+              = "Published #{distance_of_time_in_words(post.created_at, Time.now) } ago"
       - else
         .col-md-9
           h2
             = link_to post.title, post_path(post)
         .col-md-3
-          = link_to "@#{post.user.username}", profile_path(post.user.slug)
+          .row
+            .col-md-12
+              = link_to "@#{post.user.username}", profile_path(post.user.slug)
+            .col-md-12
+              = "Published #{distance_of_time_in_words(post.created_at, Time.now) } ago"
