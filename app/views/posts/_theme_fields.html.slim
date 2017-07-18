@@ -1,7 +1,18 @@
 .nested-fields.project-tag-fields
-  .form-inline
-    .tag_from_list.dropdowns style="display: inline;"
-      = f.select :topic_id, [], { include_blank: true, class: 'form-control topic-dropdowns' }
-      = link_to_add_association ' or create a new one', f, :topic, class: 'add-custom-topic'
-      = link_to_remove_association f, class: 'remove-topic btn btn-default btn-xs' do
-        <i class="fa fa-times" aria-hidden="true"></i>
+  .row
+    .col-md-12
+      - if f.object.topic_id
+        .col-md-6.theme-card-wrapper
+          .theme-content-items
+            .t2
+              = f.object.topic.title
+          = link_to_remove_association f, class: 'theme-remove-link btn btn-xs wt-color btn-active-font btn-guide' do
+            <i class="fa fa-times" aria-hidden="true"></i>
+      - else
+        .row
+          .col-md-10
+            .tag_from_list.dropdowns style="display: inline;"
+              = f.select :topic_id, [], { include_blank: true, class: 'form-control topic-dropdowns' }
+              = link_to_add_association ' or create a new one', f, :topic, class: 'add-custom-topic'
+              = link_to_remove_association f, class: 'remove-topic btn btn-default btn-xs' do
+                <i class="fa fa-times" aria-hidden="true"></i>
