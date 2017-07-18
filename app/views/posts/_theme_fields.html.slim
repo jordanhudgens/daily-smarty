@@ -1,7 +1,7 @@
 .nested-fields.project-tag-fields
   .form-inline
     .tag_from_list.dropdowns style="display: inline;"
-      = f.select :topic_id, Topic.all.collect {|p| [ p.title, p.id ] }, { include_blank: true, class: 'form-control topic-dropdowns' }
+      = f.select :topic_id, [], { include_blank: true, class: 'form-control topic-dropdowns' }
       = link_to_add_association ' or create a new one', f, :topic, class: 'add-custom-topic'
       = link_to_remove_association f, class: 'remove-topic btn btn-default btn-xs' do
         <i class="fa fa-times" aria-hidden="true"></i>

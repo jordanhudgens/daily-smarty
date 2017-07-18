@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   resources :posts
   resources :topics, only: [:index, :show]
+  get 'topic-autocomplete', to: 'topics#autocomplete'
   devise_for :users
   get 'smarties', to: 'users#index', as: 'smarties'
   get 'popular', to: 'static#popular', as: 'popular'
