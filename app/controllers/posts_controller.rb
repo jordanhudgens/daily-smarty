@@ -8,6 +8,8 @@ class PostsController < ApplicationController
   end
 
   def show
+    @page_title = @post.title
+    @page_description = @post.content
     impressionist @post
   end
 
