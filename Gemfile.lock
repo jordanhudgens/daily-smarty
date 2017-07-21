@@ -271,6 +271,8 @@ GEM
     rb-inotify (0.9.8)
       ffi (>= 0.5.0)
     redcarpet (3.4.0)
+    render_async (0.2.3)
+      bundler (~> 1.8)
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
@@ -396,6 +398,7 @@ DEPENDENCIES
   rack-mini-profiler
   rails (~> 5.1.1)
   redcarpet (~> 3.4)
+  render_async
   rmagick (~> 2.16)
   rspec-rails (~> 3.5, >= 3.5.2)
   sass-rails (~> 5.0)

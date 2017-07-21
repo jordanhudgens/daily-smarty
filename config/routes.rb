@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   get 'query', to: 'search#query', as: 'search_query'
-
   mount Ckeditor::Engine => '/ckeditor'
   resources :posts
+  get 'post_links/:id', to: 'posts#post_links', as: 'post_links'
+  get :post_links, controller: :posts
   resources :topics, only: [:index, :show]
   get 'topic-autocomplete', to: 'topics#autocomplete'
   devise_for :users

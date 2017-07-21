@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [:post_links, :show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
   impressionist actions: [:show]
 
@@ -11,6 +11,11 @@ class PostsController < ApplicationController
     @page_title = @post.title
     @page_description = @post.content
     impressionist @post
+  end
+
+  def post_links
+    @post_links = @post.post_links
+    render partial: 'post_links'
   end
 
   def new

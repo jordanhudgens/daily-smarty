@@ -1,0 +1,3 @@
+- if @post_links.any?
+  - @post_links.each do |post_link|
+    = post_link_formatter(post_link.link_url)

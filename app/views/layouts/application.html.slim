@@ -16,6 +16,7 @@ html
     .container
       = yield
 
+    = content_for :render_async
     - if Rails.env.production?
       = google_analytics
       = quantcast_javascript
