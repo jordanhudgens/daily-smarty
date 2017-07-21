@@ -8,6 +8,7 @@
             - @post.errors.full_messages.each do |message|
               li = message
 
+      = render partial: 'posts/title', locals: { f: f }
       ul#postTabList.nav.nav-tabs role="tablist" 
         li.nav-item
           a.nav-link.active aria-controls="content" data-toggle="tab" href="#content" role="tab" Content
@@ -20,10 +21,6 @@
       .tab-content
         #content.tab-pane.active role="tabpanel"
           .form-group
-            = f.label :title, class: 'form-label'
-            = f.text_field :title, class: 'form-control', autofocus: true
-          .form-group
-            = f.label :content, class: 'form-label'
             = cktext_area :post, :content, cols: 40
 
         #links.tab-pane role="tabpanel"
@@ -38,8 +35,9 @@
 
         #thumb.tab-pane role="tabpanel"
           .form-group
-            = f.label 'Image upload (optional)', class: 'form-label'
-            = f.file_field :img, class: 'form-control'
+            = f.label 'Image upload (optional)'
+            br
+            = f.file_field :img
 
       .actions
         = f.submit 'Submit', class: 'btn btn-primary'
