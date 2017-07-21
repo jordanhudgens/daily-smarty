@@ -3,13 +3,13 @@ module PostsHelper
     begin
       link = LinkThumbnailer.generate(post_link)
       post_link_mapper(link)
-    rescue LinkThumbnailer::Exceptions, ActionView::Template::Error => e
+    rescue LinkThumbnailer::Exceptions, Net::HTTP::Persistent::Error => e
       content = <<~EOL
                   <div class='card'>
                     <div class='row'>
                       <div class='col-md-12'>
                         <h2>
-                          <a href='#{post_link}'>#{post_link}>
+                          <a href='#{post_link}' target='_blank'>#{post_link}</a>
                         </h2>
                       </div>
                     </div>
