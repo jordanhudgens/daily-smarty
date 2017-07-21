@@ -6,9 +6,14 @@ class Post < ApplicationRecord
   belongs_to :user
   has_many :themes, inverse_of: :post
   has_many :topics, through: :themes
+  has_many :post_links, dependent: :destroy
 
   accepts_nested_attributes_for :topics
   accepts_nested_attributes_for :themes, allow_destroy: true
+
+  accepts_nested_attributes_for :post_links,
+                                allow_destroy: true,
+                                reject_if: lambda { |attrs| attrs['link_url'].blank? }
 
   extend FriendlyId
   friendly_id :title, use: :slugged

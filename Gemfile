@@ -62,3 +62,4 @@ gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
 gem 'honeybadger', '~> 3.1'
 gem 'link_thumbnailer'
+gem "validate_url"

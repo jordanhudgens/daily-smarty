@@ -24,7 +24,10 @@
             = cktext_area :post, :content, cols: 40
 
         #links.tab-pane role="tabpanel"
-          = 'links....'
+          .form-group
+            = f.fields_for :post_links do |post_link_form|
+              = render 'post_link_fields', :f => post_link_form
+            = link_to_add_association 'Add a Link', f, :post_links
 
         #topics.tab-pane role="tabpanel"
           .form-group

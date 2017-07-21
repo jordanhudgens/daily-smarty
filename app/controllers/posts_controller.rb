@@ -69,6 +69,8 @@ class PostsController < ApplicationController
         :content,
         :user_id,
         :img,
-        themes_attributes: [:id, :_destroy, :topic_id, topic_attributes: [:id, :_destroy, :title]])
+        themes_attributes: [:id, :_destroy, :topic_id, topic_attributes: [:id, :_destroy, :title]],
+        post_links_attributes: [:id, :_destroy, :link_url]
+      )
     end
 end
