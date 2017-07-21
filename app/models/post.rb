@@ -18,5 +18,5 @@ class Post < ApplicationRecord
   extend FriendlyId
   friendly_id :title, use: :slugged
 
-  validates_presence_of :title, :content, :user_id
+  validates_presence_of :title, :user_id
 end
