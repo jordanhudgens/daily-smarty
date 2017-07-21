@@ -3,7 +3,7 @@ module PostsHelper
     begin
       link = LinkThumbnailer.generate(post_link)
       post_link_mapper(link)
-    rescue LinkThumbnailer::Exceptions => e
+    rescue LinkThumbnailer::Exceptions, ActionView::Template::Error => e
       content = <<~EOL
                   <div class='card'>
                     <div class='row'>
