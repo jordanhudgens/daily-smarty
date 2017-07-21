@@ -8,19 +8,38 @@
             - @post.errors.full_messages.each do |message|
               li = message
 
-      .form-group
-        = f.label :title, class: 'form-label'
-        = f.text_field :title, class: 'form-control', autofocus: true
-      .form-group
-        = f.label :content, class: 'form-label'
-        = cktext_area :post, :content, cols: 40
-      .form-group
-        = f.label 'Image upload (optional)', class: 'form-label'
-        = f.file_field :img, class: 'form-control'
-      .form-group
-        = f.fields_for :themes do |theme|
-          = render 'theme_fields', :f => theme
-        .custom-fields
-        = link_to_add_association 'Add a Topic', f, :themes, class: 'add-topic', 'data-association-insertion-method' => 'append', 'data-association-insertion-node' => '.custom-fields'
+      ul#postTabList.nav.nav-tabs role="tablist" 
+        li.nav-item
+          a.nav-link.active aria-controls="content" data-toggle="tab" href="#content" role="tab" Content
+        li.nav-item
+          a.nav-link aria-controls="links" data-toggle="tab" href="#links" role="tab" Links
+        li.nav-item
+          a.nav-link aria-controls="topics" data-toggle="tab" href="#topics" role="tab" Topics
+        li.nav-item
+          a.nav-link aria-controls="thumb" data-toggle="tab" href="#thumb" role="tab" Post Thumbnail
+      .tab-content
+        #content.tab-pane.active role="tabpanel"
+          .form-group
+            = f.label :title, class: 'form-label'
+            = f.text_field :title, class: 'form-control', autofocus: true
+          .form-group
+            = f.label :content, class: 'form-label'
+            = cktext_area :post, :content, cols: 40
+
+        #links.tab-pane role="tabpanel"
+          = 'links....'
+
+        #topics.tab-pane role="tabpanel"
+          .form-group
+            = f.fields_for :themes do |theme|
+              = render 'theme_fields', :f => theme
+            .custom-fields
+            = link_to_add_association 'Add a Topic', f, :themes, class: 'add-topic', 'data-association-insertion-method' => 'append', 'data-association-insertion-node' => '.custom-fields'
+
+        #thumb.tab-pane role="tabpanel"
+          .form-group
+            = f.label 'Image upload (optional)', class: 'form-label'
+            = f.file_field :img, class: 'form-control'
+
       .actions
         = f.submit 'Submit', class: 'btn btn-primary'
