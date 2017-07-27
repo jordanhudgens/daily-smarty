@@ -12,7 +12,7 @@ html
 
     meta property="og:url" content="#{request.original_url}"
 
-    meta property="og:image" content="#{@og_logo || image_url('og-logo.jpg')}"
+    meta property="og:image" content="#{@og_logo || "https://s3.amazonaws.com/dailysmarty-production/static/og-logo.jpg"}"
 
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
