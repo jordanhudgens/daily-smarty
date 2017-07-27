@@ -16,6 +16,7 @@ class PostsController < ApplicationController
     end
 
     @og_logo = @post.img unless @post.img.blank?
+    @og_type = 'article'
     impressionist @post
   end
 
