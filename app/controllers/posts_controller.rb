@@ -9,7 +9,7 @@ class PostsController < ApplicationController
 
   def show
     @page_title = @post.title
-    @page_description = strip_tags(@post.content)
+    @page_description = ActionView::Base.full_sanitizer.sanitize(@post.content) unless @post.content.blank?
     @og_logo = @post.img unless @post.img.blank?
     impressionist @post
   end
