@@ -10,6 +10,7 @@ class PostsController < ApplicationController
   def show
     @page_title = @post.title
     @page_description = @post.content
+    @og_logo = @post.img unless @post.img.blank?
     impressionist @post
   end
 
