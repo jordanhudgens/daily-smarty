@@ -7,8 +7,7 @@ html
     title= @page_title || 'DailySmarty | Learn Something New Everyday (and keep track of it)'
     meta property="og:title" content= (@page_title || 'DailySmarty | Learn Something New Everyday (and keep track of it)')
 
-    meta content=("#{@page_description || 'Keep track of what you learn each day.'}") name="description"
-    meta property="og:description" content=("#{@page_description || 'Keep track of what you learn each day.'}")
+    meta name="description" property="og:description" content=("#{@page_description || 'Keep track of what you learn each day.'}")
 
     meta property="og:url" content="#{request.original_url}"
 

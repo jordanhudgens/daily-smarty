@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  include ActionView::Helpers::TextHelper
   before_action :set_post, only: [:post_links, :show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
   impressionist actions: [:show]
@@ -9,7 +10,11 @@ class PostsController < ApplicationController
 
   def show
     @page_title = @post.title
-    @page_description = ActionView::Base.full_sanitizer.sanitize(@post.content) unless @post.content.blank?
+
+    unless @post.content.blank?
+      @page_description = truncate(ActionView::Base.full_sanitizer.sanitize(@post.content), length: 300)
+    end
+
     @og_logo = @post.img unless @post.img.blank?
     impressionist @post
   end
