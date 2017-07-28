@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :votes
   get 'query', to: 'search#query', as: 'search_query'
   mount Ckeditor::Engine => '/ckeditor'
   resources :posts

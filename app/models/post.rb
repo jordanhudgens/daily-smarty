@@ -7,6 +7,7 @@ class Post < ApplicationRecord
   has_many :themes, inverse_of: :post
   has_many :topics, through: :themes
   has_many :post_links, dependent: :destroy
+  has_many :votes, dependent: :destroy
 
   accepts_nested_attributes_for :topics
   accepts_nested_attributes_for :themes, allow_destroy: true
