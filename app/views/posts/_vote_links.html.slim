@@ -4,6 +4,6 @@
   .col-md-12
     .center-text
       .vote-counter
-        = post.vote_count.number_of_votes || 0
+        = post.vote_count.number_of_votes
   .col-md-12
     = link_to "<i class='fa fa-arrow-down downvote-link #{arrow_color(post, 'down')}' aria-hidden='true'></i>".html_safe, downvote_path(post_slug: post.slug)
