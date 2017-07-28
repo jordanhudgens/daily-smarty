@@ -8,6 +8,7 @@ class Post < ApplicationRecord
   has_many :topics, through: :themes
   has_many :post_links, dependent: :destroy
   has_many :votes, dependent: :destroy
+  has_one :vote_count, dependent: :destroy
 
   accepts_nested_attributes_for :topics
   accepts_nested_attributes_for :themes, allow_destroy: true
@@ -20,4 +21,10 @@ class Post < ApplicationRecord
   friendly_id :title, use: :slugged
 
   validates_presence_of :title, :user_id
+
+  after_create :generate_vote_count
+
+  private def generate_vote_count
+    VoteCount.create(post_id: self.id, number_of_votes: 0)
+  end
 end

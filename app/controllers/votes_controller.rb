@@ -4,14 +4,18 @@ class VotesController < ApplicationController
   before_action :set_vote
 
   def upvote
-    @vote.destroy if @vote
-    Vote.create!(user: current_user, post: @post).up!
+    if Vote.create(user: current_user, post: @post).up!
+      @vote.destroy if @vote
+      @post.vote_count.increment
+    end
     head :ok
   end
 
   def downvote
-    @vote.destroy if @vote
-    Vote.create!(user: current_user, post: @post).down!
+    if Vote.create(user: current_user, post: @post).down!
+      @vote.destroy if @vote
+      @post.vote_count.decrement
+    end
     head :ok
   end
 
