@@ -1,3 +1,15 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+ready = ->
+  $(document).on 'click', '.upvote-link', (event) ->
+    $(this).removeClass('novote')
+    $(this).addClass('upvote')
+    $(this).closest('.vote-link-wrapper').find('a').last().find('i').removeClass('downvote')
+    $(this).closest('.vote-link-wrapper').find('a').last().find('i').addClass('novote')
+
+  $(document).on 'click', '.downvote-link', (event) ->
+    $(this).removeClass('novote')
+    $(this).addClass('downvote')
+    $(this).closest('.vote-link-wrapper').find('a').first().find('i').removeClass('upvote')
+    $(this).closest('.vote-link-wrapper').find('a').first().find('i').addClass('novote')
+
+$(document).ready ready
+$(document).on 'turbolinks:load', ready

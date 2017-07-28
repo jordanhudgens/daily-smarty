@@ -2,9 +2,15 @@
   .card
     .row
       - if !post.img.blank?
+        .col-md-1
+          .row.vote-link-wrapper
+            .col-md-12
+              = link_to "<i class='fa fa-arrow-up upvote-link #{arrow_color(post, 'up')}' aria-hidden='true'></i>".html_safe, upvote_path(post_slug: post.slug), remote: true
+            .col-md-12
+              = link_to "<i class='fa fa-arrow-down downvote-link #{arrow_color(post, 'down')}' aria-hidden='true'></i>".html_safe, downvote_path(post_slug: post.slug), remote: true
         .col-md-3
           = image_tag(post.img.post_thumb)
-        .col-md-6
+        .col-md-5
           h2
             = link_to post.title, post_path(post)
         .col-md-3
@@ -14,7 +20,13 @@
             .col-md-12
               = "Published #{distance_of_time_in_words(post.created_at, Time.now) } ago"
       - else
-        .col-md-9
+        .col-md-1
+          .row.vote-link-wrapper
+            .col-md-12
+              = link_to "<i class='fa fa-arrow-up upvote-link #{arrow_color(post, 'up')}' aria-hidden='true'></i>".html_safe, upvote_path(post_slug: post.slug), remote: true
+            .col-md-12
+              = link_to "<i class='fa fa-arrow-down downvote-link #{arrow_color(post, 'down')}' aria-hidden='true'></i>".html_safe, downvote_path(post_slug: post.slug), remote: true
+        .col-md-8
           h2
             = link_to post.title, post_path(post)
         .col-md-3

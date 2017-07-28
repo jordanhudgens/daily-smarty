@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  resources :votes
+  get 'upvote/:post_slug', to: 'votes#upvote', as: 'upvote'
+  get 'downvote/:post_slug', to: 'votes#downvote', as: 'downvote'
   get 'query', to: 'search#query', as: 'search_query'
   mount Ckeditor::Engine => '/ckeditor'
   resources :posts
