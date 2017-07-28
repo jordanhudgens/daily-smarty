@@ -1,6 +1,4 @@
 ready = ->
-  $(document).unbind('click')
-
   lastClicked = null
 
   $(document).on 'click', '.upvote-link', (event) ->
@@ -37,7 +35,6 @@ ready = ->
         success: (data, textStatus, jqXHR) ->
           counter.text(data.voteCount)
       return false
-    return false
 
 $(document).ready ready
 $(document).on 'turbolinks:load', ready
