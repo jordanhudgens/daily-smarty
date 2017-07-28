@@ -7,13 +7,17 @@
             .col-md-4.post-headline
               - if !@post.img.blank?
                 = image_tag(@post.img.guide_thumb, width: '250')
-            .col-md-8
+            .col-md-7
               h1
                 = @post.title
+            .col-md-1
+              = render partial: 'posts/vote_links', locals: { post: @post }
           - else
-            .col-md-12
+            .col-md-11
               h1
                 = @post.title
+            .col-md-1
+              = render partial: 'posts/vote_links', locals: { post: @post }
 
         = render 'breadcrumbs'
 
