@@ -42,5 +42,9 @@
             br
             = f.file_field :img
 
+      .row
+        .col-md-12
+          .form-group
+            = f.select :post_status, [['Draft', 'draft'], ['Published Publicly', 'published'], ['Private Post', 'private_post']], class: 'form-control'
       .actions
         = f.submit 'Submit', class: 'btn btn-primary'

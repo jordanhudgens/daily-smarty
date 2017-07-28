@@ -10,6 +10,12 @@ class Post < ApplicationRecord
   has_many :votes, dependent: :destroy
   has_one :vote_count, dependent: :destroy
 
+  enum post_status: {
+    draft: 0,
+    published: 1,
+    private_post: 2
+  }
+
   accepts_nested_attributes_for :topics
   accepts_nested_attributes_for :themes, allow_destroy: true
 

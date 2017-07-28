@@ -4,6 +4,7 @@ class StaticController < ApplicationController
 
     if current_user
       @posts = Post.where(user_id: current_user.following_ids)
+                 .published
                  .order('created_at desc')
                  .page(params[:page])
                  .per(42)
@@ -16,10 +17,17 @@ class StaticController < ApplicationController
 
   def profile
     @user = User.friendly.find(params[:id])
+
+    if @user == current_user
+      @posts = @user.posts
+    else
+      @posts = @user.posts.published
+    end
   end
 
   def popular
     @posts = Post.where.not(impressions_count: nil)
+               .published
                .where(created_at: (Date.today - 7.days)..Date.today)
                .order('impressions_count DESC')
                .page(params[:page])

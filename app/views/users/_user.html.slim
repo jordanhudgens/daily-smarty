@@ -5,6 +5,6 @@
         h2
           = link_to "@#{user.username}", profile_path(user.slug)
       .col-md-2
-        = "#{user.posts.count} posts"
+        = "#{user.posts.published.count} posts"
       .col-md-3
         = follow_buttons(user_to_follow: user, logged_in_user: current_user)

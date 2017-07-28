@@ -5,8 +5,8 @@
         = @topic.title
 
     .col-md-12
-      - if @topic.posts.any?
-        - @topic.posts.each do |post|
+      - if @topic_posts.any?
+        - @topic_posts.each do |post|
           = render partial: 'posts/post', locals: { post: post }
       - else
-        'There are no posts for this topic'
+        | There are no posts for this topic

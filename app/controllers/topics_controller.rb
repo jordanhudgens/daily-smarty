@@ -5,6 +5,7 @@ class TopicsController < ApplicationController
 
   def show
     @topic = Topic.friendly.find(params[:id])
+    @topic_posts = @topic.posts.published
   end
 
   def autocomplete

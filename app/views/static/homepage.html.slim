@@ -9,6 +9,6 @@
                 h2
                   = link_to topic.title, topic
                 .row.topic-grouping
-                  - topic.posts.limit(9).each do |post|
+                  - topic.posts.published.limit(9).each do |post|
                     .col-md-4
                       = link_to post.title, post

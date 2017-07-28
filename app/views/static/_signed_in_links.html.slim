@@ -1,4 +1,4 @@
-= link_to "<i class='fa fa-random' #{nav_popover('Random Post')} aria-hidden='true'></i>".html_safe, post_path(Post.all.sample)
+= link_to "<i class='fa fa-random' #{nav_popover('Random Post')} aria-hidden='true'></i>".html_safe, post_path(Post.published.sample)
 
 = link_to "<i class='fa fa-line-chart' #{nav_popover('Popular Posts')} aria-hidden='true'></i>".html_safe, popular_path
 

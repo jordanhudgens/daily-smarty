@@ -5,10 +5,11 @@ class PostsController < ApplicationController
   impressionist actions: [:show]
 
   def index
-    @posts = Post.order('created_at desc').page(params[:page]).per(42)
+    @posts = Post.published.order('created_at desc').page(params[:page]).per(42)
   end
 
   def show
+    authorize @post
     @page_title = @post.title
 
     unless @post.content.blank?
@@ -81,6 +82,7 @@ class PostsController < ApplicationController
         :content,
         :user_id,
         :img,
+        :post_status,
         themes_attributes: [:id, :_destroy, :topic_id, topic_attributes: [:id, :_destroy, :title]],
         post_links_attributes: [:id, :post_id, :_destroy, :link_url]
       )
