@@ -1,4 +1,5 @@
 class Topic < ApplicationRecord
+  acts_as_paranoid
   has_many :themes, inverse_of: :topic
   has_many :posts, through: :themes
 

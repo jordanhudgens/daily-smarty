@@ -1,4 +1,5 @@
 class Theme < ApplicationRecord
+  acts_as_paranoid
   belongs_to :post
   belongs_to :topic
 

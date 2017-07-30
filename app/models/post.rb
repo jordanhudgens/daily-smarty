@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
+  acts_as_paranoid
   include Elasticsearch::Model
   include Elasticsearch::Model::Callbacks
   is_impressionable counter_cache: true
