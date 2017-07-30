@@ -9,6 +9,8 @@
         - if current_user && policy(@post).update?
           li
             = link_to '<i class="fa fa-pencil" aria-hidden="true"></i>'.html_safe, edit_post_path(@post)
+          li
+            = link_to '<i class="fa fa-trash" aria-hidden="true"></i>'.html_safe, post_path(@post), method: :delete
         li
           = link_to "<i class='fa fa-user' aria-hidden='true'></i> #{@post.user.slug}".html_safe, profile_path(@post.user.slug)
         - if @post.topics.any?

@@ -3,6 +3,10 @@ class PostPolicy < ApplicationPolicy
     record.user_id == user.id
   end
 
+  def destroy?
+    record.user_id == user.id
+  end
+
   def show?
     if user && (record.draft? || record.private_post?) && record.user_id == user.id
       true

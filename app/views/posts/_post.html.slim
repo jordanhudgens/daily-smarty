@@ -15,6 +15,9 @@
               = link_to "@#{post.user.username}", profile_path(post.user.slug)
             .col-md-12
               = "Published #{distance_of_time_in_words(post.created_at, Time.now) } ago"
+            - if current_user && policy(post).destroy?
+              .col-md-12
+                = link_to "<i class='fa fa-trash-o' aria-hidden='true'></i>".html_safe, post, method: :delete
       - else
         .col-md-1
           = render partial: 'posts/vote_links', locals: { post: post }
@@ -27,3 +30,6 @@
               = link_to "@#{post.user.username}", profile_path(post.user.slug)
             .col-md-12
               = "Published #{distance_of_time_in_words(post.created_at, Time.now) } ago"
+            - if current_user && policy(post).destroy?
+              .col-md-12
+                = link_to "<i class='fa fa-trash-o' aria-hidden='true'></i>".html_safe, post, method: :delete
