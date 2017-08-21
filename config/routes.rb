@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get :post_links, controller: :posts
   resources :topics, only: [:index, :show]
   get 'topic-autocomplete', to: 'topics#autocomplete'
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
   get 'smarties', to: 'users#index', as: 'smarties'
   get 'popular', to: 'static#popular', as: 'popular'
   get 'follow/:following_id', to: 'users#follow_toggle', as: 'follow_toggle'

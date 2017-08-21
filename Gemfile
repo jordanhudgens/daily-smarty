@@ -65,3 +65,5 @@ gem 'link_thumbnailer'
 gem "validate_url"
 gem 'render_async'
 gem "paranoia", "~> 2.2"
+gem "koala"
+gem 'omniauth-facebook'
