@@ -25,6 +25,12 @@ class StaticController < ApplicationController
     end
   end
 
+  def privacy_policy
+  end
+
+  def terms_conditions
+  end
+
   def popular
     @posts = Post.where.not(impressions_count: nil)
                .published
