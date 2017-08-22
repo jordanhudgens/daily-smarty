@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :topics, only: [:index, :show]
   get 'topic-autocomplete', to: 'topics#autocomplete'
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
+  get 'social-connections/disconnect_facebook', to: 'users/social_disconnects#disconnect_facebook', as: :disconnect_facebook
   get 'smarties', to: 'users#index', as: 'smarties'
   get 'popular', to: 'static#popular', as: 'popular'
   get 'follow/:following_id', to: 'users#follow_toggle', as: 'follow_toggle'

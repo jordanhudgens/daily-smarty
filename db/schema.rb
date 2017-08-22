@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170821172914) do
+ActiveRecord::Schema.define(version: 20170822211335) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -95,6 +95,16 @@ ActiveRecord::Schema.define(version: 20170821172914) do
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
+  create_table "social_connections", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "provider"
+    t.text "uid"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "token"
+    t.index ["user_id"], name: "index_social_connections_on_user_id"
+  end
+
   create_table "themes", force: :cascade do |t|
     t.bigint "topic_id"
     t.bigint "post_id"
@@ -145,9 +155,6 @@ ActiveRecord::Schema.define(version: 20170821172914) do
     t.string "username"
     t.string "slug"
     t.datetime "deleted_at"
-    t.string "provider"
-    t.string "uid"
-    t.text "image"
     t.index ["deleted_at"], name: "index_users_on_deleted_at"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["invitation_token"], name: "index_users_on_invitation_token", unique: true
@@ -177,6 +184,7 @@ ActiveRecord::Schema.define(version: 20170821172914) do
 
   add_foreign_key "post_links", "posts"
   add_foreign_key "posts", "users"
+  add_foreign_key "social_connections", "users"
   add_foreign_key "vote_counts", "posts"
   add_foreign_key "votes", "posts"
   add_foreign_key "votes", "users"
