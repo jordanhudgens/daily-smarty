@@ -1,4 +1,10 @@
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
+  authenticate :user, lambda { |u| u.role == 'site_admin' } do
+    mount Sidekiq::Web => '/sidekiq'
+  end
+
   post 'upvote/:post_slug', to: 'votes#upvote', as: 'upvote'
   post 'downvote/:post_slug', to: 'votes#downvote', as: 'downvote'
   get 'query', to: 'search#query', as: 'search_query'
@@ -16,5 +22,6 @@ Rails.application.routes.draw do
   get 'corporate/terms-conditions', to: 'static#terms_conditions', as: 'terms_conditions'
   get 'follow/:following_id', to: 'users#follow_toggle', as: 'follow_toggle'
   get ':id', to: 'static#profile', as: 'profile'
+
   root to: 'static#homepage'
 end

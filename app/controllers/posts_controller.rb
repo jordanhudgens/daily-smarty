@@ -40,6 +40,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
+        FacebookPostJob.perform_later(user: @post.user, wall_post: @post.title, post_url: request.referrer)
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
         format.json { render :show, status: :created, location: @post }
       else

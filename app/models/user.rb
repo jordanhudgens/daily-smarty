@@ -4,6 +4,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable,
          :invitable, :omniauthable, omniauth_providers: [:facebook]
 
+  enum role: { standard_user: 0, site_admin: 1 }
+
   extend FriendlyId
   friendly_id :username, use: :slugged
   has_many :posts, dependent: :destroy
