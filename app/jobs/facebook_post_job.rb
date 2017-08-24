@@ -23,11 +23,6 @@ class FacebookPostJob < ApplicationJob
       "link" => post_url,
       "description" => description,
       "picture" => image,
-      "og:title" => wall_post.title,
-      "og:url" => post_url,
-      "og:description" => description,
-      "og:image" => image,
-      "og:type" => 'article'
     })
   end
 end
