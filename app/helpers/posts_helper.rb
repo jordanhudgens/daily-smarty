@@ -1,4 +1,12 @@
 module PostsHelper
+  def social_icon_renderer(provider)
+    if provider == 'facebook'
+      'fa-facebook-official'
+    elsif provider == 'twitter'
+      'fa-twitter-square'
+    end
+  end
+
   def post_link_formatter(post_link)
     begin
       link = LinkThumbnailer.generate(post_link)

@@ -46,11 +46,17 @@
 
         #social.tab-pane role="tabpanel"
           .form-group
-            = "Social Share Options"
+            h2
+              = "Social Share Options"
             br
-            - @social_share_options.each do |social|
-              = f.fields_for :post_social_shares, social do |post_social_share_form|
-                = post_social_share_form.text_field :provider
+            - if @social_share_options.any?
+              - @social_share_options.each do |social|
+                = f.fields_for :post_social_shares, social do |post_social_share_form|
+                  - provider = post_social_share_form.object.provider
+                  .pretty.circle.plain.o-primary
+                    = post_social_share_form.check_box :status, {}, 'export_post', 'not_to_export'
+                    = "<label><i class='fa #{social_icon_renderer(provider)}'></i> #{provider.titleize}</label>".html_safe
+                    = post_social_share_form.hidden_field :provider, value: provider
 
       .row
         .col-md-12

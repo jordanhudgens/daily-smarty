@@ -29,12 +29,13 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
     fb_social = @post.post_social_shares.build(provider: 'facebook')
-    twitter_social = @post.post_social_shares.build(provider: 'twitter')
-    @social_share_options = [fb_social, twitter_social]
+    #twitter_social = @post.post_social_shares.build(provider: 'twitter')
+    @social_share_options = [fb_social]
   end
 
   def edit
     authorize @post
+    @social_share_options = @post.post_social_shares
   end
 
   def create
@@ -45,7 +46,7 @@ class PostsController < ApplicationController
       if @post.save
 
         if share_on_facebook? @post, current_user
-          #FacebookPostJob.perform_later(user: @post.user, wall_post: @post.title, post_url: post_url(@post))
+          FacebookPostJob.perform_later(user: @post.user, wall_post: @post.title, post_url: post_url(@post))
         end
 
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
@@ -58,7 +59,7 @@ class PostsController < ApplicationController
   end
 
   def share_on_facebook? post, user
-    post.published? && user.social_connections.find_by_provider('facebook')
+    post.published? && user.social_connections.find_by_provider('facebook') && post.post_social_shares.find_by_provider('facebook').export_post?
   end
 
   def update
@@ -94,7 +95,7 @@ class PostsController < ApplicationController
         :user_id,
         :img,
         :post_status,
-        post_social_shares_attributes: [:id, :provider, :post_id, :_destroy],
+        post_social_shares_attributes: [:id, :provider, :status],
         themes_attributes: [:id, :_destroy, :topic_id, topic_attributes: [:id, :_destroy, :title]],
         post_links_attributes: [:id, :post_id, :_destroy, :link_url]
       )
