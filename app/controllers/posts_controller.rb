@@ -40,7 +40,11 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        FacebookPostJob.perform_later(user: @post.user, wall_post: @post.title, post_url: request.referrer)
+
+        if share_on_facebook? @post, current_user
+          FacebookPostJob.perform_later(user: @post.user, wall_post: @post.title, post_url: post_url(@post))
+        end
+
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
         format.json { render :show, status: :created, location: @post }
       else
@@ -48,6 +52,10 @@ class PostsController < ApplicationController
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def share_on_facebook? post, user
+    post.published? && user.social_connections.find_by_provider('facebook')
   end
 
   def update
