@@ -18,6 +18,8 @@
           a.nav-link aria-controls="topics" data-toggle="tab" href="#topics" role="tab" Topics
         li.nav-item
           a.nav-link aria-controls="thumb" data-toggle="tab" href="#thumb" role="tab" Post Thumbnail
+        li.nav-item
+          a.nav-link aria-controls="social" data-toggle="tab" href="#social" role="tab" Social
       .tab-content
         #content.tab-pane.active role="tabpanel"
           .form-group
@@ -41,6 +43,15 @@
             = f.label 'Image upload (optional)'
             br
             = f.file_field :img
+
+        #social.tab-pane role="tabpanel"
+          .form-group
+            = "Social Share Options"
+            br
+            = f.fields_for :post_social_shares do |post_social_share_form|
+              = render 'post_social_share_fields', :f => post_social_share_form
+            = link_to_add_association 'Add a Social Share', f, :post_social_shares
+
 
       .row
         .col-md-12

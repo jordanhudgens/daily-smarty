@@ -9,6 +9,7 @@ class Post < ApplicationRecord
   has_many :topics, through: :themes
   has_many :post_links, dependent: :destroy
   has_many :votes, dependent: :destroy
+  has_many :post_social_shares, inverse_of: :post
   has_one :vote_count, dependent: :destroy
 
   enum post_status: {
@@ -17,6 +18,9 @@ class Post < ApplicationRecord
     private_post: 2
   }
 
+  accepts_nested_attributes_for :post_social_shares,
+                                allow_destroy: true,
+                                reject_if: proc { |attrs| attrs[:provider].blank? }
   accepts_nested_attributes_for :topics
   accepts_nested_attributes_for :themes, allow_destroy: true
 

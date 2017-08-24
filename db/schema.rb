@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170823232526) do
+ActiveRecord::Schema.define(version: 20170824011412) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -78,6 +78,14 @@ ActiveRecord::Schema.define(version: 20170823232526) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_post_links_on_post_id"
+  end
+
+  create_table "post_social_shares", force: :cascade do |t|
+    t.bigint "post_id"
+    t.string "provider"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_post_social_shares_on_post_id"
   end
 
   create_table "posts", id: :serial, force: :cascade do |t|
@@ -184,6 +192,7 @@ ActiveRecord::Schema.define(version: 20170823232526) do
   end
 
   add_foreign_key "post_links", "posts"
+  add_foreign_key "post_social_shares", "posts"
   add_foreign_key "posts", "users"
   add_foreign_key "social_connections", "users"
   add_foreign_key "vote_counts", "posts"

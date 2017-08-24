@@ -42,7 +42,7 @@ class PostsController < ApplicationController
       if @post.save
 
         if share_on_facebook? @post, current_user
-          FacebookPostJob.perform_later(user: @post.user, wall_post: @post.title, post_url: post_url(@post))
+          #FacebookPostJob.perform_later(user: @post.user, wall_post: @post.title, post_url: post_url(@post))
         end
 
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
@@ -91,6 +91,7 @@ class PostsController < ApplicationController
         :user_id,
         :img,
         :post_status,
+        post_social_shares_attributes: [:id, :provider, :post_id, :_destroy],
         themes_attributes: [:id, :_destroy, :topic_id, topic_attributes: [:id, :_destroy, :title]],
         post_links_attributes: [:id, :post_id, :_destroy, :link_url]
       )
