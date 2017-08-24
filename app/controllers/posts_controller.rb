@@ -28,6 +28,9 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    fb_social = @post.post_social_shares.build(provider: 'facebook')
+    twitter_social = @post.post_social_shares.build(provider: 'twitter')
+    @social_share_options = [fb_social, twitter_social]
   end
 
   def edit
