@@ -68,3 +68,5 @@ gem "paranoia", "~> 2.2"
 gem "koala"
 gem 'omniauth-facebook'
 gem 'sidekiq'
+gem 'twitter', '~> 6.1'
+gem 'omniauth-twitter', '~> 1.4'

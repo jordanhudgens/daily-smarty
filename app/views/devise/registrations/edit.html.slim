@@ -66,6 +66,11 @@
               = link_to "<i class='fa fa-facebook-official' aria-hidden='true'></i> Disconnect Facebook account".html_safe, disconnect_facebook_path
             - else
               = link_to "<i class='fa fa-facebook-official' aria-hidden='true'></i> Connect Facebook to share posts".html_safe, user_facebook_omniauth_authorize_path
+          .col-md-12.text-center.submit-button-wrapper
+            - if current_user.social_connections.find_by_provider('twitter')
+              = link_to "<i class='fa fa-twitter-square' aria-hidden='true'></i> Disconnect Twitter account".html_safe, disconnect_facebook_path
+            - else
+              = link_to "<i class='fa fa-twitter-square' aria-hidden='true'></i> Connect Twitter to share posts".html_safe, user_twitter_omniauth_authorize_path
         .pull-right
           h3
             | Cancel my account

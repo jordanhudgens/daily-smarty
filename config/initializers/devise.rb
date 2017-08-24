@@ -324,4 +324,5 @@ Devise.setup do |config|
   # config.omniauth_path_prefix = '/my_engine/users/auth'
   config.scoped_views = true
   config.omniauth :facebook, ENV.fetch('FB_APP_ID'), ENV.fetch('FB_APP_SECRET'), callback_url: ENV.fetch('FB_CALLBACK_URL'), scope: 'publish_actions'
+  config.omniauth :twitter, ENV.fetch('TWITTER_APP_ID'), ENV.fetch('TWITTER_APP_SECRET'), callback_url: ENV.fetch('TWITTER_CALLBACK_URL')
 end

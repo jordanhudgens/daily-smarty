@@ -2,7 +2,7 @@ class User < ApplicationRecord
   acts_as_paranoid
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
-         :invitable, :omniauthable, omniauth_providers: [:facebook]
+         :invitable, :omniauthable, omniauth_providers: [:facebook, :twitter]
 
   enum role: { standard_user: 0, site_admin: 1 }
 
