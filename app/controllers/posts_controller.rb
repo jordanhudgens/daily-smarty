@@ -46,7 +46,7 @@ class PostsController < ApplicationController
       if @post.save
 
         if share_on_facebook? @post, current_user
-          FacebookPostJob.perform_later(user: @post.user, wall_post: @post.title, post_url: post_url(@post))
+          FacebookPostJob.perform_later(user: @post.user, wall_post: @post, post_url: post_url(@post))
         end
 
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
