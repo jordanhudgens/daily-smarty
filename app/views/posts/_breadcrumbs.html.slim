@@ -1,30 +1,24 @@
 .row
   .col-md-12
-    .hidden-md-down
-      ul#breadcrumb
+    ul#breadcrumb
+      li
+        = link_to '<i class="fa fa-home" aria-hidden="true"></i>'.html_safe, root_path
+      li
+        = link_to "<i class='fa fa-fire' aria-hidden='true'></i> #{@post.impressions_count}".html_safe, '#'
+      - if current_user && policy(@post).update?
         li
-          = link_to '<i class="fa fa-home" aria-hidden="true"></i>'.html_safe, root_path
+          = link_to '<i class="fa fa-pencil" aria-hidden="true"></i>'.html_safe, edit_post_path(@post)
         li
-          = link_to "<i class='fa fa-fire' aria-hidden='true'></i> #{@post.impressions_count}".html_safe, '#'
-        - if current_user && policy(@post).update?
-          li
-            = link_to '<i class="fa fa-pencil" aria-hidden="true"></i>'.html_safe, edit_post_path(@post)
-          li
-            = link_to '<i class="fa fa-trash" aria-hidden="true"></i>'.html_safe, post_path(@post), method: :delete
-        li
-          = link_to "<i class='fa fa-user' aria-hidden='true'></i> #{@post.user.slug}".html_safe, profile_path(@post.user.slug)
-        - if @post.topics.any?
-          - @post.topics.each do |topic|
-            li
-              = link_to topic.title, topic_path(topic)
+          = link_to '<i class="fa fa-trash" aria-hidden="true"></i>'.html_safe, post_path(@post), method: :delete
+      li
+        = link_to "<i class='fa fa-user' aria-hidden='true'></i> #{@post.user.slug}".html_safe, profile_path(@post.user.slug)
 
-    .hidden-lg-up
-      - if @post.topics.any?
-        .topic-button
-          button.btn.btn-primary.btn-block aria-controls="collapseTopics" aria-expanded="false" data-target="#collapseTopics" data-toggle="collapse" type="button"
-            | Post Topics
-        #collapseTopics.collapse
-          .card.card-block.post-topic-collapse-list
-            - @post.topics.each do |topic|
-              div
-                = link_to topic.title, topic_path(topic)
+    - if @post.topics.any?
+      .topic-button
+        button.btn.btn-primary.btn-block aria-controls="collapseTopics" aria-expanded="false" data-target="#collapseTopics" data-toggle="collapse" type="button"
+          | Post Topics
+      #collapseTopics.collapse
+        .card.card-block.post-topic-collapse-list
+          - @post.topics.each do |topic|
+            div
+              = link_to topic.title, topic_path(topic)

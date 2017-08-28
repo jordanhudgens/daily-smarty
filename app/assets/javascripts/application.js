@@ -12,9 +12,18 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require lib/select2
+//= require lib/tether
+//= require followings
+//= require gist
+//= require posts
+//= require search
+//= require select
+//= require shortcut_keys
+//= require static
+//= require votes
 //= require cocoon
 //= require turbolinks
-//= require ckeditor/init
 //= require popover_config
-//= require_tree .
 //= require bootstrap-sprockets
+//= require ckeditor/init
