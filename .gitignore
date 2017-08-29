@@ -18,3 +18,6 @@
 
 # Ignore env vars
 .env
+
+# Ignore dump.rdb
+dump.rdb
