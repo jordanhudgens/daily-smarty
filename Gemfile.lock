@@ -471,6 +471,7 @@ DEPENDENCIES
   omniauth-twitter (~> 1.4)
   paranoia (~> 2.2)
   pg (~> 0.18)
+  popper_js
   puma (~> 3.0)
   pundit (~> 1.1)
   rack-mini-profiler

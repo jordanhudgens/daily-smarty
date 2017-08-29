@@ -24,6 +24,7 @@
 //= require votes
 //= require cocoon
 //= require turbolinks
+//= require popper
 //= require popover_config
 //= require bootstrap-sprockets
 //= require ckeditor/init
