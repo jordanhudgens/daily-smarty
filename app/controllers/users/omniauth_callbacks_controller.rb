@@ -19,7 +19,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     if SocialConnection.find_by_uid(oauth.uid)
       SocialConnection.find_by_uid(oauth.uid).update!(user: current_user, uid: oauth.uid, provider: oauth.provider, token: oauth.credentials.token)
     else
-      SocialConnection.create!(user: current_user, uid: oauth.uid, provider: oauth.provider, token: oauth.credentials.token)
+      SocialConnection.create!(user: current_user, uid: oauth.uid, provider: oauth.provider, token: oauth.credentials.token, twitter_token_secret: oauth.credentials.secret)
     end
 
     redirect_to root_path, notice: 'Twitter has been connected, you can now share posts to your wall'

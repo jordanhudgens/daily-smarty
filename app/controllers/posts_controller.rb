@@ -29,8 +29,8 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
     fb_social = @post.post_social_shares.build(provider: 'facebook')
-    #twitter_social = @post.post_social_shares.build(provider: 'twitter')
-    @social_share_options = [fb_social]
+    twitter_social = @post.post_social_shares.build(provider: 'twitter')
+    @social_share_options = [fb_social, twitter_social]
   end
 
   def edit
@@ -49,6 +49,10 @@ class PostsController < ApplicationController
           FacebookPostJob.perform_later(user: @post.user, wall_post: @post, post_url: post_url(@post))
         end
 
+        if share_on_twitter? @post, current_user
+          TwitterPostJob.perform_later(user: @post.user, wall_post: @post, post_url: post_url(@post))
+        end
+
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
         format.json { render :show, status: :created, location: @post }
       else
@@ -60,6 +64,10 @@ class PostsController < ApplicationController
 
   def share_on_facebook? post, user
     post.published? && user.social_connections.find_by_provider('facebook') && post.post_social_shares.find_by_provider('facebook').export_post?
+  end
+
+  def share_on_twitter? post, user
+    post.published? && user.social_connections.find_by_provider('twitter') && post.post_social_shares.find_by_provider('twitter').export_post?
   end
 
   def update

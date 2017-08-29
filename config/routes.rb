@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get 'topic-autocomplete', to: 'topics#autocomplete'
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
   get 'social-connections/disconnect_facebook', to: 'users/social_disconnects#disconnect_facebook', as: :disconnect_facebook
+  get 'social-connections/disconnect_twitter', to: 'users/social_disconnects#disconnect_twitter', as: :disconnect_twitter
   get 'smarties', to: 'users#index', as: 'smarties'
   get 'popular', to: 'static#popular', as: 'popular'
   get 'corporate/privacy-policy', to: 'static#privacy_policy', as: 'privacy_policy'
