@@ -17,7 +17,7 @@
 #breadcrumb li a {
   color: #FFF;
   display: block;
-  background: $dailysmarty-green;
+  background: $dailysmarty-blue;
   text-decoration: none;
   position: relative;
   height: 40px;
@@ -58,7 +58,7 @@
   content: "";
   position: absolute;
   top: 0;
-  border: 0 solid $dailysmarty-green;
+  border: 0 solid $dailysmarty-blue;
   border-width: 20px 10px;
   width: 0;
   height: 0;
@@ -70,17 +70,17 @@
 #breadcrumb li a:after {
   left: 100%;
   border-color: transparent;
-  border-left-color: $dailysmarty-green;
+  border-left-color: $dailysmarty-blue;
 }
 #breadcrumb li a:hover {
-  background-color: $dailysmarty-hover-green;
+  background-color: $dailysmarty-hover-blue;
 }
 #breadcrumb li a:hover:before {
-  border-color: $dailysmarty-hover-green;
+  border-color: $dailysmarty-hover-blue;
   border-left-color: transparent;
 }
 #breadcrumb li a:hover:after {
-  border-left-color: $dailysmarty-hover-green;
+  border-left-color: $dailysmarty-hover-blue;
 }
 #breadcrumb li a:active {
   background-color: #16a085;
