@@ -1,6 +1,6 @@
 nav.navbar.navbar-toggleable-md.navbar-light.bg-faded
   .container
-    = link_to image_tag('nav_logo.png', width: '42%'), root_path, class: 'navbar-brand logo'
+    = link_to image_tag('nav_logo.png', height: '30px'), root_path, class: 'navbar-brand logo'
 
     = form_with url: search_query_path, method: :get, local: true do |f|
       .input-group
