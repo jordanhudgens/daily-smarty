@@ -10,3 +10,14 @@ nav.navbar.navbar-toggleable-md.navbar-light.bg-faded
         span.search-wrapper
           <span id="search-icon-id" class="fa fa-search"></span>
           = f.text_field :q, id: :q, class: 'form-control search-box', placeholder: 'What do you want to learn today?'
+
+      = link_to 'New Post', new_post_path, class: 'btn btn-primary'
+
+      .dropdown.show
+        a.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="https://example.com" 
+          = inline_svg('settings-icon.svg', class: 'setting-gear-icon')
+        .dropdown-menu.dropdown-menu-right
+          = link_to "#{inline_svg('settings-icon.svg', class: 'dropdown-list-item-icon')} Account Settings".html_safe, edit_user_registration_path, class: 'dropdown-item'
+          = link_to "#{inline_svg('my-profile.svg', class: 'dropdown-profile-icon')} My Profile".html_safe, profile_path(current_user), class: 'dropdown-item'
+          .dropdown-divider
+          = link_to "#{inline_svg('logout.svg', class: 'dropdown-profile-icon logout-link')} Logout".html_safe, destroy_user_session_path, method: :delete, class: 'dropdown-item logout-link'

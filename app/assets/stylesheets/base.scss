@@ -25,6 +25,10 @@ h2 {
 }
 
 .btn-primary {
+  border-radius: 2px;
+  font-size: 14px;
+  font-family: $light-font;
+  font-weight: 500;
   background-color: $dailysmarty-blue;
   border-color: $dailysmarty-blue;
 }

@@ -123,7 +123,7 @@ $blue: #3ae39f; // Guidebook blue
     display: flex;
     justify-content: space-between;
     text-align: left !important;
-    padding-top: 6%;
+    padding-top: 5%;
     padding-right: 21px;
     padding-left: 0px;
     padding-bottom: 32px;
@@ -160,7 +160,48 @@ $blue: #3ae39f; // Guidebook blue
         padding-left: 6px;
       }
     }
+
   }
+}
+
+a.dropdown-toggle::after {
+  display: none;
+}
+
+.dropdown-menu {
+  top: 145%;
+  left: -150px;
+  border: 1px solid #D3DCE6;
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 6px 0 rgba(0,0,0,0.11);
+
+  a.dropdown-item {
+    color: $dropdown-grey;
+    font-family: $light-font;
+    font-size: 14px;
+  }
+
+  .dropdown-profile-icon {
+    margin-right: 11px;
+  }
+
+  .dropdown-item:hover {
+    background-color: transparent;
+    color: $dailysmarty-blue !important;
+  }
+
+  .dropdown-list-item-icon {
+    max-height: 12px;
+    margin-left: -6px;
+    margin-right: 8px;
+    path {
+      fill: $dropdown-grey !important;
+    }
+  }
+}
+
+a.logout-link {
+  color: $dailysmarty-blue !important;
 }
 
 .nav-forgot-password {
