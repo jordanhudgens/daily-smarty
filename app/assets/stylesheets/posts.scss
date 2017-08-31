@@ -16,14 +16,32 @@
 
   .post-link-title {
     display: flex;
-    align-items: center;
+    text-align: left;
+    flex-direction: column;
     justify-content: space-between;
     width: 80%;
+    .topics {
+      display: flex;
+      a {
+        font-weight: bold;
+        font-size: 13px;
+        line-height: 18px;
+        font-family: $topic-font-family;
+        margin-right: 10px;
+      }
+    }
   }
 
   .post-metadata {
     display: flex;
-    justify-content: space-between;
+	  color: #ABABAB;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 20px;
+    font-family: $submission-font-family;
+    a {
+      margin-left: 5px;
+    }
   }
 
   .post-votes {

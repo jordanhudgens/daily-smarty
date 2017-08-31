@@ -4,14 +4,11 @@
   .post-link-title
     h2
       = link_to post.title, post_path(post), data: { turbolinks: false }
-  .post-metadata
-    .row
-      .col-md-12
-        = link_to "@#{post.user.username}", profile_path(post.user.slug)
-      .col-md-12
-        = "Published #{distance_of_time_in_words(post.created_at, Time.now) } ago"
-      - if current_user && policy(post).destroy?
-        .col-md-12
-          = link_to "<i class='fa fa-trash-o' aria-hidden='true'></i>".html_safe, post, method: :delete
+    - if post.topics.any?
+      .topics
+        - post.topics.each do |topic|
+          = link_to topic.title.upcase, topic_path(topic)
+    .post-metadata
+      = "submitted #{distance_of_time_in_words(post.created_at, Time.now) } ago by #{link_to "@#{post.user.username}", profile_path(post.user.slug)}".html_safe
   .post-votes
     = render partial: 'posts/vote_links', locals: { post: post }
