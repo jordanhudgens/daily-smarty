@@ -1,7 +1,8 @@
 .search-box {
-  width: 20em !important;
+  width: 15.4em !important;
   border-radius: 100px;
   background-color: $off-white;
+  border: 0px;
   @include input-placeholder {
     color: $grey-white !important;
     padding-left: 20px;
