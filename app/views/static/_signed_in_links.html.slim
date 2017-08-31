@@ -1,15 +1,8 @@
-= link_to "<i class='fa fa-random' #{nav_popover('Random Post')} aria-hidden='true'></i>".html_safe, post_path(Post.published.sample), data: { turbolinks: false }
-
-= link_to "<i class='fa fa-line-chart' #{nav_popover('Popular Posts')} aria-hidden='true'></i>".html_safe, popular_path
-
-= link_to "<i class='fa fa-globe' #{nav_popover('All Posts')} aria-hidden='true'></i>".html_safe, posts_path
-
-= link_to "<i class='fa fa-rss' #{nav_popover('Your Posts')} aria-hidden='true'></i>".html_safe, profile_path(current_user)
-
-= link_to "<i class='fa fa-plus-circle' #{nav_popover('Write a New Post (ctrl + d)')} aria-hidden='true'></i>".html_safe, new_post_path
-
-= link_to "<i class='fa fa-cog' #{nav_popover('Account Settings')} aria-hidden='true'></i>".html_safe, edit_user_registration_path
-
-= link_to "<i class='fa fa-users' #{nav_popover('All Users')} aria-hidden='true'></i>".html_safe, smarties_path
-
-= link_to "<i class='fa fa-sign-out' #{nav_popover('Logout')} aria-hidden='true'></i>".html_safe, destroy_user_session_path, method: :delete
+span.nav-link
+  = link_to "My Feed".html_safe, root_path
+span.nav-link
+  = link_to "Topics".html_safe, topics_path
+span.nav-link
+  = link_to "Users".html_safe, smarties_path
+span.nav-link
+  = link_to "Posts".html_safe, posts_path

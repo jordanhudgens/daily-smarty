@@ -115,9 +115,33 @@ $blue: #3ae39f; // Guidebook blue
   border: 1px solid transparent !important;
 }
 
-.nav-links a {
-  margin-left: 20px;
-  font-size: 2.42em;
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+
+  .nav-link {
+    text-align: left !important;
+    padding-top: 7%;
+    padding-right: 21px;
+    padding-left: 0px;
+    padding-bottom: 0px;
+    height: 67px !important;
+    &:hover {
+      border-bottom: 2px solid $dailysmarty-blue;
+    }
+
+    a {
+      margin-left: 20px;
+      font-size: 14px;
+      color: $light-charcoal;
+      font-family: $light-font;
+      font-weight: 500;
+      &:hover {
+        text-decoration: none;
+        color: $dailysmarty-blue;
+      }
+    }
+  }
 }
 
 .nav-forgot-password {

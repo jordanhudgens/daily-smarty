@@ -2,14 +2,12 @@ nav.navbar.navbar-toggleable-md.navbar-light.bg-faded
   .container
     = link_to image_tag('nav_logo.png', height: '30px'), root_path, class: 'navbar-brand logo'
 
-    = form_with url: search_query_path, method: :get, local: true do |f|
-      .input-group
-        = f.text_field :q, id: :q, class: 'form-control search-box', placeholder: 'What do you want to learn?'
-        span.input-group-btn
-          = f.submit 'Search', class: 'btn btn-secondary'
-
-    .nav-links
-      - if current_user
+    - if current_user
+      .nav-links
         = render 'static/signed_in_links'
-      - else
-        = render 'static/nav_sign_in_form'
+
+      = form_with url: search_query_path, method: :get, local: true do |f|
+        .input-group
+          = f.text_field :q, id: :q, class: 'form-control search-box', placeholder: 'What do you want to learn?'
+          span.input-group-btn
+            = f.submit 'Search', class: 'btn btn-secondary'
