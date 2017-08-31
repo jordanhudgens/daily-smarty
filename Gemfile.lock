@@ -193,6 +193,10 @@ GEM
       image_size
       typhoeus
     image_size (1.5.0)
+    inline_svg (0.12.0)
+      activesupport (>= 3.0)
+      loofah (>= 2.0)
+      nokogiri (~> 1.6)
     iso8601 (0.9.1)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
@@ -459,6 +463,7 @@ DEPENDENCIES
   hirb
   honeybadger (~> 3.1)
   impressionist!
+  inline_svg
   jbuilder (~> 2.5)
   jquery-rails
   kaminari (~> 1.0, >= 1.0.1)

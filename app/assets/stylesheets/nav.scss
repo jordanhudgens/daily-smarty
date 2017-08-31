@@ -126,8 +126,17 @@ $blue: #3ae39f; // Guidebook blue
     padding-left: 0px;
     padding-bottom: 0px;
     height: 67px !important;
+    .posts-icon {
+      path {
+        fill: $light-charcoal !important;
+      }
+    }
+
     &:hover {
       border-bottom: 2px solid $dailysmarty-blue;
+      path {
+        fill: $dailysmarty-blue !important;
+      }
     }
 
     a {

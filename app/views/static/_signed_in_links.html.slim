@@ -1,8 +1,8 @@
 span.nav-link
-  = link_to "My Feed".html_safe, root_path
+  = link_to "#{inline_svg('my-feed', class: 'nav-icon')} My Feed".html_safe, root_path
 span.nav-link
-  = link_to "Topics".html_safe, topics_path
+  = link_to "#{inline_svg('catagories', class: 'nav-icon')} Topics".html_safe, topics_path
 span.nav-link
-  = link_to "Users".html_safe, smarties_path
+  = link_to "#{inline_svg('users', class: 'nav-icon')} Users".html_safe, smarties_path
 span.nav-link
-  = link_to "Posts".html_safe, posts_path
+  = link_to "#{inline_svg('posts.svg', class: 'posts-icon nav-icon')} Posts".html_safe, posts_path
