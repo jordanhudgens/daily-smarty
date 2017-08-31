@@ -120,13 +120,17 @@ $blue: #3ae39f; // Guidebook blue
   justify-content: space-between;
 
   .nav-link {
+    display: flex;
+    justify-content: space-between;
     text-align: left !important;
-    padding-top: 7%;
+    padding-top: 6%;
     padding-right: 21px;
     padding-left: 0px;
-    padding-bottom: 0px;
+    padding-bottom: 32px;
     height: 67px !important;
     .posts-icon {
+      display: flex;
+      justify-content: space-between;
       path {
         fill: $light-charcoal !important;
       }
@@ -140,7 +144,9 @@ $blue: #3ae39f; // Guidebook blue
     }
 
     a {
-      margin-left: 20px;
+      display: flex;
+      justify-content: space-between;
+      margin-left: 31px;
       font-size: 14px;
       color: $light-charcoal;
       font-family: $light-font;
@@ -148,6 +154,10 @@ $blue: #3ae39f; // Guidebook blue
       &:hover {
         text-decoration: none;
         color: $dailysmarty-blue;
+      }
+
+      .nav-link-text {
+        padding-left: 6px;
       }
     }
   }

@@ -1,5 +1,5 @@
 nav.navbar.navbar-toggleable-md.navbar-light.bg-faded
-  .container
+  .container.nav-logo-wrapper
     = link_to image_tag('nav_logo.png', height: '30px'), root_path, class: 'navbar-brand logo'
 
     - if current_user
@@ -7,7 +7,6 @@ nav.navbar.navbar-toggleable-md.navbar-light.bg-faded
         = render 'static/signed_in_links'
 
       = form_with url: search_query_path, method: :get, local: true do |f|
-        .input-group
-          = f.text_field :q, id: :q, class: 'form-control search-box', placeholder: 'What do you want to learn?'
-          span.input-group-btn
-            = f.submit 'Search', class: 'btn btn-secondary'
+        span.search-wrapper
+          <span id="search-icon-id" class="fa fa-search"></span>
+          = f.text_field :q, id: :q, class: 'form-control search-box', placeholder: 'What do you want to learn today?'

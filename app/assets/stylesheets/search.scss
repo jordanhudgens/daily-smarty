@@ -1,3 +1,20 @@
 .search-box {
-  width: 16em !important;
+  width: 20em !important;
+  border-radius: 100px;
+  background-color: $off-white;
+  @include input-placeholder {
+    color: $grey-white !important;
+    padding-left: 20px;
+    font-family: $light-font;
+    font-weight: 500;
+    font-size: 14px;
+  }
 }
+
+.fa-search {
+  position: absolute;
+  color: $grey-white;
+  margin-left: 14px;
+  margin-top: 11px;
+}
+
