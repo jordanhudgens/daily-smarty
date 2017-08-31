@@ -8,8 +8,12 @@
     justify-content: space-between;
     margin-right: 35px;
     img {
-      height: 84px;
-      width: 119px;
+      max-height: 84px;
+      max-width: 119px;
+      min-height: 84px;
+      min-width: 119px;
+      height: auto;
+      width: auto;
       border-radius: 5px;
     }
   }
