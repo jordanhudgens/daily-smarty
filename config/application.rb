@@ -24,5 +24,6 @@ module Dailysmarty
     config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
     Elasticsearch::Model.client = Elasticsearch::Client.new host: ENV['SEARCHBOX_URL']
     config.active_job.queue_adapter = :sidekiq
+    config.assets.paths << Rails.root.join("app", "assets", "fonts")
   end
 end

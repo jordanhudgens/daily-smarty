@@ -7,6 +7,14 @@ module PostsHelper
     end
   end
 
+  def post_thumb(post)
+    if post.img.post_thumb.blank?
+      image_tag('empty-thumb.png')
+    else
+      image_tag(post.img.post_thumb)
+    end
+  end
+
   def post_link_formatter(post_link)
     begin
       link = LinkThumbnailer.generate(post_link)

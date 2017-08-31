@@ -1,35 +1,17 @@
 .post-item-wrapper
-  .card
+  .image-item
+    = post_thumb(post)
+  .post-link-title
+    h2
+      = link_to post.title, post_path(post), data: { turbolinks: false }
+  .post-metadata
     .row
-      - if !post.img.blank?
-        .col-md-1
-          = render partial: 'posts/vote_links', locals: { post: post }
-        .col-md-3
-          = image_tag(post.img.post_thumb)
-        .col-md-5
-          h2
-            = link_to post.title, post_path(post), data: { turbolinks: false }
-        .col-md-3
-          .row
-            .col-md-12
-              = link_to "@#{post.user.username}", profile_path(post.user.slug)
-            .col-md-12
-              = "Published #{distance_of_time_in_words(post.created_at, Time.now) } ago"
-            - if current_user && policy(post).destroy?
-              .col-md-12
-                = link_to "<i class='fa fa-trash-o' aria-hidden='true'></i>".html_safe, post, method: :delete
-      - else
-        .col-md-1
-          = render partial: 'posts/vote_links', locals: { post: post }
-        .col-md-8
-          h2
-            = link_to post.title, post_path(post), data: { turbolinks: false }
-        .col-md-3
-          .row
-            .col-md-12
-              = link_to "@#{post.user.username}", profile_path(post.user.slug)
-            .col-md-12
-              = "Published #{distance_of_time_in_words(post.created_at, Time.now) } ago"
-            - if current_user && policy(post).destroy?
-              .col-md-12
-                = link_to "<i class='fa fa-trash-o' aria-hidden='true'></i>".html_safe, post, method: :delete
+      .col-md-12
+        = link_to "@#{post.user.username}", profile_path(post.user.slug)
+      .col-md-12
+        = "Published #{distance_of_time_in_words(post.created_at, Time.now) } ago"
+      - if current_user && policy(post).destroy?
+        .col-md-12
+          = link_to "<i class='fa fa-trash-o' aria-hidden='true'></i>".html_safe, post, method: :delete
+  .post-votes
+    = render partial: 'posts/vote_links', locals: { post: post }

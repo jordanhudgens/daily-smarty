@@ -12,6 +12,12 @@ a {
   box-shadow: 0 2px 15px 0 rgba(0,0,0,0.09);
 }
 
+h2 {
+  font-family: $heading-font-family;
+  font-weight: 600;
+}
+
+
 .block-background {
   background-color: white;
   padding: 20px 10px 20px 10px;
