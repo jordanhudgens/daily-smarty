@@ -11,7 +11,7 @@ class PostImageUploader < CarrierWave::Uploader::Base
   end
 
   version :feature_thumb do
-    process resize_to_fit: [1000, 563]
+    process resize_to_fit: [660, 453]
   end
 
   version :guide_thumb do

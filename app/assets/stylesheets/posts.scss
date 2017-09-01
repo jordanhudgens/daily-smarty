@@ -55,10 +55,6 @@
   width: 100%;
 }
 
-.post-content img {
-  width: 100% !important;
-  height: auto !important;
-}
 
 .topic-button {
   margin-bottom: 10px;
@@ -181,5 +177,71 @@ h2 a {
   &:hover {
     color: $dailysmarty-hover-blue;
     text-decoration: none;
+  }
+}
+
+.post-show-wrapper {
+  width: 660px;
+  margin-left: auto;
+  margin-right: auto;
+  .post-details-wrapper {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  h1 {
+    font-family: $topic-font-family;
+    font-weight: 700;
+    font-size: 24px;
+    color: $medium-charcoal;
+  }
+
+  h2 {
+    font-family: $topic-font-family;
+    font-weight: 700;
+    font-size: 18px;
+    color: $medium-charcoal;
+  }
+  h3 {
+    font-family: $topic-font-family;
+    font-weight: 700;
+    font-size: 16px;
+    color: $medium-charcoal;
+  }
+  h3 {
+    font-family: $topic-font-family;
+    font-weight: 700;
+    font-size: 14px;
+    color: $medium-charcoal;
+  }
+  .post-content {
+    font-family: Palatino;
+    font-size: 19px;
+    color: $dark-charcoal;
+    img {
+      width: 100% !important;
+      height: auto !important;
+    }
+  }
+  .post-metadata {
+    font-family: $light-font;
+    font-weight: 500;
+    font-size: 15px;
+    color: $light-grey;
+    a {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    .post-show-topic-item {
+      font-family: $topic-font-family;
+      font-size: 13px;
+      font-weight: 900;
+      margin-left: 10px;
+      a {
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
   }
 }

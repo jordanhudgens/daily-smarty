@@ -14,11 +14,6 @@
         = link_to "<i class='fa fa-user' aria-hidden='true'></i> #{@post.user.slug}".html_safe, profile_path(@post.user.slug)
 
     - if @post.topics.any?
-      .topic-button
-        button.btn.btn-primary.btn-block aria-controls="collapseTopics" aria-expanded="false" data-target="#collapseTopics" data-toggle="collapse" type="button"
-          | Post Topics
-      #collapseTopics.collapse
-        .card.card-block.post-topic-collapse-list
-          - @post.topics.each do |topic|
-            div
-              = link_to topic.title, topic_path(topic)
+      - @post.topics.each do |topic|
+        span
+          = link_to topic.title, topic_path(topic)
