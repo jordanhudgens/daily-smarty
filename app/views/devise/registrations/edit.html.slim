@@ -9,6 +9,10 @@
         = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }, class: 'form-horizontal') do |f|
           = devise_error_messages!
 
+          = f.fields_for :user_images, current_user.user_images.build do |user_image|
+            = "Hi there"
+            = user_image.file_field :img
+
           .row
             .col-md-6
               .form-group

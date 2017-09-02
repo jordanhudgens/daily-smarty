@@ -11,6 +11,11 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :votes, dependent: :destroy
   has_many :social_connections, dependent: :destroy
+  has_many :user_images, dependent: :destroy
+
+  accepts_nested_attributes_for :user_images,
+                                allow_destroy: true,
+                                reject_if: proc { |attrs| attrs[:img].blank? }
 
   has_many :users_are_following_this_user, class_name:  "Following",
                                           foreign_key: "followed_id",

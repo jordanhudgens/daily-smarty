@@ -3,7 +3,7 @@ class Post < ApplicationRecord
   include Elasticsearch::Model
   include Elasticsearch::Model::Callbacks
   is_impressionable counter_cache: true
-  mount_uploader :img, PostImageUploader
+  mount_uploader :img, ImageUploader
   belongs_to :user
   has_many :themes, inverse_of: :post
   has_many :topics, through: :themes

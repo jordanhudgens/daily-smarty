@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170829212356) do
+ActiveRecord::Schema.define(version: 20170902224753) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -135,6 +135,14 @@ ActiveRecord::Schema.define(version: 20170829212356) do
     t.index ["deleted_at"], name: "index_topics_on_deleted_at"
   end
 
+  create_table "user_images", force: :cascade do |t|
+    t.text "img"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_user_images_on_user_id"
+  end
+
   create_table "users", id: :serial, force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -197,6 +205,7 @@ ActiveRecord::Schema.define(version: 20170829212356) do
   add_foreign_key "post_social_shares", "posts"
   add_foreign_key "posts", "users"
   add_foreign_key "social_connections", "users"
+  add_foreign_key "user_images", "users"
   add_foreign_key "vote_counts", "posts"
   add_foreign_key "votes", "posts"
   add_foreign_key "votes", "users"

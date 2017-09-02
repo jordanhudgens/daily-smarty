@@ -1,4 +1,4 @@
-class PostImageUploader < CarrierWave::Uploader::Base
+class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::RMagick
   storage :aws
 
@@ -16,6 +16,18 @@ class PostImageUploader < CarrierWave::Uploader::Base
 
   version :guide_thumb do
     process resize_to_fit: [400, 225]
+  end
+
+  version :user_show do
+    process resize_to_fit: [58, 58]
+  end
+
+  version :user_nav do
+    process resize_to_fit: [39, 39]
+  end
+
+  version :user_post_thumb do
+    process resize_to_fit: [22, 22]
   end
 
   def extension_whitelist
