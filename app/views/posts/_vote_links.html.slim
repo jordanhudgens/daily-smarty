@@ -7,10 +7,10 @@
         = post.vote_count.number_of_votes
   - else
     .col-md-12
-      = link_to "<i class='fa fa-arrow-up upvote-link #{arrow_color(post, 'up')}' aria-hidden='true'></i>".html_safe, upvote_path(post_slug: post.slug)
+      = link_to "<i class='fa fa-caret-up upvote-link #{arrow_color(post, 'up')}' aria-hidden='true'></i>".html_safe, upvote_path(post_slug: post.slug)
     .col-md-12
       .center-text
         .vote-counter
           = post.vote_count.number_of_votes
     .col-md-12
-      = link_to "<i class='fa fa-arrow-down downvote-link #{arrow_color(post, 'down')}' aria-hidden='true'></i>".html_safe, downvote_path(post_slug: post.slug)
+      = link_to "<i class='fa fa-caret-down downvote-link #{arrow_color(post, 'down')}' aria-hidden='true'></i>".html_safe, downvote_path(post_slug: post.slug)

@@ -7,19 +7,20 @@
 }
 
 .novote {
-  color: grey;
+  color: $light-grey;
 }
 
 .vote-counter {
-  font-weight: 900;
-  margin-left: 2px;
-  font-size: 1.25em;
-  color: $dailysmarty-blue;
+  font-family: $light-font;
+  font-weight: 500;
+  color: #000000;
+  font-size: 15px;
 }
 
 .score-wrapper {
+  font-family: $light-font;
   text-align: center;
-  font-weight: 900;
+  font-weight: 500;
   color: grey;
-  font-size: 0.8em;
+  font-size: 15px;
 }
