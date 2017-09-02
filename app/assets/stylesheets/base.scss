@@ -8,20 +8,34 @@ a {
 }
 
 .card {
-  border-radius: 3px; background-color: #FFFFFF;
+  width: 1175px;
+  border-radius: 3px;
+  background-color: #FFFFFF;
   box-shadow: 0 2px 15px 0 rgba(0,0,0,0.09);
 }
-
-h2 {
-  font-family: $heading-font-family;
-  font-weight: 600;
-}
-
 
 .block-background {
   background-color: white;
   padding: 20px 10px 20px 10px;
   border-radius: 15px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $topic-font-family;
+  color: $medium-charcoal;
+  font-weight: 700;
+}
+
+h1 { font-size: 24px; }
+h2 { font-size: 18px; }
+h3 { font-size: 16px; }
+h4 { font-size: 14px; }
+h5 { font-size: 14px; }
+h6 { font-size: 14px; }
+
+.page-heading-wrapper {
+  margin-bottom: 19px;
+  margin-top: 10px;
 }
 
 .btn-primary {
