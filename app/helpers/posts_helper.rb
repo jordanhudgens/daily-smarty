@@ -21,7 +21,7 @@ module PostsHelper
       post_link_mapper(link)
     rescue LinkThumbnailer::Exceptions, Net::HTTP::Persistent::Error => e
       content = <<~EOL
-                  <div class='card'>
+                  <div class='card post-link-card'>
                     <div class='row'>
                       <div class='col-md-12'>
                         <h2>
@@ -47,7 +47,7 @@ module PostsHelper
 
   def format_title_link(link)
     content = <<~EOL
-                <div class='card'>
+                <div class='card post-link-card'>
                   <div class='row'>
                     <div class='col-md-12'>
                       <h2>
@@ -63,7 +63,7 @@ module PostsHelper
 
   def format_video_link(link)
     content = <<~EOL
-                <div class='card'>
+                <div class='card post-link-card'>
                   <div class='row'>
                     <div class='col-md-4'>
                       <div>#{link.videos.first.embed_code}</div>
@@ -82,7 +82,7 @@ module PostsHelper
 
   def format_image_link(link)
     content = <<~EOL
-                <div class='card'>
+                <div class='card post-link-card'>
                   <div class='row'>
                     <div class='col-md-4'>
                       <img src='#{link.images.first.src.to_s}'>
