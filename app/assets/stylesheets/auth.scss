@@ -16,6 +16,12 @@
   }
 }
 
+.registration-img-wrapper {
+  img {
+    border-radius: 100px;
+  }
+}
+
 @media #{$phone-query} {
   .registration-card-wrapper {
     width: 90vw;

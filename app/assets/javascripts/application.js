@@ -23,6 +23,7 @@
 //= require static
 //= require votes
 //= require cocoon
+//= require auth
 //= require turbolinks
 //= require popper
 //= require popover_config
