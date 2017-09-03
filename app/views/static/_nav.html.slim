@@ -21,3 +21,7 @@ nav.navbar.navbar-toggleable-md.navbar-light.bg-faded
           = link_to "#{inline_svg('my-profile.svg', class: 'dropdown-profile-icon')} My Profile".html_safe, profile_path(current_user), class: 'dropdown-item'
           .dropdown-divider
           = link_to "#{inline_svg('logout.svg', class: 'dropdown-profile-icon logout-link')} Logout".html_safe, destroy_user_session_path, method: :delete, class: 'dropdown-item logout-link'
+
+      - if UserImage.where(user: current_user).any?
+        .nav-avatar
+          = link_to image_tag(UserImage.where(user: current_user).last.img.user_nav_thumb), profile_path(current_user)

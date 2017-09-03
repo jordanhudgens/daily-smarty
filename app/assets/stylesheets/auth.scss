@@ -87,6 +87,7 @@
 }
 
 .image-upload-wrapper {
+
   input {
     display: none;
   }
@@ -96,5 +97,20 @@
     height: 113px;
     cursor: pointer;
     border-radius: 100px;
+    filter: brightness(50%);
+  }
+
+  .registration-image-caption {
+    font-family: $light-font;
+    z-index: 100;
+    position: absolute;
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    width: 110px;
+    left: 18px;
+    top: 27px;
+    text-align: center;
+    cursor: pointer;
   }
 }
