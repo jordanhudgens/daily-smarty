@@ -11,4 +11,16 @@
     border-radius: 100px;
     margin-right: 25px;
   }
+
+  .profile-stats {
+    font-size: 15px;
+    font-weight: 700;
+    font-family: $light-font;
+    .count {
+      color: black;
+    }
+    .stat-item {
+      color: $light-grey;
+    }
+  }
 }

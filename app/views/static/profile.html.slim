@@ -1,13 +1,32 @@
 .page-heading-wrapper
   .row.user-profile-heading-wrapper
-    .col-md-3
+    .col-md-4
       h1
         - if UserImage.where(user: @user).any?
           = "#{image_tag(UserImage.where(user: @user).last.img.user_profile_thumb)} @#{@user.username}".html_safe
         - else
           = "@#{@user.username}"
-    .col-md-7
-    .col-md-2
+
+    .col-md-4.text-center
+      .profile-stats
+        .row
+          .col-md-4
+            .count
+              = @user.posts.count
+            .stat-item
+              = 'Posts'
+          .col-md-4
+            .count
+              = @user.followers.count
+            .stat-item
+              = 'Followers'
+          .col-md-4
+            .count
+              = @user.following.count
+            .stat-item
+              = 'Following'
+
+    .col-md-4
       .pull-right
         = follow_buttons(user_to_follow: @user, logged_in_user: current_user)
 
