@@ -1,9 +1,10 @@
+.row
+  .col-md-12.page-heading-wrapper
+    h1
+      = "You searched for: #{params[:q]}"
+
 .full-width-div
   .card
-    .col-md-12
-      h2
-        = "You searched for: #{params[:q]}"
-
     .col-md-12
       - if @posts.any?
         h4

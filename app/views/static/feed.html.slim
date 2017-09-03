@@ -1,9 +1,10 @@
+.row
+  .col-md-12.page-heading-wrapper
+    h1
+      = 'My Feed'
+
 .full-width-div
   .card
-    .col-md-12
-      h1
-        = 'Feed'
-
     .col-md-12
       - if @posts.any?
         = render @posts
