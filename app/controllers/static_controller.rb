@@ -19,9 +19,9 @@ class StaticController < ApplicationController
     @user = User.friendly.find(params[:id])
 
     if @user == current_user
-      @posts = @user.posts
+      @posts = @user.posts.page(params[:page]).per(20)
     else
-      @posts = @user.posts.published
+      @posts = @user.posts.published.page(params[:page]).per(20)
     end
   end
 
