@@ -18,6 +18,6 @@
         - if @posts.any?
           - @posts.each do |post|
             = render partial: 'posts/post', locals: { post: post }
-            = paginate @posts
+          = paginate @posts
         - else
           = 'There are no posts for this user'
