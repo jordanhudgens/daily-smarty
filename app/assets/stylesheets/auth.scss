@@ -85,3 +85,16 @@
 .take-me-back-btn {
   margin-top: 21px;
 }
+
+.image-upload-wrapper {
+  input {
+    display: none;
+  }
+
+  img {
+    width: 113px;
+    height: 113px;
+    cursor: pointer;
+    border-radius: 100px;
+  }
+}

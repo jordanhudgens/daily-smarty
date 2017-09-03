@@ -10,12 +10,11 @@
         = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }, class: 'form-horizontal') do |f|
           = devise_error_messages!
 
-          .registration-img-wrapper
-            = image_tag(current_user.user_images.last.img.user_registration_page)
-
           = f.fields_for :user_images, current_user.user_images.build do |user_image|
-            = "Hi there"
-            = user_image.file_field :img
+            .image-upload-wrapper
+              = user_image.label :img
+                = image_tag(UserImage.where(user: current_user).last.img.url)
+              = user_image.file_field :img
 
           .row
             .col-md-6
