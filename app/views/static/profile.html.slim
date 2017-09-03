@@ -1,12 +1,18 @@
+.page-heading-wrapper
+  .row.user-profile-heading-wrapper
+    .col-md-3
+      h1
+        - if UserImage.where(user: @user).any?
+          = "#{image_tag(UserImage.where(user: @user).last.img.user_profile_thumb)} @#{@user.username}".html_safe
+        - else
+          = "@#{@user.username}"
+    .col-md-7
+    .col-md-2
+      .pull-right
+        = follow_buttons(user_to_follow: @user, logged_in_user: current_user)
+
 .full-width-div
   .card
-    .row
-      .col-md-10
-        h1
-          = "@#{@user.username}"
-      .col-md-2
-        .pull-right
-          = follow_buttons(user_to_follow: @user, logged_in_user: current_user)
     .row
       .col-md-12
         - if @posts.any?
