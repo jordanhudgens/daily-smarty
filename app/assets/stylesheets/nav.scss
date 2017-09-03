@@ -271,4 +271,9 @@ a.logout-link {
 
 .nav-avatar img {
   border-radius: 100px;
+  min-width: 39px;
+  min-height: 39px;
+  object-fit: cover;
+  max-width: 39px;
+  max-height: 39px;
 }
