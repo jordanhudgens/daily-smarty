@@ -11,10 +11,12 @@
           = devise_error_messages!
 
           = f.fields_for :user_images, current_user.user_images.build do |user_image|
-            .image-upload-wrapper
-              = user_image.label :img
-                = image_tag(UserImage.where(user: current_user).last.img.url)
-              = user_image.file_field :img
+            - user_images = UserImage.where(user: current_user)
+            - if user_images.any?
+              .image-upload-wrapper
+                = user_image.label :img
+                  = image_tag(user_images.last.img.url)
+                = user_image.file_field :img
 
           .row
             .col-md-6
