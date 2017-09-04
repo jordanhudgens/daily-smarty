@@ -118,19 +118,28 @@
 .social-link-wrapper {
   font-family: $light-font;
   font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 
   .facebook {
+    display: flex;
+    justify-content: space-between;
     a {
       color: #475993;
     }
   }
   .twitter {
+    display: flex;
+    justify-content: space-between;
     a {
       color: rgb(29, 161, 242);
     }
   }
 
   .delete-account {
+    display: flex;
+    justify-content: space-between;
     a {
       color: #FF4405;
     }
