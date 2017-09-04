@@ -114,3 +114,43 @@
     cursor: pointer;
   }
 }
+
+.social-link-wrapper {
+  font-family: $light-font;
+  font-weight: 500;
+
+  .facebook {
+    a {
+      color: #475993;
+    }
+  }
+  .twitter {
+    a {
+      color: rgb(29, 161, 242);
+    }
+  }
+
+  .delete-account {
+    a {
+      color: #FF4405;
+    }
+  }
+}
+
+.user-registration-form-fields {
+  margin-top: 21px;
+
+  .form-label {
+    font-family: $light-font;
+    font-weight: 700;
+    font-color: $medium-charcoal;
+    font-size: 14px;
+  }
+
+  input {
+    border: 1px solid #D3DCE6;
+    height: 50px;
+    border-radius: 3px;
+  }
+}
+

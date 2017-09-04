@@ -6,92 +6,94 @@
 .edit-registration-card-wrapper
   .card
     .row
-      .col-md-8
+      .col-md-12
         = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }, class: 'form-horizontal') do |f|
           = devise_error_messages!
 
           = f.fields_for :user_images, current_user.user_images.build do |user_image|
-            - user_images = UserImage.where(user: current_user)
-            .image-upload-wrapper
-              = user_image.label :img
-                - if user_images.any?
-                  = image_tag(user_images.last.img.url)
-                - else
-                  = image_tag('empty-avatar-thumb.png')
-                span.registration-image-caption
-                  = inline_svg('camera-icon.svg')
-                  br
-                  = "Change your profile photo"
-              = user_image.file_field :img
+            .row
+              .col-md-2
+                - user_images = UserImage.where(user: current_user)
+                .image-upload-wrapper
+                  = user_image.label :img
+                    - if user_images.any?
+                      = image_tag(user_images.last.img.url)
+                    - else
+                      = image_tag('empty-avatar-thumb.png')
+                    span.registration-image-caption
+                      = inline_svg('camera-icon.svg')
+                      br
+                      = "Change your profile photo"
+                  = user_image.file_field :img
+              .col-md-10.social-link-wrapper
+                span.facebook
+                  - if current_user.social_connections.find_by_provider('facebook')
+                    = link_to "<i class='fa fa-facebook-official' aria-hidden='true'></i> Disconnect Facebook account".html_safe, disconnect_facebook_path
+                  - else
+                    = link_to "<i class='fa fa-facebook-official' aria-hidden='true'></i> Connect Facebook to share posts".html_safe, user_facebook_omniauth_authorize_path
 
-          .row
-            .col-md-6
-              .form-group
-                = f.email_field :email, autofocus: true, class: 'form-control'
-                - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-                  div
-                    | Currently waiting confirmation for: 
-                    = resource.unconfirmed_email
-            .col-md-6
-              .form-group
-                = f.text_field :username, class: 'form-control', placeholder: 'Username'
-
-          .row
-            .col-md-12
-              .form-group
-                = f.text_field :full_name, class: 'form-control', placeholder: 'Your full name'
-
-          .row
-            .col-md-12
-              .form-group
-                = f.label :current_password, class: 'control-labl'
-                i
-                  | (we need your current password to confirm your changes)
                 br
-                = f.password_field :current_password, autocomplete: "off", class: 'form-control'
 
-          .row
-            .col-md-12
-              .form-group
-                = f.label :password, class: 'control-label'
-                i
-                  | (leave blank if you don't want to change it)
+                span.twitter
+                  - if current_user.social_connections.find_by_provider('twitter')
+                    = link_to "<i class='fa fa-twitter-square' aria-hidden='true'></i> Disconnect Twitter account".html_safe, disconnect_twitter_path
+                  - else
+                    = link_to "<i class='fa fa-twitter-square' aria-hidden='true'></i> Connect Twitter to share posts".html_safe, user_twitter_omniauth_authorize_path
+
                 br
-                = f.password_field :password, autocomplete: "off", class: 'form-control'
-                - if @minimum_password_length
-                  br
-                  em
-                    = @minimum_password_length
-                    |  characters minimum
-            .col-md-12
-              .form-group
-                = f.label :password_confirmation, class: 'control-label'
-                = f.password_field :password_confirmation, autocomplete: "off", class: 'form-control'
 
-          .registration-line-break
+                span.delete-account
+                  = link_to "<i class='fa fa-times-circle' aria-hidden='true'></i> Cancel my account".html_safe, registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete
+          .user-registration-form-fields
+            .row
+              .col-md-6
+                .form-group
+                  = f.label :email, class: 'form-label'
+                  = f.email_field :email, class: 'form-control'
+                  - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+                    div
+                      | Currently waiting confirmation for: 
+                      = resource.unconfirmed_email
+              .col-md-6
+                .form-group
+                  = f.label :username, class: 'form-label'
+                  = f.text_field :username, class: 'form-control', placeholder: 'Username'
+
+            .row
+              .col-md-12
+                .form-group
+                  = f.label :full_name, class: 'form-label'
+                  = f.text_field :full_name, class: 'form-control', placeholder: 'Your full name'
+
+            .row
+              .col-md-12
+                .form-group
+                  = f.label :current_password, class: 'control-labl'
+                  i
+                    | (we need your current password to confirm your changes)
+                  br
+                  = f.password_field :current_password, autocomplete: "off", class: 'form-control'
+
+            .row
+              .col-md-12
+                .form-group
+                  = f.label :password, class: 'control-label'
+                  i
+                    | (leave blank if you don't want to change it)
+                  br
+                  = f.password_field :password, autocomplete: "off", class: 'form-control'
+                  - if @minimum_password_length
+                    br
+                    em
+                      = @minimum_password_length
+                      |  characters minimum
+              .col-md-12
+                .form-group
+                  = f.label :password_confirmation, class: 'control-label'
+                  = f.password_field :password_confirmation, autocomplete: "off", class: 'form-control'
 
           .row
             .col-md-12.text-center.submit-button-wrapper
               = f.submit "Update", class: 'form-control btn btn-primary'
 
       .col-md-4
-        .row
-          .col-md-12.text-center.submit-button-wrapper
-            - if current_user.social_connections.find_by_provider('facebook')
-              = link_to "<i class='fa fa-facebook-official' aria-hidden='true'></i> Disconnect Facebook account".html_safe, disconnect_facebook_path
-            - else
-              = link_to "<i class='fa fa-facebook-official' aria-hidden='true'></i> Connect Facebook to share posts".html_safe, user_facebook_omniauth_authorize_path
-          .col-md-12.text-center.submit-button-wrapper
-            - if current_user.social_connections.find_by_provider('twitter')
-              = link_to "<i class='fa fa-twitter-square' aria-hidden='true'></i> Disconnect Twitter account".html_safe, disconnect_twitter_path
-            - else
-              = link_to "<i class='fa fa-twitter-square' aria-hidden='true'></i> Connect Twitter to share posts".html_safe, user_twitter_omniauth_authorize_path
-        .pull-right
-          h3
-            | Cancel my account
-          p
-            | Unhappy? 
-            = button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-danger'
-
-            .take-me-back-btn
-              = link_to 'Take me back to my profile', profile_path(current_user), class: 'btn btn-primary'
