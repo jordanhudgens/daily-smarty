@@ -74,20 +74,18 @@
                   br
                   = f.password_field :current_password, autocomplete: "off", class: 'form-control'
 
+            hr
+
             .row
-              .col-md-12
+              .col-md-6
                 .form-group
                   = f.label :password, class: 'control-label'
                   i
                     | (leave blank if you don't want to change it)
                   br
                   = f.password_field :password, autocomplete: "off", class: 'form-control'
-                  - if @minimum_password_length
-                    br
-                    em
-                      = @minimum_password_length
-                      |  characters minimum
-              .col-md-12
+
+              .col-md-6
                 .form-group
                   = f.label :password_confirmation, class: 'control-label'
                   = f.password_field :password_confirmation, autocomplete: "off", class: 'form-control'
