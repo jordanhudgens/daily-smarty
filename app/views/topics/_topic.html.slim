@@ -1,2 +1,10 @@
-div.topic-link
-  = link_to topic.title, topic
+.topic-link
+  .row
+    .col-md-8
+        = link_to topic.title, topic
+    .col-md-2
+      .topic-post-count.pull-right
+        = "#{topic.posts.count} posts"
+    .col-md-2
+      .topic-follow-btn-wrapper
+        = link_to 'Follow', root_path, class: 'btn btn-default btn-block'

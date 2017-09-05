@@ -45,9 +45,23 @@ h6 { font-size: 14px; }
   background-color: $dailysmarty-blue;
   border-color: $dailysmarty-blue;
 }
+
 .btn-primary:hover {
   background-color: $dailysmarty-hover-blue;
   border-color: $dailysmarty-hover-blue;
+}
+
+.btn-default {
+  border-radius: 2px;
+  font-size: 14px;
+  font-family: $light-font;
+  font-weight: 500;
+  background-color: white;
+  border: 1px solid #E2E2E2;
+}
+
+.btn-default:hover {
+  background-color: $off-white;
 }
 
 .btn-danger {
@@ -183,8 +197,4 @@ padding: 20px 0px 20px 0px;
   .card {
     padding: 42px;
   }
-}
-
-.topic-link {
-  margin-top: 21px !important;
 }

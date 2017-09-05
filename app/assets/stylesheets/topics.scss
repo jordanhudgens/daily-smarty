@@ -1,0 +1,26 @@
+.topic-links {
+  .topic-link {
+    border-bottom: 1px solid #D3DCE6;
+    padding-top: 16px;
+    padding-bottom: 16px;
+
+    a {
+      color: $medium-charcoal;
+      font-size: 18px;
+      font-weight: 500;
+      font-family: $medium-font;
+    }
+
+    .topic-post-count {
+      font-size: 18px;
+      font-family: $light-font;
+      color: #D3DCE6;
+    }
+  }
+}
+
+.topic-follow-btn-wrapper {
+  a {
+    font-size: 14px !important;
+  }
+}
