@@ -14,6 +14,9 @@
                     = link_to topic.title.upcase, topic_path(topic)
             .post-metadata
               = "submitted #{distance_of_time_in_words(@post.created_at, Time.now) } ago by #{link_to @post.user.username, profile_path(@post.user)}".html_safe
+              - if current_user && policy(@post).update?
+                = link_to ' <i class="fa fa-pencil" aria-hidden="true"></i>'.html_safe, edit_post_path(@post)
+                = link_to " <i class='fa fa-trash-o' aria-hidden='true'></i>".html_safe, @post, method: :delete
           .col-md-1
             = render partial: 'posts/vote_links', locals: { post: @post }
 
