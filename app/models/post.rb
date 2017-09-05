@@ -23,7 +23,6 @@ class Post < ApplicationRecord
                                 reject_if: proc { |attrs| attrs[:provider].blank? }
   accepts_nested_attributes_for :topics
   accepts_nested_attributes_for :themes, allow_destroy: true
-
   accepts_nested_attributes_for :post_links,
                                 allow_destroy: true,
                                 reject_if: lambda { |attrs| attrs['link_url'].blank? }

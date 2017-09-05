@@ -7,6 +7,7 @@ class Topic < ApplicationRecord
   friendly_id :title, use: :slugged
 
   validates_presence_of :title
+  validates_uniqueness_of :title
 
   def self.top_ten
     select('topics.*, COUNT(posts.id) AS posts_count').
