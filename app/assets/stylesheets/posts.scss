@@ -1,5 +1,5 @@
 .post-item-wrapper {
-  margin: 20px 0px 20px 0px;
+  margin: 46px 0px 46px 0px;
   display: flex;
   justify-content: space-between;
 
@@ -13,6 +13,16 @@
       width: 119px;
       height: 84px;
     }
+  }
+
+  .user-thumb img {
+    max-width: 22px;
+    min-width: 22px;
+    max-height: 22px;
+    min-height: 22px;
+    object-fit: cover;
+    border-radius: 100px;
+    margin-right: 5px;
   }
 
   .post-link-title {
