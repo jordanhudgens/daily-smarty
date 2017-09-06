@@ -5,14 +5,15 @@
 
 .full-width-div
   .card
-    .col-md-12
-      - if @posts.any?
-        h4
-          = "There were <strong>#{@posts.count}</strong> posts that matched your query".html_safe
+    .search-card-wrapper
+      .col-md-12
+        - if @posts.any?
+          h4
+            = "There were <strong>#{@posts.count}</strong> posts that matched your query".html_safe
 
-        = render @posts
-        = paginate @posts
-      - else
-        hr
-        h3
-          = "There were no posts that matched your query"
+          = render @posts
+          = paginate @posts
+        - else
+          hr
+          h3
+            = "There were no posts that matched your query"
