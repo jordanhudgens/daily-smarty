@@ -1,48 +1,51 @@
 FORMAT: 1A
-HOST: http://polls.apiblueprint.org/
+HOST: http://api.dailysmarty.com/
 
 # DailySmarty
 
-Polls is a simple API allowing consumers to view polls and vote in them.
+DailySmarty is a knowledge logging service that allows for users to share what they learn each day. The API allows for 3rd party clients to query posts and securely post to the system via the API.
 
-## Questions Collection [/questions]
+## List All Posts [/posts]
 
-### List All Questions [GET]
+### Most Recent Posts [GET]
 
 + Response 200 (application/json)
 
         [
             {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
+                "title": "Example of Creating a Service Object in Rails",
+                "created_at": "2017-09-06 16:49:11 UTC",
+                "content": "<p>Using service object in Rails can be a helpful design pattern to follow for organizing code and separting concerns in your controllers.</p><p>This is a helpful guide for learning how to add service objects in your Rails applications.</p>",
+                "url": "http://www.dailysmarty.com/posts/example-of-creating-a-service-object-in-rails",
+                "author": "jordan",
+                "rating": 100,
+                "topics": [
                     {
-                        "choice": "Swift",
-                        "votes": 2048
-                    }, {
-                        "choice": "Python",
-                        "votes": 1024
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 512
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 256
+                        "title": "Development"
+                    },
+                    {
+                        "title": "Ruby on Rails"
+                    },
+                    {
+                        "title": "Design Patterns"
                     }
+                ],
+                "post_links": [
+                    "url": "https://hackernoon.com/service-objects-in-ruby-on-rails-and-you-79ca8a1c946e?gi=518854af8434"
                 ]
             }
         ]
 
-### Create a New Question [POST]
+### Create a New Post [POST]
 
-You may create your own question using this action. It takes a JSON
-object containing a question and a collection of answers in the
-form of choices.
+You may create your own post using this action. It takes a JSON
+object containing a title and pdacontent.
 
 + Request (application/json)
 
         {
-            "question": "Favourite programming language?",
+            "title": "Implementing the Facade Pattern in Rails",
+            "content": "The Facade design pattern helps to streamline the setup code in Rails controllers and organize where initial values are stored. This guide provides helpful examples for how this can be implemented in a Rails app.",
             "choices": [
                 "Swift",
                 "Python",
@@ -78,3 +81,34 @@ form of choices.
                     }
                 ]
             }
+
+## Query Posts [/posts?q=rails]
+
+### Search for Posts [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "title": "Example of Creating a Service Object in Rails",
+                "created_at": "2017-09-06 16:49:11 UTC",
+                "content": "<p>Using service object in Rails can be a helpful design pattern to follow for organizing code and separting concerns in your controllers.</p><p>This is a helpful guide for learning how to add service objects in your Rails applications.</p>",
+                "url": "http://www.dailysmarty.com/posts/example-of-creating-a-service-object-in-rails",
+                "author": "jordan",
+                "rating": 100,
+                "topics": [
+                    {
+                        "title": "Development"
+                    },
+                    {
+                        "title": "Ruby on Rails"
+                    },
+                    {
+                        "title": "Design Patterns"
+                    }
+                ],
+                "post_links": [
+                    "url": "https://hackernoon.com/service-objects-in-ruby-on-rails-and-you-79ca8a1c946e?gi=518854af8434"
+                ]
+            }
+        ]
