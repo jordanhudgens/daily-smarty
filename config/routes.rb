@@ -5,6 +5,11 @@ Rails.application.routes.draw do
     mount Sidekiq::Web => '/sidekiq'
   end
 
+  namespace :api, path: '/', constraints: { subdomain: 'api' } do
+    resources :posts, only: [:index, :create]
+    get 'search', to: 'posts#search'
+  end
+
   post 'upvote/:post_slug', to: 'votes#upvote', as: 'upvote'
   post 'downvote/:post_slug', to: 'votes#downvote', as: 'downvote'
   get 'query', to: 'search#query', as: 'search_query'
