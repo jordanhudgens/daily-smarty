@@ -194,6 +194,7 @@ h2 a {
   width: 660px;
   margin-left: auto;
   margin-right: auto;
+  padding-top: 42px;
   .post-details-wrapper {
     margin-top: 30px;
     margin-bottom: 30px;
@@ -234,4 +235,10 @@ h2 a {
 .post-link-card {
   width: 100%;
   padding-top: 42px !important;
+}
+
+.post-form-wrapper {
+  .card {
+    padding-top: 42px;
+  }
 }
