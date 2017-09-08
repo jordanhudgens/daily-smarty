@@ -1,6 +1,6 @@
 ready = ->
   $(document).on 'click', '.follow-link', (event) ->
-    $(this).text("Unfollow")
+    $(this).text("Following")
     $(this).removeClass('follow-link btn-primary')
     $(this).addClass('unfollow-link btn-danger')
     return false
