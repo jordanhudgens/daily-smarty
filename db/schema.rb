@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170902224753) do
+ActiveRecord::Schema.define(version: 20170908195524) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -126,6 +126,15 @@ ActiveRecord::Schema.define(version: 20170902224753) do
     t.index ["topic_id"], name: "index_themes_on_topic_id"
   end
 
+  create_table "topic_followings", force: :cascade do |t|
+    t.bigint "topic_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["topic_id"], name: "index_topic_followings_on_topic_id"
+    t.index ["user_id"], name: "index_topic_followings_on_user_id"
+  end
+
   create_table "topics", id: :serial, force: :cascade do |t|
     t.string "title"
     t.string "slug"
@@ -205,6 +214,8 @@ ActiveRecord::Schema.define(version: 20170902224753) do
   add_foreign_key "post_social_shares", "posts"
   add_foreign_key "posts", "users"
   add_foreign_key "social_connections", "users"
+  add_foreign_key "topic_followings", "topics"
+  add_foreign_key "topic_followings", "users"
   add_foreign_key "user_images", "users"
   add_foreign_key "vote_counts", "posts"
   add_foreign_key "votes", "posts"
