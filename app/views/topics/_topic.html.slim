@@ -7,4 +7,4 @@
         = "#{topic.posts.count} posts"
     .col-md-2
       .topic-follow-btn-wrapper
-        = link_to 'Follow', root_path, class: 'btn btn-default btn-block'
+        = topic_follow_buttons(topic_to_follow: topic, logged_in_user: current_user)

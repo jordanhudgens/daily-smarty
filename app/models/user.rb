@@ -31,6 +31,9 @@ class User < ApplicationRecord
   has_many :following, through: :this_user_is_following_other_users,
                        source: :followed
 
+  has_many :topic_followings
+  has_many :topics, through: :topic_followings
+
   validates_uniqueness_of :username, :slug
   validates_presence_of :full_name, :username, :slug
 

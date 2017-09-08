@@ -8,6 +8,18 @@ class TopicsController < ApplicationController
     @topic_posts = @topic.posts.published
   end
 
+  def topic_follow_toggle
+    authenticate_user!
+
+    if TopicFollowing.where(user_id: current_user.id, topic_id: params[:id]).any?
+      TopicFollowing.find_by_user_id_and_topic_id(current_user.id, params[:id]).destroy
+      head :ok
+    else
+      TopicFollowing.create!(user_id: current_user.id, topic_id: params[:id])
+      head :ok
+    end
+  end
+
   def autocomplete
     topics = Topic.where('title ILIKE ?', "%#{params[:q]}%")
     render json:

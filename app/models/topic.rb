@@ -3,6 +3,9 @@ class Topic < ApplicationRecord
   has_many :themes, inverse_of: :topic
   has_many :posts, through: :themes
 
+  has_many :topic_followings
+  has_many :users, through: :topic_followings
+
   extend FriendlyId
   friendly_id :title, use: :slugged
 

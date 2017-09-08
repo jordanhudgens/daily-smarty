@@ -22,6 +22,7 @@
 //= require shortcut_keys
 //= require static
 //= require votes
+//= require topics
 //= require cocoon
 //= require turbolinks
 //= require popper

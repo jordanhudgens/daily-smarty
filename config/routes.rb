@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resources :posts
   get 'post_links/:id', to: 'posts#post_links', as: 'post_links'
   get :post_links, controller: :posts
+  get 'topic_follow_toggle/:id', to: 'topics#topic_follow_toggle', as: 'topic_follow_toggle'
   resources :topics, only: [:index, :show]
   get 'topic-autocomplete', to: 'topics#autocomplete'
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
