@@ -44,8 +44,8 @@ class User < ApplicationRecord
   end
 
   def self.order_by_most_recent_post
-    select('users.*,MAX(posts.created_at) as most_recent_post').
-      joins(:posts).order('most_recent_post desc').group('users.id')
+    select('users.*,MAX(posts.created_at) as most_recent_post')
+      .joins(:posts).order('most_recent_post desc').group('users.id')
   end
 
   def self.new_with_session(params, session)
