@@ -49,9 +49,9 @@ module ApplicationHelper
   def follow_buttons(user_to_follow: user, logged_in_user: current_user)
     if logged_in_user
       if current_user.following.any? && current_user.following_ids.include?(user_to_follow.id)
-        link_to 'Following', follow_toggle_path(user_to_follow.id), class: 'unfollow-link btn btn-danger', remote: true
+        link_to 'Following', follow_toggle_path(user_to_follow.id), class: 'unfollow-link btn btn-unfollow btn-block', remote: true
       else
-        link_to 'Follow', follow_toggle_path(user_to_follow.id), class: 'follow-link btn btn-primary', remote: true
+        link_to 'Follow', follow_toggle_path(user_to_follow.id), class: 'follow-link btn btn-default btn-block', remote: true
       end
     else
       link_to 'Sign Up to Follow', new_user_registration_path, class: 'btn btn-primary'

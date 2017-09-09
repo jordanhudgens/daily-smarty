@@ -1,10 +1,16 @@
-.post-item-wrapper
-  .card
-    .row
-      .col-md-7
-        h2
-          = link_to "@#{user.username}", profile_path(user.slug)
-      .col-md-2
-        = "#{user.posts.published.count} posts"
-      .col-md-3
-        = follow_buttons(user_to_follow: user, logged_in_user: current_user)
+.user-record-wrapper
+  .row
+    .col-md-1
+      = image_tag('empty-avatar-thumb.png')
+    .col-md-11.user-details
+      .row
+        .col-md-7
+          = link_to "@#{user.username}", profile_path(user.slug), class: 'username-link'
+          .post-data
+            = "#{user.posts.published.count} posts"
+        .col-md-3
+          - if user.posts.published.any?
+            .post-data
+              = "Last posted #{distance_of_time_in_words(user.posts.published.last.created_at, Time.now)} ago"
+        .col-md-2
+          = follow_buttons(user_to_follow: user, logged_in_user: current_user)
