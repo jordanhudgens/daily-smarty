@@ -1,3 +1,17 @@
+.filter-link {
+  margin-top: 21px;
+
+  a {
+    color: $topic-font-family;
+    font-weight: 900;
+    font-size: 13px;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
 .user-index-wrapper {
   .card {
     padding-top: 42px;

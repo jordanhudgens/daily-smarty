@@ -2,6 +2,8 @@
   .col-md-12.page-heading-wrapper
     h1
       = 'Users'
+    .filter-link
+      = link_to "<i class='fa fa-chevron-down' aria-hidden='true'></i> #{@filter_link_text}".html_safe, smarties_path(filter: @filter_link)
 
 .full-width-div.user-index-wrapper
   .card

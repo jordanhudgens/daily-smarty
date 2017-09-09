@@ -1,6 +1,14 @@
 class UsersController < ApplicationController
   def index
-    @users = User.page(params[:page]).per(21)
+    if params[:filter] == 'recent_posts'
+      @filter_link_text = 'MOST POSTS'
+      @filter_link = 'post_count'
+      @users = User.order_by_most_recent_post.page(params[:page]).per(21)
+    else
+      @filter_link_text = 'RECENT POSTINGS'
+      @filter_link = 'recent_posts'
+      @users = User.order_by_post_count.page(params[:page]).per(21)
+    end
   end
 
   def follow_toggle
