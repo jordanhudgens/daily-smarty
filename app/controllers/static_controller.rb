@@ -3,11 +3,25 @@ class StaticController < ApplicationController
     @page_title = 'DailySmarty | A Tool for Learning Something New Everyday'
 
     if current_user
-      @posts = Post.where(user_id: current_user.following_ids)
-                 .published
-                 .order('created_at desc')
-                 .page(params[:page])
-                 .per(42)
+      post_ids = []
+
+      if current_user.following_ids.any?
+        post_ids << Post.where(user_id: current_user.following_ids)
+                      .published
+                      .order('created_at desc')
+                      .limit(10)
+                      .pluck(:id)
+      end
+
+      if current_user.topics.any?
+        post_ids_from_followed_topics = current_user.topics.map do |topic|
+          topic.posts.published.order('created_at desc').map do |post|
+            post_ids << post.id
+          end
+        end
+      end
+
+      @posts = Post.where(id: post_ids.flatten).order('created_at desc').page(params[:page]).per(20)
 
       render 'static/feed'
     else
