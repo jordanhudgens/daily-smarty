@@ -1,6 +1,6 @@
 class TopicsController < ApplicationController
   def index
-    @topics = Topic.all.page(params[:page]).per(42)
+    @topics = Topic.order_by_post_count.page(params[:page]).per(42)
   end
 
   def show

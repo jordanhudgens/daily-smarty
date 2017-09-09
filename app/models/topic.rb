@@ -19,4 +19,8 @@ class Topic < ApplicationRecord
       order('posts_count DESC').
       limit(10)
   end
+
+  def self.order_by_post_count
+    order('themes_count DESC')
+  end
 end
