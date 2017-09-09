@@ -4,14 +4,15 @@
       = 'My Feed'
 
 .full-width-div
-  .card
-    .col-md-12
-      - if @posts.any?
-        = render @posts
+  .homepage-wrapper
+    .card
+      .col-md-12
+        - if @posts.any?
+          = render @posts
 
-        = paginate @posts
-      - else
-        h2
-          = 'There are no posts from the users that you follow'
-        p
-          = link_to 'Find other users to follow', smarties_path
+          = paginate @posts
+        - else
+          h2
+            = 'There are no posts from the users that you follow'
+          p
+            = link_to 'Find other users to follow', smarties_path
