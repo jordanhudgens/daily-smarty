@@ -1,41 +1,42 @@
-.row
-  .col-md-12.text-center.registration-heading
-    = "START LOGGING YOUR KNOWLEDGE EACH DAY"
-
 .registration-card-wrapper
+  .row
+    .col-md-12.page-heading-wrapper
+      h1
+        = 'Sign Up'
+
   .card
-    .row
-      .col-md-12
-        = form_for(resource, as: resource_name, url: registration_path(resource_name), class: 'form-horizontal') do |f|
-          = devise_error_messages!
-          .row
-            .col-md-6
-              .form-group
-                = f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'Email'
-            .col-md-6
-              .form-group
-                = f.text_field :username, class: 'form-control', placeholder: 'Username'
-
-          .row
-            .col-md-12
-              .form-group
-                = f.text_field :full_name, class: 'form-control', placeholder: 'Your full name'
-
+    = form_for(resource, as: resource_name, url: registration_path(resource_name), class: 'form-horizontal') do |f|
+      = devise_error_messages!
+      .row
+        .col-md-12
+          .form-group
+            = f.label :full_name
+            = f.text_field :full_name, class: 'form-control'
+        .col-md-12
+          .form-group
+            = f.label :username
+            = f.text_field :username, class: 'form-control'
+        .col-md-12
+          .form-group
+            = f.label :email
+            = f.email_field :email, autofocus: true, class: 'form-control'
+        .col-md-12
           .row
             .col-md-6
               .form_group
-                = f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: 'Password'
-
+                = f.label :password
+                = f.password_field :password, autocomplete: "off", class: 'form-control'
             .col-md-6
               .form_group
-                = f.password_field :password_confirmation, autocomplete: "off", class: 'form-control', placeholder: 'Confirm password'
+                = f.label :password_confirmation
+                = f.password_field :password_confirmation, autocomplete: "off", class: 'form-control'
 
-          .registration-line-break
+      .registration-line-break
 
-          .row
-            .col-md-12.text-center.submit-button-wrapper
-              = f.submit "Sign up", class: 'form-control btn btn-primary'
+      .row
+        .col-md-12.text-center.submit-button-wrapper
+          = f.submit "Sign up", class: 'form-control btn btn-primary'
 
-          .row
-            .col-md-12.text-center.devise-links
-              = render "devise/shared/links"
+      .row
+        .col-md-12.text-center.devise-links
+          = render "devise/shared/links"
