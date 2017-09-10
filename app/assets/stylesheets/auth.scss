@@ -7,6 +7,19 @@
     padding: 42px 30px 42px 30px;
   }
 
+  label {
+    font-size: 14px;
+    color: #4A4A4A;
+    font-weight: 500;
+  }
+
+  .forgot-password-link {
+    color: $dailysmarty-blue;
+    font-family: $medium-font;
+    text-decoration: none;
+    font-size: 14px;
+  }
+
   .sign-in-links {
     margin-top: 21px;
 
