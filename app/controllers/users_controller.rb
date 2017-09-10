@@ -21,11 +21,13 @@ class UsersController < ApplicationController
     end
   end
 
-  def username_uniqueness
-    if User.find_by_username(params[:username])
-      render json: { uniquness: false }
+  def username_validator
+    if params[:username].size <= 2
+      render json: { valid: false }
+    elsif User.find_by_username(params[:username])
+      render json: { valid: false }
     else
-      render json: { uniquness: true }
+      render json: { valid: true }
     end
   end
 end
