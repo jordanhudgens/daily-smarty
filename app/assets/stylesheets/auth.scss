@@ -6,6 +6,22 @@
   .card {
     padding: 42px 30px 42px 30px;
   }
+
+  .sign-in-links {
+    margin-top: 21px;
+
+    .pre-existing-account-text {
+      color: #4A4A4A;
+      font-size: 14px;
+      font-weight: 500;
+    }
+  }
+
+  .registration-submit-button-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 21px;
+  }
 }
 
 .edit-registration-card-wrapper {
@@ -160,5 +176,21 @@
     border: 1px solid #D3DCE6;
     height: 50px;
     border-radius: 3px;
+  }
+
+  .username-icon-styles {
+    font-size: 2em;
+    margin-top: 33px;
+    position: absolute;
+    right: 0;
+    margin-right: 24px;
+
+    #valid-username {
+      color: $dailysmarty-blue;
+    }
+
+    #invalid-username {
+      color: $dailysmarty-orange;
+    }
   }
 }

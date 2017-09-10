@@ -7,36 +7,41 @@
   .card
     = form_for(resource, as: resource_name, url: registration_path(resource_name), class: 'form-horizontal') do |f|
       = devise_error_messages!
-      .row
-        .col-md-12
-          .form-group
-            = f.label :full_name
-            = f.text_field :full_name, autofocus: true, class: 'form-control'
-        .col-md-12
-          .form-group
-            = f.label :username
-            = f.text_field :username, class: 'form-control'
-        .col-md-12
-          .form-group
-            = f.label :email
-            = f.email_field :email, class: 'form-control'
-        .col-md-12
-          .row
-            .col-md-6
-              .form_group
-                = f.label :password
-                = f.password_field :password, autocomplete: "off", class: 'form-control'
-            .col-md-6
-              .form_group
-                = f.label :password_confirmation
-                = f.password_field :password_confirmation, autocomplete: "off", class: 'form-control'
-
-      .registration-line-break
-
-      .row
-        .col-md-12.text-center.submit-button-wrapper
-          = f.submit "Sign up", class: 'form-control btn btn-primary'
+      .user-registration-form-fields
+        .row
+          .col-md-12
+            .form-group
+              = f.label :full_name
+              = f.text_field :full_name, autofocus: true, class: 'form-control'
+          .col-md-12
+            .form-group
+              = f.label :username
+              span.username-icon-styles
+                <span id="valid-username" class="fa fa-check-circle"></span>
+                <span id="invalid-username" class="fa fa-times-circle"></span>
+              = f.text_field :username, class: 'form-control'
+          .col-md-12
+            .form-group
+              = f.label :email
+              = f.email_field :email, class: 'form-control'
+          .col-md-12
+            .row
+              .col-md-6
+                .form_group
+                  = f.label :password
+                  = f.password_field :password, autocomplete: "off", class: 'form-control'
+              .col-md-6
+                .form_group
+                  = f.label :password_confirmation
+                  = f.password_field :password_confirmation, autocomplete: "off", class: 'form-control'
 
       .row
-        .col-md-12.text-center.devise-links
-          = render "devise/shared/links"
+        .registration-submit-button-wrapper
+          .col-md-12.text-center.submit-button-wrapper
+            = f.submit "Sign up", class: 'form-control btn btn-primary'
+
+      .row
+        .col-md-12.text-center.sign-in-links
+          .pre-existing-account-text
+            = "Already have an account? "
+            = link_to "Sign in", new_user_session_path

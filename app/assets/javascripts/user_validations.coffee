@@ -1,4 +1,7 @@
 ready = ->
+  $('#invalid-username').hide()
+  $('#valid-username').hide()
+
   $('#user_username').on 'blur', (event) ->
     $.ajax
       url: '/username_uniqueness/' + $('#user_username').val()
@@ -7,10 +10,12 @@ ready = ->
       error: (jqXHR, textStatus, errorThrown) ->
       success: (data, textStatus, jqXHR) ->
         if data.uniquness is true
-          $('#user_username').addClass('valid-username')
+          $('#invalid-username').hide()
+          $('#valid-username').show()
           console.log('valid')
         else if data.uniquness is false
-          $('#user_username').addClass('invalid-username')
+          $('#valid-username').hide()
+          $('#invalid-username').show()
           console.log('invalid')
     event.stopImmediatePropagation();
     return false
