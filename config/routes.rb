@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   get 'social-connections/disconnect_facebook', to: 'users/social_disconnects#disconnect_facebook', as: :disconnect_facebook
   get 'social-connections/disconnect_twitter', to: 'users/social_disconnects#disconnect_twitter', as: :disconnect_twitter
   get 'smarties', to: 'users#index', as: 'smarties'
+  get 'username_uniqueness/:username', to: 'users#username_uniqueness'
   get 'popular', to: 'static#popular', as: 'popular'
   get 'corporate/privacy-policy', to: 'static#privacy_policy', as: 'privacy_policy'
   get 'corporate/terms-conditions', to: 'static#terms_conditions', as: 'terms_conditions'

@@ -19,6 +19,7 @@
 //= require posts
 //= require search
 //= require select
+//= require user_validations
 //= require shortcut_keys
 //= require static
 //= require votes

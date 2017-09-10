@@ -11,7 +11,7 @@
         .col-md-12
           .form-group
             = f.label :full_name
-            = f.text_field :full_name, class: 'form-control'
+            = f.text_field :full_name, autofocus: true, class: 'form-control'
         .col-md-12
           .form-group
             = f.label :username
@@ -19,7 +19,7 @@
         .col-md-12
           .form-group
             = f.label :email
-            = f.email_field :email, autofocus: true, class: 'form-control'
+            = f.email_field :email, class: 'form-control'
         .col-md-12
           .row
             .col-md-6

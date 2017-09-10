@@ -20,4 +20,12 @@ class UsersController < ApplicationController
       head :ok
     end
   end
+
+  def username_uniqueness
+    if User.find_by_username(params[:username])
+      render json: { uniquness: false }
+    else
+      render json: { uniquness: true }
+    end
+  end
 end
