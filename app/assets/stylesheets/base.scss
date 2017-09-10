@@ -40,10 +40,10 @@ h6 { font-size: 14px; }
 .btn-primary {
   border-radius: 2px;
   font-size: 14px;
-  font-family: $light-font;
+  font-family: $medium-font;
   font-weight: 500;
   background-color: $dailysmarty-blue;
-  border-color: $dailysmarty-blue;
+  border: 1px solid $dailysmarty-blue;
 }
 
 .btn-primary:hover {
@@ -54,10 +54,11 @@ h6 { font-size: 14px; }
 .btn-default {
   border-radius: 2px;
   font-size: 14px;
-  font-family: $light-font;
+  font-family: $medium-font;
   font-weight: 500;
   background-color: white;
   border: 1px solid #E2E2E2;
+  color: $medium-charcoal;
 }
 
 .btn-default:hover {

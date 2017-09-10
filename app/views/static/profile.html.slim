@@ -12,7 +12,7 @@
         .row
           .col-md-4
             .count
-              = @user.posts.count
+              = @user.posts_count
             .stat-item
               = 'Posts'
           .col-md-4
@@ -39,4 +39,5 @@
             = render partial: 'posts/post', locals: { post: post }
           = paginate @posts
         - else
-          = 'There are no posts for this user'
+          .no-posts-wrapper
+            = 'There are no posts for this user'
