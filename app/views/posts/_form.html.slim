@@ -8,43 +8,29 @@
             - @post.errors.full_messages.each do |message|
               li = message
 
-      = render partial: 'posts/title', locals: { f: f }
-      ul#postTabList.nav.nav-tabs role="tablist" 
-        li.nav-item
-          a.nav-link.active aria-controls="content" data-toggle="tab" href="#content" role="tab" Content
-        li.nav-item
-          a.nav-link aria-controls="links" data-toggle="tab" href="#links" role="tab" Links
-        li.nav-item
-          a.nav-link aria-controls="topics" data-toggle="tab" href="#topics" role="tab" Topics
-        li.nav-item
-          a.nav-link aria-controls="thumb" data-toggle="tab" href="#thumb" role="tab" Post Thumbnail
-        li.nav-item
-          a.nav-link aria-controls="social" data-toggle="tab" href="#social" role="tab" Social
-      .tab-content
-        #content.tab-pane.active role="tabpanel"
+      .row
+        .col-md-6
           .form-group
-            = cktext_area :post, :content, cols: 40
-
-        #links.tab-pane role="tabpanel"
+            = f.label :title, class: 'form-label'
+            = f.text_field :title, class: 'form-control', autofocus: true
+        .col-md-6
           .form-group
-            = f.fields_for :post_links do |post_link_form|
-              = render 'post_link_fields', :f => post_link_form
-            = link_to_add_association 'Add a Link', f, :post_links
+            = f.label 'Image upload (optional)'
+            br
+            = f.file_field :img
 
-        #topics.tab-pane role="tabpanel"
+        .col-md-6
+          .form-group
+            = f.select :post_status, [['Draft', 'draft'], ['Published Publicly', 'published'], ['Private Post', 'private_post']], class: 'form-control'
+
+        .col-md-6
           .form-group
             = f.fields_for :themes do |theme|
               = render 'theme_fields', :f => theme
             .custom-fields
             = link_to_add_association 'Add a Topic', f, :themes, class: 'add-topic', 'data-association-insertion-method' => 'append', 'data-association-insertion-node' => '.custom-fields'
 
-        #thumb.tab-pane role="tabpanel"
-          .form-group
-            = f.label 'Image upload (optional)'
-            br
-            = f.file_field :img
-
-        #social.tab-pane role="tabpanel"
+        .col-md-12
           .form-group
             h2
               = "Social Share Options"
@@ -58,9 +44,16 @@
                     = "<label><i class='fa #{social_icon_renderer(provider)}'></i> #{provider.titleize}</label>".html_safe
                     = post_social_share_form.hidden_field :provider, value: provider
 
-      .row
         .col-md-12
           .form-group
-            = f.select :post_status, [['Draft', 'draft'], ['Published Publicly', 'published'], ['Private Post', 'private_post']], class: 'form-control'
-      .actions
-        = f.submit 'Submit', class: 'btn btn-primary'
+            = cktext_area :post, :content, cols: 40
+
+        .col-md-12
+          .form-group
+            = f.fields_for :post_links do |post_link_form|
+              = render 'post_link_fields', :f => post_link_form
+            = link_to_add_association 'Add a Link', f, :post_links
+
+        .col-md-12
+          .actions
+            = f.submit 'Submit', class: 'btn btn-primary'
