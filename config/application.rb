@@ -25,5 +25,6 @@ module Dailysmarty
     Elasticsearch::Model.client = Elasticsearch::Client.new host: ENV['SEARCHBOX_URL']
     config.active_job.queue_adapter = :sidekiq
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
+    config.autoload_paths << Rails.root.join('lib')
   end
 end
