@@ -1,6 +1,11 @@
 FactoryGirl.define do
   factory :topic do
-    title "My Topic"
-    slug "my-topic"
+    title "CSS"
+    slug "css"
+  end
+
+  factory :topic_two, class: 'Topic' do
+    title "HTML"
+    slug "html"
   end
 end
