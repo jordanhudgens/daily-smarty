@@ -13,5 +13,5 @@
           .col-md-10
             = f.label :link_url, class: 'form-label'
             = f.text_field :link_url, class: 'form-control'
-            = link_to_remove_association f, class: 'remove-topic btn btn-default btn-xs' do
-              <i class="fa fa-times" aria-hidden="true"></i>
+            = link_to_remove_association f do
+              <i class="fa fa-times-circle remove-link" aria-hidden="true"></i>

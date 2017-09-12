@@ -242,3 +242,29 @@ h2 a {
     padding-top: 42px;
   }
 }
+
+.add-link-wrapper {
+  a {
+    color: #007AFF;
+    font-size: 14px;
+    font-weight: 500;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.remove-link {
+  position: absolute;
+  right: 29px;
+  top: 43px;
+  color: #ff2600;
+  font-size: 28px;
+}
+
+.project-tag-fields input {
+  border-radius: 3px;
+  height: 50px;
+  border: 1px solid #D3DCE6;
+  margin-bottom: 10px;
+}

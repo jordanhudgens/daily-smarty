@@ -49,10 +49,10 @@
             = cktext_area :post, :content, cols: 40
 
         .col-md-12
-          .form-group
+          .form-group.add-link-wrapper
             = f.fields_for :post_links do |post_link_form|
               = render 'post_link_fields', :f => post_link_form
-            = link_to_add_association 'Add a Link', f, :post_links
+            = link_to_add_association '<i class="fa fa-plus-circle" aria-hidden="true"></i> Add a Link'.html_safe, f, :post_links
 
         .col-md-12
           .actions
