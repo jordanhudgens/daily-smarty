@@ -34,6 +34,8 @@ class User < ApplicationRecord
   has_many :topic_followings
   has_many :topics, through: :topic_followings
 
+  has_one :api_client, dependent: :destroy
+
   validates_uniqueness_of :username, :slug
   validates_presence_of :full_name, :username, :slug
 

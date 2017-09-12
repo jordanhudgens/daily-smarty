@@ -1,0 +1,2 @@
+class ApiClient < ApplicationRecord
+end

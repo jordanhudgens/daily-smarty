@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170909231548) do
+ActiveRecord::Schema.define(version: 20170912205115) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "api_clients", force: :cascade do |t|
+    t.string "source_app"
+    t.text "api_key"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_api_clients_on_user_id"
+  end
 
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string "data_file_name", null: false
@@ -212,6 +221,7 @@ ActiveRecord::Schema.define(version: 20170909231548) do
     t.index ["user_id"], name: "index_votes_on_user_id"
   end
 
+  add_foreign_key "api_clients", "users"
   add_foreign_key "post_links", "posts"
   add_foreign_key "post_social_shares", "posts"
   add_foreign_key "posts", "users"
