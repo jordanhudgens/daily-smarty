@@ -1,6 +1,5 @@
 ready = ->
   $('.dropdowns select').select2()
-  $('#post_post_status').select2()
   $(document).on 'click', '.add-topic', (event) ->
     $(this).parent().find('.dropdowns select').select2
       ajax:

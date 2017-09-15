@@ -238,6 +238,13 @@ h2 a {
 }
 
 .post-form-wrapper {
+  .styled-text-field {
+    height: 50px;
+    width: 100%;
+    border: 1px solid #D3DCE6;
+    border-radius: 3px;
+  }
+
   .card {
     padding-top: 42px;
   }
@@ -267,4 +274,15 @@ h2 a {
   height: 50px;
   border: 1px solid #D3DCE6;
   margin-bottom: 10px;
+}
+
+#post_post_status {
+	height: 50px;
+  width: 100%;
+  border: 1px solid #D3DCE6;
+  border-radius: 3px;
+  background-color: #ffffff;
+  font-size: 14px;
+  color: #4A4A4A;
+  font-weight: 500;
 }
