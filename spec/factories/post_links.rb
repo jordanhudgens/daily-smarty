@@ -1,6 +1,5 @@
 FactoryGirl.define do
   factory :post_link do
-    post nil
-    link_url "MyText"
+    link_url "https://google.com"
   end
 end
