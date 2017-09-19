@@ -39,18 +39,16 @@ DailySmarty is a knowledge logging service that allows for users to share what t
 ### Create a New Post [POST]
 
 You may create your own post using this action. It takes a JSON
-object containing a title and pdacontent.
+object containing a title _(required)_, content, and array of post links.
 
 + Request (application/json)
 
         {
             "title": "Implementing the Facade Pattern in Rails",
             "content": "The Facade design pattern helps to streamline the setup code in Rails controllers and organize where initial values are stored. This guide provides helpful examples for how this can be implemented in a Rails app.",
-            "choices": [
-                "Swift",
-                "Python",
-                "Objective-C",
-                "Ruby"
+            "post_links": [
+                "https://medium.com/kkempin/facade-design-pattern-in-ruby-on-rails-710aa88326f",
+                "https://medium.com/@ryakh/facade-pattern-on-rails-d65b86cdb5b1"
             ]
         }
 
