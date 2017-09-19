@@ -20,7 +20,7 @@ RSpec.describe Post, type: :model do
       topic_two = FactoryGirl.create(:topic_two)
       Theme.create(topic: topic_one, post: post)
       Theme.create(topic: topic_two, post: post)
-      expect(post.topics.count).to eq(2)
+      expect(post.topics.pluck(:id)).to eq([topic_one.id, topic_two.id])
     end
   end
 end
