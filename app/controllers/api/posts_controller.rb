@@ -13,18 +13,15 @@ class Api::PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-
     username = ActionController::HttpAuthentication::Basic::user_name_and_password(request).first
-
     user = User.find_by_username(username)
-
     @post.user = user
 
     # TODO Find out how to accept link urls
     if @post.save
-      render json { render @post, status: :created, location: @post }
+      render json: { post: @post, status: :created, location: @post }
     else
-      render json { render json: @post.errors, status: :unprocessable_entity }
+      render json: { errors: @post.errors, status: :unprocessable_entity }
     end
   end
 
@@ -39,9 +36,12 @@ class Api::PostsController < ApplicationController
     end
 
     def authenticate
-      authenticate_or_request_with_http_basic do |source_app, api_key|
-        client = ApiClient.find_by_source_app(source_app)
-        client && client.api_key == api_key
+      authenticate_or_request_with_http_basic do |username, api_key|
+        user   = User.find_by_username(username)
+        client = ApiClient.find_by_api_key(api_key)
+        if (user) && (client) && (user.api_client == client)
+          true
+        end
       end
     end
 end
