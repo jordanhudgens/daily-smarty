@@ -8,7 +8,7 @@ describe 'Post feature' do
     expect(page).to have_content(post.title)
   end
 
-  xit 'can be visited by a site visitor' do
+  it 'can be visited by a site visitor' do
     visit root_path
     expect(page.title).to eq('DailySmarty | A Tool for Learning Something New Everyday')
   end
