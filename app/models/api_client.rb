@@ -1,9 +1,7 @@
 class ApiClient < ApplicationRecord
   belongs_to :user
 
-  validates_presence_of :source_app, :api_key
-  validates_uniqueness_of :source_app
-
+  validates_presence_of :user_id
   before_validation :set_api_key
 
   private
