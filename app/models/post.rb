@@ -34,6 +34,10 @@ class Post < ApplicationRecord
 
   after_create :generate_vote_count
 
+  def url_for_post
+    "http://www.dailysmarty.com/posts/#{self.slug}"
+  end
+
   private def generate_vote_count
     VoteCount.create(post_id: self.id, number_of_votes: 0)
   end
