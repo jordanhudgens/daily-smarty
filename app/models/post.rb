@@ -7,7 +7,7 @@ class Post < ApplicationRecord
   belongs_to :user, counter_cache: true
   has_many :themes, inverse_of: :post
   has_many :topics, through: :themes
-  has_many :post_links, dependent: :destroy
+  has_many :post_links, inverse_of: :post, dependent: :destroy
   has_many :votes, dependent: :destroy
   has_many :post_social_shares, inverse_of: :post
   has_one :vote_count, dependent: :destroy

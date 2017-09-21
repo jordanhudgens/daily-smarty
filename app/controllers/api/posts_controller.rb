@@ -17,9 +17,8 @@ class Api::PostsController < ApplicationController
     user = User.find_by_username(username)
     @post.user = user
 
-    # TODO Find out how to accept link urls
     if @post.save
-      render json: { post: @post, status: :created, location: @post }
+      render json: @post, adapter: :json
     else
       render json: { errors: @post.errors, status: :unprocessable_entity }
     end
@@ -28,10 +27,10 @@ class Api::PostsController < ApplicationController
   private
 
     def post_params
-      params.require(:post).permit(
+      params.permit(
         :title,
         :content,
-        post_links: [:id, :post_id, :link_url]
+        post_links_attributes: [:id, :link_url]
       )
     end
 
