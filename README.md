@@ -4,4 +4,4 @@
 
 ## Next Steps
 
-- [ ] Enable the ability to send post links via the API
+- [ ] Add header/auth requirements and Location data in the response for the API request
