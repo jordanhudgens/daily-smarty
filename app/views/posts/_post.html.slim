@@ -9,8 +9,8 @@
         - post.topics.each do |topic|
           = link_to topic.title.upcase, topic_path(topic)
     .post-metadata.user-thumb
-      - if UserImage.where(user: current_user).any?
-        = "submitted #{distance_of_time_in_words(post.created_at, Time.now) } ago by #{link_to image_tag(UserImage.where(user: current_user).last.img.url) + " " + post.user.username, profile_path(post.user.slug)}".html_safe
+      - if UserImage.where(user: post.user).any?
+        = "submitted #{distance_of_time_in_words(post.created_at, Time.now) } ago by #{link_to image_tag(UserImage.where(user: post.user).last.img.url) + " " + post.user.username, profile_path(post.user.slug)}".html_safe
       - else
         = "submitted #{distance_of_time_in_words(post.created_at, Time.now) } ago by #{link_to post.user.username, profile_path(post.user.slug)}".html_safe
   .post-votes
