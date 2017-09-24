@@ -4,7 +4,7 @@ class StaticController < ApplicationController
 
     if current_user
       hfs = HomepageFeedService.new(user: current_user)
-      @posts = Post.where(id: hfs.post_ids).order('created_at desc').page(params[:page]).per(20)
+      @posts = hfs.feed_query.page(params[:page]).per(20)
       render 'static/feed'
     else
       @topics = Topic.top_ten

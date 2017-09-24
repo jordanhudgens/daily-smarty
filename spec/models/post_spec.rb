@@ -23,7 +23,4 @@ RSpec.describe Post, type: :model do
       expect(post.topics.pluck(:id)).to eq([topic_one.id, topic_two.id])
     end
   end
-
-  describe 'homepage feed custom query' do
-  end
 end
