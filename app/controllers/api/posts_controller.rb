@@ -1,6 +1,6 @@
 class Api::PostsController < ApplicationController
   protect_from_forgery except: [:create]
-  before_action :authenticate
+  before_action :authenticate, only: [:create]
 
   def index
     @posts = Post.published.order('created_at DESC').limit(10)
@@ -8,7 +8,6 @@ class Api::PostsController < ApplicationController
   end
 
   def search
-
   end
 
   def create
@@ -18,7 +17,7 @@ class Api::PostsController < ApplicationController
     @post.user = user
 
     if @post.save
-      render json: @post, adapter: :json
+      render json: @post, adapter: :json, location: @post
     else
       render json: { errors: @post.errors, status: :unprocessable_entity }
     end
