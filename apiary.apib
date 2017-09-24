@@ -41,10 +41,14 @@ DailySmarty is a knowledge logging service that allows for users to share what t
 You may create your own post using this action. It takes a JSON
 object containing a title _(required)_, content, and array of post links.
 
+#### Authentication
+
+You will need to provide your username and API secret kUpdaey with HTTP basic auth and pass the credentials in the header to create posts.
+
 + Request (application/json)
 
         {
-            "title": "Implementing the Facade Pattern in Rails 14",
+            "title": "Implementing the Facade Pattern in Rails",
             "content": "The Facade design pattern helps to streamline the setup code in Rails controllers and organize where initial values are stored. This guide provides helpful examples for how this can be implemented in a Rails app.",
             "post_links_attributes": [
                 {
@@ -60,14 +64,14 @@ object containing a title _(required)_, content, and array of post links.
 
     + Headers
 
-            Location: /questions/2
+            Location: http://api.dailysmarty.com/posts/implementing-the-facade-pattern-in-rails
 
     + Body
 
             {
                 "post": {
                     "id": 210,
-                    "title": "Implementing the Facade Pattern in Rails 14",
+                    "title": "Implementing the Facade Pattern in Rails",
                     "content": "The Facade design pattern helps to streamline the setup code in Rails controllers and organize where initial values are stored. This guide provides helpful examples for how this can be implemented in a Rails app.",
                     "created_at": "2017-09-21T23:16:03.822Z",
                     "url_for_post": "http://www.dailysmarty.com/posts/implementing-the-facade-pattern-in-rails-14-fd379746-1e26-47a5-bc3a-e3b6c82f1e61",
