@@ -104,7 +104,7 @@ class PostsController < ApplicationController
         :img,
         :post_status,
         post_social_shares_attributes: [:id, :provider, :status],
-        themes_attributes: [:id, :_destroy, :topic_id, topic_attributes: [:id, :_destroy, :title]],
+        topic_titles: [],
         post_links_attributes: [:id, :post_id, :_destroy, :link_url]
       )
     end

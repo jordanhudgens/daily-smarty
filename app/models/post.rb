@@ -34,6 +34,22 @@ class Post < ApplicationRecord
 
   after_create :generate_vote_count
 
+  def topic_titles=(titles)
+    transaction do
+      themes.delete_all
+      titles.each do |title|
+        unless title.blank?
+          topic = Topic.find_or_create_by!(title: title)
+          self.themes.create!(topic: topic)
+        end
+      end
+    end
+  end
+
+  def topic_titles
+    topics.map(&:title)
+  end
+
   def url_for_post
     "http://www.dailysmarty.com/posts/#{self.slug}"
   end

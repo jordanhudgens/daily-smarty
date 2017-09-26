@@ -25,10 +25,7 @@
 
         .col-md-6
           .form-group
-            = f.fields_for :themes do |theme|
-              = render 'theme_fields', :f => theme
-            .custom-fields
-            = link_to_add_association 'Add a Topic', f, :themes, class: 'add-topic', 'data-association-insertion-method' => 'append', 'data-association-insertion-node' => '.custom-fields'
+            = collection_select(:post, :topic_titles, Topic.all, :title, :title, {include_blank: false}, { :multiple => true, :name => 'post[topic_titles][]', class: 'form-control' })
 
         .col-md-12
           .form-group

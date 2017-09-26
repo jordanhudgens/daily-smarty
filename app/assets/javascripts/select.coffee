@@ -1,5 +1,8 @@
 ready = ->
   $('.dropdowns select').select2()
+  $('#post_topic_titles').select2(
+    tags: true
+  )
   $(document).on 'click', '.add-topic', (event) ->
     $(this).parent().find('.dropdowns select').select2
       ajax:
