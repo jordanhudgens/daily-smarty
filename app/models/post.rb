@@ -5,8 +5,8 @@ class Post < ApplicationRecord
   is_impressionable counter_cache: true
   mount_uploader :img, ImageUploader
   belongs_to :user, counter_cache: true
-  has_many :themes, inverse_of: :post
-  has_many :topics, through: :themes
+  has_many :themes, inverse_of: :post, autosave: true
+  has_many :topics, through: :themes, autosave: true
   has_many :post_links, inverse_of: :post, dependent: :destroy
   has_many :votes, dependent: :destroy
   has_many :post_social_shares, inverse_of: :post
@@ -40,7 +40,7 @@ class Post < ApplicationRecord
       titles.each do |title|
         unless title.blank?
           topic = Topic.find_or_create_by!(title: title)
-          self.themes.create!(topic: topic)
+          self.themes.build(topic: topic)
         end
       end
     end
