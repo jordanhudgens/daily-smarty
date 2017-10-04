@@ -24,7 +24,7 @@ css:
             = render partial: 'posts/vote_links', locals: { post: @post }
 
     - if !@post.img.blank?
-      = image_tag(@post.img.feature_thumb, style: 'margin-bottom: 30px; max-width: 660px; border-radius: 5px;')
+      = image_tag(@post.img.feature_thumb, style: 'margin-bottom: 30px; max-width: 100%; border-radius: 5px;')
 
     .row
       .col-md-12.post-content
