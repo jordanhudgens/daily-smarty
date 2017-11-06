@@ -306,6 +306,7 @@ GEM
     pundit (1.1.0)
       activesupport (>= 3.0.0)
     rack (2.0.3)
+    rack-cors (1.0.2)
     rack-mini-profiler (0.10.5)
       rack (>= 1.2.0)
     rack-protection (2.0.0)
@@ -503,6 +504,7 @@ DEPENDENCIES
   popper_js
   puma (~> 3.0)
   pundit (~> 1.1)
+  rack-cors
   rack-mini-profiler
   rails (~> 5.1.1)
   redcarpet (~> 3.4)
@@ -527,4 +529,4 @@ RUBY VERSION
    ruby 2.3.1p112
 
 BUNDLED WITH
-   1.15.3
+   1.16.0

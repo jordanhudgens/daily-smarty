@@ -26,5 +26,12 @@ module Dailysmarty
     config.active_job.queue_adapter = :sidekiq
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
     config.autoload_paths << Rails.root.join('lib')
+
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins '*'
+        resource '*', :headers => :any, :methods => [:get, :post, :options]
+      end
+    end
   end
 end
