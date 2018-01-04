@@ -37,5 +37,6 @@ class StaticController < ApplicationController
   end
 
   def branding
+    @page_title = 'DailySmarty Logos and Brand Guidelines'
   end
 end
