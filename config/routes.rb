@@ -28,6 +28,7 @@ Rails.application.routes.draw do
   get 'popular', to: 'static#popular', as: 'popular'
   get 'corporate/privacy-policy', to: 'static#privacy_policy', as: 'privacy_policy'
   get 'corporate/terms-conditions', to: 'static#terms_conditions', as: 'terms_conditions'
+  get 'corporate/branding', to: 'static#branding', as: 'branding'
   get 'follow/:following_id', to: 'users#follow_toggle', as: 'follow_toggle'
   get ':id', to: 'static#profile', as: 'profile'
 

@@ -35,4 +35,7 @@ class StaticController < ApplicationController
                .page(params[:page])
                .per(42)
   end
+
+  def branding
+  end
 end
