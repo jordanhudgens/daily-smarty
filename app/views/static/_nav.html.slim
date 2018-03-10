@@ -4,7 +4,14 @@ nav.navbar.navbar-toggleable-md.navbar-light.bg-faded
 
     - if current_user
       .nav-links
-        = render 'static/signed_in_links'
+        span.nav-link
+          = link_to "#{inline_svg('my-feed.svg', class: 'nav-icon')} <span class='nav-link-text'>My Feed</span>".html_safe, root_path
+        span.nav-link
+          = link_to "#{inline_svg('catagories.svg', class: 'nav-icon')} <span class='nav-link-text'>Topics</span>".html_safe, topics_path
+        span.nav-link
+          = link_to "#{inline_svg('users.svg', class: 'nav-icon')} <span class='nav-link-text'>Users</span>".html_safe, smarties_path
+        span.nav-link
+          = link_to "#{inline_svg('posts.svg', class: 'posts-icon nav-icon')} <span class='nav-link-text'>Posts</span>".html_safe, posts_path
 
       = form_with url: search_query_path, method: :get, local: true do |f|
         span.search-wrapper
@@ -26,6 +33,21 @@ nav.navbar.navbar-toggleable-md.navbar-light.bg-faded
         .nav-avatar
           = link_to image_tag(UserImage.where(user: current_user).last.img.user_nav_thumb), profile_path(current_user)
     - else
+      .nav-links
+        span.nav-link
+          = link_to "#{inline_svg('my-feed.svg', class: 'nav-icon')} <span class='nav-link-text'>Feed</span>".html_safe, new_user_registration_path
+        span.nav-link
+          = link_to "#{inline_svg('catagories.svg', class: 'nav-icon')} <span class='nav-link-text'>Topics</span>".html_safe, topics_path
+        span.nav-link
+          = link_to "#{inline_svg('users.svg', class: 'nav-icon')} <span class='nav-link-text'>Users</span>".html_safe, smarties_path
+        span.nav-link
+          = link_to "#{inline_svg('posts.svg', class: 'posts-icon nav-icon')} <span class='nav-link-text'>Posts</span>".html_safe, posts_path
+
+      = form_with url: search_query_path, method: :get, local: true do |f|
+        span.search-wrapper
+          <span id="search-icon-id" class="fa fa-search"></span>
+          = f.text_field :q, id: :q, class: 'form-control search-box', placeholder: 'What do you want to learn today?'
+
       .nav-links
         span.nav-link.nav-auth-link
           = link_to "#{inline_svg('users.svg', class: 'nav-icon')} <span class='nav-link-text'>Login</span>".html_safe, new_user_session_path
