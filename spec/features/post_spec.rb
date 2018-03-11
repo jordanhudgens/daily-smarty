@@ -12,4 +12,10 @@ describe 'Post feature' do
     visit root_path
     expect(page.title).to eq('DailySmarty | A Tool for Learning Something New Everyday')
   end
+
+  it 'cannot be visited by a site visitor if the post is in draft mode' do
+    post = FactoryGirl.create(:draft_post)
+    visit post_path(post)
+    expect(root_path).to eq(root_path)
+  end
 end
