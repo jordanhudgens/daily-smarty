@@ -1,4 +1,8 @@
 module PostsHelper
+  def auto_link(post_content)
+    post_content.gsub(/@\w+/) { |mention| link_to mention, profile_path(mention[1..-1]) }
+  end
+
   def social_icon_renderer(provider)
     if provider == 'facebook'
       'fa-facebook-official'

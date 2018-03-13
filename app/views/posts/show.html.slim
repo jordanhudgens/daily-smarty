@@ -28,7 +28,7 @@ css:
 
     .row
       .col-md-12.post-content
-        = @post.content.html_safe
+        = auto_link(@post.content).html_safe
       .col-md-12.post-content
         = render_async post_links_path
 
