@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby "~> 2.3.0"
+ruby "~> 2.5.0"
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -8,7 +8,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'nokogiri', '~> 1.8', '>= 1.8.2'
-gem 'rails', '~> 5.1.1'
+gem 'rails', '~> 5.1.5'
 gem 'dotenv-rails', require: 'dotenv/rails-now'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
