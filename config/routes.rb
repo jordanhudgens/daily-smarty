@@ -33,4 +33,10 @@ Rails.application.routes.draw do
   get ':id', to: 'static#profile', as: 'profile'
 
   root to: 'static#homepage'
+
+  if Rails.env.production?
+    get '404', to: 'errors#not_found'
+    get '422', to: 'errors#internal_server_error'
+    get '500', to: 'errors#internal_server_error'
+  end
 end

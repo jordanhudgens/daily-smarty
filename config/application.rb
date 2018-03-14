@@ -26,6 +26,7 @@ module Dailysmarty
     config.active_job.queue_adapter = :sidekiq
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
     config.autoload_paths << Rails.root.join('lib')
+    config.exceptions_app = self.routes
 
     config.middleware.insert_before 0, Rack::Cors do
       allow do
