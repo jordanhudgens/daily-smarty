@@ -1,39 +1,40 @@
 doctype html
-html lang="en" 
+html lang="en"
   head
     meta content=("text/html; charset=UTF-8") http-equiv="Content-Type"
     meta charset="UTF-8"
     title Error
     link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet"
     css:
-      | body {
-        | font-family: 'Merriweather', serif;
-        | background-color: lightgoldenrodyellow;
-      | }
+       body {
+         font-family: 'Merriweather', serif;
+         background-color: lightgoldenrodyellow;
+       }
 
       .error_wrapper {
-        | display: flex;
-        | justify-content: center;
-        | align-items: center;
-        | height: 100vh;
-        | flex-direction: column;
-      | }
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         height: 100vh;
+         flex-direction: column;
+      }
 
       .error_wrapper > .error_heading {
-        | margin-bottom: 42px;
-        | display: flex;
-        | justify-content: center;
-        | align-items: center;
-        | flex-direction: column;
-      | }
+        margin-bottom: 42px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
 
-      | img {
-        | width: 50%;
-      | }
+      img {
+        width: 50%;
+      }
   body
     .error_wrapper
       .error_heading
-        h2 Yikes... Who knows when that page will be available, would you like to try another?
+        h2
+          = "Yikes... Who knows when that page will be available, would you like to try another?"
         div
-          a href="#"  Let's make like Dorothy and go home
+          a href="#{root_url}"  Let's make like Dorothy and go home
       img alt="" src="https://s3.amazonaws.com/dailysmarty-production/static/tbot.png"

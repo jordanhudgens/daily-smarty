@@ -1,9 +1,6 @@
 class ErrorsController < ApplicationController
   layout 'errors'
 
-  def not_found
-  end
-
-  def internal_server_error
+  def error_page
   end
 end
