@@ -28,6 +28,11 @@ module Dailysmarty
     config.autoload_paths << Rails.root.join('lib')
     config.exceptions_app = self.routes
 
+    console do
+      require 'console_helper'
+      Rails::ConsoleMethods.send :include, ConsoleHelper::Console
+    end
+
     config.middleware.insert_before 0, Rack::Cors do
       allow do
         origins '*'
