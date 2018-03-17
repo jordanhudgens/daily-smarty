@@ -29,7 +29,6 @@ module Dailysmarty
     config.exceptions_app = self.routes
 
     console do
-      require 'console_helper'
       Rails::ConsoleMethods.send :include, ConsoleHelper::Console
     end
 
