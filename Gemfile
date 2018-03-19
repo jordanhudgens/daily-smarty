@@ -22,7 +22,7 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rspec-rails', '~> 3.5', '>= 3.5.2'
-  gem 'factory_girl_rails', '~> 4.8'
+  gem 'factory_bot_rails', '~> 4.8', '>= 4.8.2'
   gem 'database_cleaner', '~> 1.5', '>= 1.5.3'
   gem 'capybara', '~> 2.13'
 end

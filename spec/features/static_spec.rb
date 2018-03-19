@@ -8,8 +8,8 @@ describe 'Static Pages' do
 
   describe 'logged in behavior' do
     before do
-      @user_one      = FactoryGirl.create(:user)
-      @user_two      = FactoryGirl.create(:user)
+      @user_one      = FactoryBot.create(:user)
+      @user_two      = FactoryBot.create(:user)
       @user_two_post = create(:published_post, user: @user_two)
       login_as(@user_one)
     end
@@ -31,7 +31,7 @@ describe 'Static Pages' do
     end
 
     it 'shows posts from followed topics' do
-      topic = FactoryGirl.create(:topic)
+      topic = FactoryBot.create(:topic)
       Theme.create(topic: topic, post: @user_two_post)
       create(:topic_following, user: @user_one, topic: topic)
       visit root_path

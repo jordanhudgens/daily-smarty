@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :following do
     follower_id
     followed_id

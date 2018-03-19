@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe PostLink, type: :model do
   before do
-    @post = FactoryGirl.create(:post)
+    @post = FactoryBot.create(:post)
     @post_link = create(:post_link, post: @post)
   end
 

@@ -8,7 +8,7 @@ describe 'navigation' do
   end
 
   it 'does not has login and registration links if the user is logged in' do
-    user = FactoryGirl.create(:user)
+    user = FactoryBot.create(:user)
     login_as(user)
     visit root_path
     expect(page).to_not have_link('Login')
@@ -16,7 +16,7 @@ describe 'navigation' do
   end
 
   it 'it allows the user to login and redirects them to the homepage' do
-    user = FactoryGirl.create(:user)
+    user = FactoryBot.create(:user)
 
     visit new_user_session_path
 

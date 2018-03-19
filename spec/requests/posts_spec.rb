@@ -9,8 +9,8 @@ RSpec.describe "Posts", type: :request do
     end
 
     xit "retrieves a list of posts" do
-      post_one = FactoryGirl.create(:post)
-      post_two = FactoryGirl.create(:post)
+      post_one = FactoryBot.create(:post)
+      post_two = FactoryBot.create(:post)
       get posts_url(subdomain: 'api')
       expect(response.content_type).to eq("application/json")
       expect(response).to have_http_status(:ok)
