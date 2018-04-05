@@ -20,30 +20,38 @@ css:
         p
           | Thank you again for your interest and relationship with DailySmarty. Please see the guidelines outlined below (logo assets can be downloaded below):
 
-      .col-md-6
-        h3
-          | Primary Logo
-        p
-          | White Space = 1/4 logo width
-        p
-          | White logo on primary blue
+    .branding-description
+      .row
+        .col-md-6.branding-description-text
+          h3.branding-description-heading
+            | Primary Logo
 
-        h3
-          | Primary Color
-        p
-          | #0079FF
-        p
-          | RGB 0, 121, 255
+          .branding-description-metadata
+            div
+              | White Space = 1/4 logo width
+            div
+              | White logo on primary blue
 
-        h3
-          | Name
-        p
-          | Capitalize "D" and "S"
-        p
-          | No space between the words
+          h3.branding-description-heading
+            | Primary Color
 
-      .col-md-6
-        = image_tag('branding/logo-with-margin.png', width: '100%')
+          .branding-description-metadata
+            div
+              | #0079FF
+            div
+              | RGB 0, 121, 255
+
+          h3.branding-description-heading
+            | Name
+
+          .branding-description-metadata
+            div
+              | Capitalize "D" and "S"
+            div
+              | No space between the words
+
+        .col-md-6
+          = image_tag('branding/logo-with-margin.png', width: '100%')
 
 
     hr

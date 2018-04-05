@@ -1,3 +1,22 @@
 .branding-heading-wrapper {
   margin-bottom: 20px;
 }
+
+.branding-description {
+  margin-top: 42px;
+  margin-bottom: 42px;
+
+  .branding-description-text {
+    text-align: right;
+
+    .branding-description-heading {
+      font-size: 18px;
+    }
+
+    .branding-description-metadata {
+      color: #808080;
+      font-size: 16px;
+      margin-bottom: 50px !important;
+    }
+  }
+}
