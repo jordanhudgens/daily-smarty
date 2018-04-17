@@ -54,6 +54,54 @@ css:
           = image_tag('branding/logo-with-margin.png', width: '100%')
 
 
+      .branding__dos_donts_wrapper
+        .row
+          .col-md-4
+            .branding-list-description.blue-text
+              | Logo Do’s
+            ul.branding-list
+              li
+                | Provide adequate white space surrounding the logo
+
+              li
+                | Icon must always be white
+
+              li
+                | Keep a large size so the icon doesn’t get obscured
+
+              li
+                | Place logo on white or light background colors
+
+
+          .col-md-4
+            .branding-list-description.red-text
+              | Logo Dont’s
+            ul.branding-list
+              li
+                | Strech or scale the logo non-uniformely
+
+              li
+                | Crop or partially cover the logo with other objects
+
+              li
+                | Alter the logo or wordmark color to anything other than our primary color
+
+
+          .col-md-2
+            .branding__nope_images
+              = image_tag('branding/nope_stretch.png')
+              .nope_image_text
+                | Stretch
+
+              = image_tag('branding/nope_crop.png')
+              .nope_image_text
+                | Crop
+
+              = image_tag('branding/nope_color.png')
+              .nope_image_text
+                | Color
+
+
     hr
 
       h2

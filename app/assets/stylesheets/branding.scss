@@ -20,3 +20,50 @@
     }
   }
 }
+
+.branding__dos_donts_wrapper {
+  margin-top: 42px;
+  margin-bottom: 42px;
+
+  .branding-list-description {
+    font-size: 16px;
+    font-weight: 900;
+    margin-left: 41px;
+    margin-bottom: 20px;
+  }
+
+  .blue-text {
+    color: #0079ff;
+  }
+
+  .red-text {
+    color: #dc0004;
+  }
+
+  .branding-list {
+    color: #1a1a1a;
+    font-family: Palatino;
+    font-size: 16px;
+    line-height: 25px !important;
+
+    li {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+  }
+
+  .branding__nope_images {
+    text-align: center;
+
+    img {
+      width: 62px;
+      height: 62px;
+    }
+
+    .nope_image_text {
+      margin-bottom: 15px;
+      color: #999999;
+      font-size: 17px;
+    }
+  }
+}
