@@ -1,69 +1,113 @@
-.branding-heading-wrapper {
+.branding-container {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+}
+.content-wrapper {
+  width: 660px;
+}
+.style-details {
+  margin-top: 75px;
+  margin-bottom: 75px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+.style-details-text {
+  text-align: right;
+}
+.style-details-text div {
+  color: #808080;
+  font-weight: normal;
+}
+.style-details-text h3 {
+  margin-top: 30px;
+}
+.style-details-logo img {
+  width: 100%;
+}
+.dos_donts_wrapper {
+  margin-top: 75px;
+  margin-bottom: 75px;
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr;
+  grid-gap: 30px;
+}
+.dont_image_box {
+  text-align: center;
   margin-bottom: 20px;
 }
-
-.branding-description {
-  margin-top: 42px;
-  margin-bottom: 42px;
-
-  .branding-description-text {
-    text-align: right;
-
-    .branding-description-heading {
-      font-size: 18px;
-    }
-
-    .branding-description-metadata {
-      color: #808080;
-      font-size: 16px;
-      margin-bottom: 50px !important;
-    }
-  }
+.dos_donts_heading {
+  font-weight: 900;
+  margin-bottom: 20px;
+  margin-left: 40px;
 }
-
-.branding__dos_donts_wrapper {
-  margin-top: 42px;
+.blue_text {
+  color: #0079ff;
+}
+.red_text {
+  color: #dc0004;
+}
+.dont_image_box img {
+  width: 50%;
+}
+.dont_image_box div {
+  color: #999999;
+  font-size: 14px;
+}
+.dos_donts_list li {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 16px;
+}
+.alternate_options_wrapper {
+  margin-top: 75px;
+  margin-bottom: 75px;
+}
+.alternate_options_wrapper h3 {
+  color: #999999;
+  font-size: 18px;
+  font-weight: 900;
+}
+.alternate_options_wrapper li {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 19px;
+}
+.alternate_logo_images {
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  grid-gap: 100px 40px;
+}
+.image_logos {
+  width: 60%;
+}
+.text_logos {
+  width: 90%;
+}
+.additional_branding_details {
+  margin-top: 75px;
+  margin-bottom: 75px;
+}
+.additional_branding_details a {
+  color: #4fb8e8;
+  font-size: 19px;
+}
+.additional_branding_details p {
   margin-bottom: 42px;
-
-  .branding-list-description {
-    font-size: 16px;
-    font-weight: 900;
-    margin-left: 41px;
-    margin-bottom: 20px;
+}
+@media (max-width: 48em) {
+  .style-details {
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
   }
-
-  .blue-text {
-    color: #0079ff;
-  }
-
-  .red-text {
-    color: #dc0004;
-  }
-
-  .branding-list {
-    color: #1a1a1a;
-    font-family: Palatino;
-    font-size: 16px;
-    line-height: 25px !important;
-
-    li {
-      margin-top: 20px;
-      margin-bottom: 20px;
-    }
-  }
-
-  .branding__nope_images {
+  .style-details-text {
     text-align: center;
-
-    img {
-      width: 62px;
-      height: 62px;
-    }
-
-    .nope_image_text {
-      margin-bottom: 15px;
-      color: #999999;
-      font-size: 17px;
-    }
+  }
+  .dos_donts_wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
   }
 }

@@ -1,125 +1,99 @@
 css:
   body { background-color: #ffffff !important; }
 
-.full-width-div
-  .post-show-wrapper
-    .row.branding-heading-wrapper
-      .col-md-12
-        h1
-          | DailySmarty Branding Guidelines
+.branding-container
+  .content-wrapper
 
-    .row
-      .col-md-12.post-content
-
-        p
-          | Welcome to the DailySmarty branding guidelines! We’re happy that you see the worth of our product and understand the value in promoting it correctly.
-
-        p
-          | The folowing guides have been provided to assist you in maintaining the integrity and intedended useage of our logo and branding in your marketing materials.  Keeping with these guidelines will reinforce both your and our professionalism and legitimacy in the eyes of the audience. 
-
-        p
-          | Thank you again for your interest and relationship with DailySmarty. Please see the guidelines outlined below (logo assets can be downloaded below):
-
-    .branding-description
-      .row
-        .col-md-6.branding-description-text
-          h3.branding-description-heading
-            | Primary Logo
-
-          .branding-description-metadata
-            div
-              | White Space = 1/4 logo width
-            div
-              | White logo on primary blue
-
-          h3.branding-description-heading
-            | Primary Color
-
-          .branding-description-metadata
-            div
-              | #0079FF
-            div
-              | RGB 0, 121, 255
-
-          h3.branding-description-heading
-            | Name
-
-          .branding-description-metadata
-            div
-              | Capitalize "D" and "S"
-            div
-              | No space between the words
-
-        .col-md-6
-          = image_tag('branding/logo-with-margin.png', width: '100%')
-
-
-      .branding__dos_donts_wrapper
-        .row
-          .col-md-4
-            .branding-list-description.blue-text
-              | Logo Do’s
-            ul.branding-list
-              li
-                | Provide adequate white space surrounding the logo
-
-              li
-                | Icon must always be white
-
-              li
-                | Keep a large size so the icon doesn’t get obscured
-
-              li
-                | Place logo on white or light background colors
-
-
-          .col-md-4
-            .branding-list-description.red-text
-              | Logo Dont’s
-            ul.branding-list
-              li
-                | Strech or scale the logo non-uniformely
-
-              li
-                | Crop or partially cover the logo with other objects
-
-              li
-                | Alter the logo or wordmark color to anything other than our primary color
-
-
-          .col-md-2
-            .branding__nope_images
-              = image_tag('branding/nope_stretch.png')
-              .nope_image_text
-                | Stretch
-
-              = image_tag('branding/nope_crop.png')
-              .nope_image_text
-                | Crop
-
-              = image_tag('branding/nope_color.png')
-              .nope_image_text
-                | Color
-
-
-    hr
-
-      h2
-        | 260px x 260px thumbnail logo
-
-      = image_tag('branding/logo-260x260.png')
-
-      hr
-
-      h2
-        | 2500px x 2500px circular logo
-
-      = image_tag('branding/logo-2500-2500.png', width: '100%')
-
-      hr
-
-      h2
-        | SVG
-
-      = link_to 'Download SVG', 'https://s3.amazonaws.com/dailysmarty-production/static/branding/logo-2500-2500.svg'
-
+    h2
+      | Branding Guidelines
+    p
+      | Welcome to the DailySmarty branding guidelines! We’re happy that you see the worth of our product and understand the value in promoting it correctly.
+    p
+      | The folowing guides have been provided to assist you in maintaining the integrity and intedended useage of our logo and branding in your marketing materials. Keeping with these guidelines will reinforce both your and our professionalism and legitimacy in the eyes of the audience.
+    p
+      | Thank you again for your interest and relationship with DailySmarty. Please see the guidelines outlined below (logo assets can be downloaded below):
+    .style-details
+      .style-details-text
+        h3
+          | Primary Logo
+        div
+          | White Space = 1/4 logo width
+        div
+          | White logo on primary blue
+        h3
+          | Primary Color
+        div
+          | #0079FF
+        div
+          | RGB 0, 121, 255
+        h3
+          | Name
+        div
+          | Capitalize “D” and “S”
+        div
+          | No space between the words
+      .style-details-logo
+        = image_tag('branding/logo-with-margin.png')
+    .dos_donts_wrapper
+      .dos_donts_list
+        .dos_donts_heading.blue_text
+          |  Logo Do’s 
+        ul
+          li
+            | Provide adequate white space surrounding the logo.
+          li
+            | Icon must always be white
+          li
+            | Keep a large size so the icon doesn’t get obscured.
+          li
+            | Place logo on white or light background colors
+      .dos_donts_list
+        .dos_donts_heading.red_text
+          |  Logo Dont’s 
+        ul
+          li
+            | Strech or scale the logo non-uniformely
+          li
+            | Crop or partially cover the logo with other objects
+          li
+            | Alter the logo or wordmark color to anything other than our primary color
+      .donts_images
+        .dont_image_box
+          = image_tag('branding/dont_stretch.png')
+          div
+            | Stretch
+        .dont_image_box
+          = image_tag('branding/dont_crop.png')
+          div
+            | Crop
+        .dont_image_box
+          = image_tag('branding/dont_color.png')
+          div
+            | Color
+    .alternate_options_wrapper
+      h3
+        | Alternate Options
+      ul
+        li
+          | The circular badge can be used separately from the wordmark.
+        li
+          | The icon may be extracted from the logo and applied separately - but it must remain white and have a background of our primary blue color.
+        li
+          | The wordmark may be used separately from the circular badge.
+        li
+          | Logo Do’s and Do Not’s above still apply.
+      .alternate_logo_images
+        = image_tag('branding/ds_circle_logo.png', class: 'image_logos')
+        = image_tag('branding/ds_square_logo.png', class: 'image_logos')
+        = image_tag('branding/ds_icon_text_logo.png', class: 'text_logos')
+        = image_tag('branding/ds_text_logo.png', class: 'text_logos')
+    .additional_branding_details
+      h3
+        | Asset Download
+      p
+        a[href="#"]
+          | Download .zip file.
+      h3
+        | Usage
+      p
+        |  Please remember to adhere to the above guidlines when referencing and using our logos. If you are unsure of the correct protocol for a particular usecase, feel free to ask us at the following email: support@dailysmarty.com. 
