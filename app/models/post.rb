@@ -54,6 +54,14 @@ class Post < ApplicationRecord
     "http://www.dailysmarty.com/posts/#{self.slug}"
   end
 
+  def associated_topics
+    if self.topics.any?
+      self.topics.pluck(:title)
+    else
+      []
+    end
+  end
+
   private def generate_vote_count
     VoteCount.create(post_id: self.id, number_of_votes: 0)
   end
