@@ -34,6 +34,10 @@ class Post < ApplicationRecord
 
   after_create :generate_vote_count
 
+  def self.with_images
+
+  end
+
   def topic_titles=(titles)
     transaction do
       themes.delete_all

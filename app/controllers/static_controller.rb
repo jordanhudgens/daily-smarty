@@ -7,7 +7,7 @@ class StaticController < ApplicationController
       @posts = hfs.feed_query.page(params[:page]).per(20)
       render 'static/feed'
     else
-      @topics = Topic.top_ten
+      @featured_posts_with_images = Post.with_images
     end
   end
 
