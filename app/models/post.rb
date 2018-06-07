@@ -35,7 +35,7 @@ class Post < ApplicationRecord
   after_create :generate_vote_count
 
   def self.with_images
-
+    where.not(img: nil).order('updated_at DESC')
   end
 
   def topic_titles=(titles)
