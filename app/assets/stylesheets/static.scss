@@ -17,6 +17,13 @@
 .homepage-wrapper {
   .card {
     padding-top: 42px;
+
+    .homepage-post-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 2em;
+      margin-bottom: 42px;
+    }
   }
 }
 
