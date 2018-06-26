@@ -30,7 +30,12 @@ class PostsController < ApplicationController
     @post = Post.new
     fb_social = @post.post_social_shares.build(provider: 'facebook')
     twitter_social = @post.post_social_shares.build(provider: 'twitter')
-    @social_share_options = [fb_social, twitter_social]
+
+    if fb_social || twitter_social
+      @social_share_options = [fb_social, twitter_social]
+    else
+      @social_share_options = []
+    end
   end
 
   def edit
