@@ -41,7 +41,11 @@ module PostsHelper
   end
 
   def node_src(env)
-    env[:node].attributes['src'].value
+    if env[:node].attributes['src']
+      env[:node].attributes['src'].value
+    else
+      ''
+    end
   end
 
 
