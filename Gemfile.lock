@@ -272,6 +272,8 @@ GEM
     nio4r (2.2.0)
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
+    nokogumbo (1.5.0)
+      nokogiri
     oauth (0.5.4)
     oauth2 (1.4.0)
       faraday (>= 0.8, < 0.13)
@@ -381,6 +383,10 @@ GEM
       ansi
       ast
     ruby-progressbar (1.9.0)
+    sanitize (4.6.5)
+      crass (~> 1.0.2)
+      nokogiri (>= 1.4.4)
+      nokogumbo (~> 1.4)
     sass (3.4.25)
     sass-rails (5.0.7)
       railties (>= 4.0.0, < 6)
@@ -519,6 +525,7 @@ DEPENDENCIES
   rmagick (~> 2.16)
   rspec-rails (~> 3.5, >= 3.5.2)
   rubocop
+  sanitize
   sass-rails (~> 5.0)
   sidekiq
   slim-rails (= 3.1.1)

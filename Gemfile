@@ -77,4 +77,4 @@ gem 'omniauth-twitter', '~> 1.4'
 gem 'inline_svg'
 gem 'active_model_serializers', '~> 0.10.7'
 gem 'rack-cors', :require => 'rack/cors'
-
+gem 'sanitize'

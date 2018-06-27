@@ -1,4 +1,50 @@
 module PostsHelper
+  def sanitize_with_whitelist(html)
+    return '' unless html
+
+    transformer = lambda do |env|
+      if env[:node].element? &&
+        env[:node_name] == 'script' &&
+        (node_src(env).start_with?("https://gist.github.com/") || node_src(env).start_with?("https://static.codepen.io/assets/embed/ei.js")) &&
+        env[:node].text == '' &&
+        env[:node].children.empty?
+        {node_whitelist: [env[:node]]}
+      end
+    end
+
+    cleaned_html = Sanitize.fragment(
+      html,
+      :elements => [
+        'header',
+        'span',
+        'strong',
+        'p',
+        'h1', 'h2', 'h3', 'h4',
+        'img',
+        'tt',
+        'br',
+        'em',
+        'u',
+        'div'
+      ],
+      :attributes => {
+        'a'    => ['href', 'title', 'class'],
+        'span' => ['class'],
+        'p'    => ['class'],
+        'img'  => ['src', 'class', 'alt', 'style'],
+        'div'  => ['class', 'style']
+      },
+     :transformers => transformer
+    )
+
+    cleaned_html
+  end
+
+  def node_src(env)
+    env[:node].attributes['src'].value
+  end
+
+
   def auto_link(post_content)
     post_content.gsub(/@\w+/) { |mention| link_to mention, profile_path(mention[1..-1]) }
   end
