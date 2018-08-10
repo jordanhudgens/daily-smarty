@@ -28,6 +28,13 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     = javascript_include_tag Ckeditor.cdn_url
 
+    script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" 
+    javascript:
+      (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-8602476344574578",
+        enable_page_level_ads: true
+      });
+
   body
     = render 'static/nav'
     .container
@@ -38,3 +45,4 @@ html
       = google_analytics
       = quantcast_javascript
       = quantcast_tracking_pixel
+
