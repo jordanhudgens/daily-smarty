@@ -6,14 +6,20 @@
           .row
             .col-md-12
               - @featured_posts_with_images.each do |post|
-                .homepage-post-wrapper
-                  .featured_image
-                    = image_tag post.img, width: '100%'
-
-                  .metadata
+                .post-item-wrapper
+                  .image-item
+                    = post_thumb(post)
+                  .post-link-title
                     h2
-                      = link_to post.title, post
+                      = link_to post.title, post_path(post), data: { turbolinks: false }
                     - if post.topics.any?
-                      - post.topics.each do |topic|
-                        h3
-                          = link_to topic.title, topic
+                      .topics
+                        - post.topics.each do |topic|
+                          = link_to topic.title.upcase, topic_path(topic)
+                    .post-metadata.user-thumb
+                      - if UserImage.where(user: post.user).any?
+                        = "submitted #{distance_of_time_in_words(post.created_at, Time.now) } ago by #{link_to image_tag(UserImage.where(user: post.user).last.img.url) + " " + post.user.username, profile_path(post.user.slug)}".html_safe
+                      - else
+                        = "submitted #{distance_of_time_in_words(post.created_at, Time.now) } ago by #{link_to post.user.username, profile_path(post.user.slug)}".html_safe
+                  .post-votes
+                    = render partial: 'posts/vote_links', locals: { post: post }
