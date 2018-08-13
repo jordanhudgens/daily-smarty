@@ -8,6 +8,9 @@
 .full-width-div.user-index-wrapper
   .card
     .col-md-12
+      .spacer80
+        = render partial: 'shared/google_leaderboard'
+
       = render partial: 'users/user', collection: @users
 
       = paginate @users

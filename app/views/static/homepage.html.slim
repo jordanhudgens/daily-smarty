@@ -5,13 +5,7 @@
         .col-md-12
           .row
             .col-md-12
-              .flex-center
-                .ad-banner
-                  script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" 
-                  /! CronDose Banner
-                  ins.adsbygoogle data-ad-client="ca-pub-8602476344574578" data-ad-slot="6455042962" style="display:inline-block;width:728px;height:90px" 
-                  javascript:
-                    (adsbygoogle = window.adsbygoogle || []).push({});
+              = render partial: 'shared/google_leaderboard'
               - @featured_posts_with_images.each do |post|
                 .post-item-wrapper
                   .image-item

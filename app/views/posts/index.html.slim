@@ -6,6 +6,9 @@
 .full-width-div
   .card
     .col-md-12
+      .spacer80
+        = render partial: 'shared/google_leaderboard'
+
       = render @posts
 
       = paginate @posts
