@@ -45,7 +45,7 @@
 
   .post-metadata {
     display: flex;
-	  color: #ABABAB;
+    color: #ababab;
     font-size: 15px;
     font-weight: 500;
     line-height: 20px;
@@ -65,13 +65,12 @@
   width: 100%;
 }
 
-
 .topic-button {
   margin-bottom: 10px;
 }
 
 .post-topic-collapse-list {
-  margin-bottom: 10px
+  margin-bottom: 10px;
 }
 
 .theme-card-wrapper {
@@ -141,7 +140,7 @@
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background-color: #8BB634;
+  background-color: #8bb634;
   opacity: 0.6;
   position: absolute;
   top: 0;
@@ -181,7 +180,7 @@
 }
 
 h2 a {
-  color: #1A1A1A;
+  color: #1a1a1a;
   font-size: 22px;
   line-height: 30px;
   &:hover {
@@ -199,7 +198,7 @@ h2 a {
   }
   margin-left: auto;
   margin-right: auto;
-  padding-top: 42px;
+  padding-top: 0px;
   .post-details-wrapper {
     margin-top: 30px;
     margin-bottom: 30px;
@@ -247,7 +246,7 @@ h2 a {
   .styled-text-field {
     height: 50px;
     width: 100%;
-    border: 1px solid #D3DCE6;
+    border: 1px solid #d3dce6;
     border-radius: 3px;
   }
 
@@ -258,7 +257,7 @@ h2 a {
 
 .add-link-wrapper {
   a {
-    color: #007AFF;
+    color: #007aff;
     font-size: 14px;
     font-weight: 500;
     &:hover {
@@ -278,17 +277,17 @@ h2 a {
 .project-tag-fields input {
   border-radius: 3px;
   height: 50px;
-  border: 1px solid #D3DCE6;
+  border: 1px solid #d3dce6;
   margin-bottom: 10px;
 }
 
 #post_post_status {
-	height: 50px;
+  height: 50px;
   width: 100%;
-  border: 1px solid #D3DCE6;
+  border: 1px solid #d3dce6;
   border-radius: 3px;
   background-color: #ffffff;
   font-size: 14px;
-  color: #4A4A4A;
+  color: #4a4a4a;
   font-weight: 500;
 }
