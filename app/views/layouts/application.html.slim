@@ -36,6 +36,15 @@ html
       });
 
   body
+    script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript" 
+    javascript:
+      (function(){
+        if(typeof _bsa !== 'undefined' && _bsa) {
+        /!/ format, zoneKey, segment:value, options
+          _bsa.init('flexbar', 'CK7DV23L', 'placement:demo');
+        }
+      })();
+
     = render 'static/nav'
     .container
       = yield
