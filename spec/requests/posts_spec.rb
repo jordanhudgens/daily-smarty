@@ -8,12 +8,12 @@ RSpec.describe "Posts", type: :request do
       expect(response).to have_http_status(:ok)
     end
 
-    xit "retrieves a list of posts" do
+    it "retrieves a list of posts" do
       post_one = FactoryBot.create(:post)
       post_two = FactoryBot.create(:post)
       get posts_url(subdomain: 'api')
-      expect(response.content_type).to eq("application/json")
-      expect(response).to have_http_status(:ok)
+      body = JSON.parse(response.body)
+      expect(body['posts'].size).to eq(2)
     end
   end
 
