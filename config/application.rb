@@ -28,9 +28,6 @@ module Dailysmarty
     config.autoload_paths << Rails.root.join('lib')
     config.exceptions_app = self.routes
 
-    config.force_ssl = true
-    config.ssl_options = {  redirect: { status: 301 } }
-
     config.middleware.insert_before 0, Rack::Cors do
       allow do
         origins '*'
