@@ -7,7 +7,6 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'nokogiri', '~> 1.8', '>= 1.8.2'
 gem 'rails', '~> 5.1.5'
 gem 'dotenv-rails', require: 'dotenv/rails-now'
 gem 'pg', '~> 0.18'
@@ -79,3 +78,4 @@ gem 'active_model_serializers', '~> 0.10.7'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'sanitize'
 gem "sprockets", ">= 3.7.2"
+gem "nokogiri", ">= 1.8.5"
