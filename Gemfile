@@ -78,3 +78,4 @@ gem 'inline_svg'
 gem 'active_model_serializers', '~> 0.10.7'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'sanitize'
+gem "sprockets", ">= 3.7.2"
