@@ -1,23 +1,22 @@
 .navbar-light {
-  border-bottom: 1px solid #E7E9EA;
+  border-bottom: 1px solid #e7e9ea;
   margin-bottom: 20px;
   height: 67px;
-  background-color: #FFFFFF;
-  box-shadow: 0 2px 15px 0 rgba(0,0,0,0.09);
+  background-color: #ffffff;
+  box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.09);
 }
 
 $toggle-height: 30px;
 $toggle-width: 150px;
 $switch-size: 30px;
 
-$anim-slight-bounce: cubic-bezier(0.34,1.61,0.7,1);
+$anim-slight-bounce: cubic-bezier(0.34, 1.61, 0.7, 1);
 $anim-speed-normal: 250ms;
 
 $border-color: #dadde1;
 $blue: #3ae39f; // Guidebook blue
 
 .tgl {
-
   position: relative;
   display: inline-block;
   height: $toggle-height;
@@ -50,8 +49,11 @@ $blue: #3ae39f; // Guidebook blue
     top: -1px;
     border-radius: 3px;
     border: 1px solid darken($border-color, 5%);
-    @include box-shadow(0 2px 2px rgba(0,0,0,.13));
-    @include transition(left $anim-slight-bounce $anim-speed-normal, transform $anim-slight-bounce $anim-speed-normal);
+    @include box-shadow(0 2px 2px rgba(0, 0, 0, 0.13));
+    @include transition(
+      left $anim-slight-bounce $anim-speed-normal,
+      transform $anim-slight-bounce $anim-speed-normal
+    );
     z-index: 1;
   }
 
@@ -71,14 +73,21 @@ $blue: #3ae39f; // Guidebook blue
     top: 0;
     bottom: 0;
     width: $toggle-width - ($switch-size / 2) + 10; // 10 compensates for animation bounce
-    @include transition(left $anim-slight-bounce $anim-speed-normal, right $anim-slight-bounce $anim-speed-normal);
-    background: $blue url('https://s3.amazonaws.com/bottega-devcamp/hand-raise-front-end/icons/active-xs-roboto.png') center center no-repeat;
+    @include transition(
+      left $anim-slight-bounce $anim-speed-normal,
+      right $anim-slight-bounce $anim-speed-normal
+    );
+    background: $blue
+      url('https://s3.amazonaws.com/bottega-devcamp/hand-raise-front-end/icons/active-xs-roboto.png')
+      center center no-repeat;
   }
 
   .tgl_bgd-negative {
     right: auto;
     left: -($toggle-width - ($switch-size / 2));
-    background: white url('https://s3.amazonaws.com/bottega-devcamp/hand-raise-front-end/icons/inactive-xs-roboto.png') center center no-repeat;
+    background: white
+      url('https://s3.amazonaws.com/bottega-devcamp/hand-raise-front-end/icons/inactive-xs-roboto.png')
+      center center no-repeat;
   }
 
   &:hover {
@@ -90,12 +99,11 @@ $blue: #3ae39f; // Guidebook blue
 
   &:active {
     .tgl_switch {
-      @include transform(scale(.95));
+      @include transform(scale(0.95));
     }
   }
 
   > :not(:checked) ~ .tgl_body {
-
     > .tgl_switch {
       left: $toggle-width - $switch-size;
     }
@@ -170,9 +178,9 @@ a.dropdown-toggle::after {
 .dropdown-menu {
   top: 145%;
   left: -150px;
-  border: 1px solid #D3DCE6;
-  background-color: #FFFFFF;
-  box-shadow: 0 2px 6px 0 rgba(0,0,0,0.11);
+  border: 1px solid #d3dce6;
+  background-color: #ffffff;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.11);
 
   a.dropdown-item {
     color: $dropdown-grey;
@@ -199,11 +207,12 @@ a.dropdown-toggle::after {
   }
 }
 
-.dropdown-menu:after, .dropdown-menu:before {
+.dropdown-menu:after,
+.dropdown-menu:before {
   bottom: 100%;
   left: 91%;
   border: solid transparent;
-  content: " ";
+  content: ' ';
   height: 0;
   width: 0;
   position: absolute;
@@ -212,14 +221,14 @@ a.dropdown-toggle::after {
 
 .dropdown-menu:after {
   border-color: rgba(136, 183, 213, 0);
-  border-bottom-color: #FFFFFF;
+  border-bottom-color: #ffffff;
   border-width: 9px;
   margin-left: -9px;
 }
 
 .dropdown-menu:before {
   border-color: rgba(194, 225, 245, 0);
-  border-bottom-color: #D3DCE6;
+  border-bottom-color: #d3dce6;
   border-width: 10px;
   margin-left: -10px;
 }
@@ -247,22 +256,26 @@ a.logout-link {
   border-radius: 0.2rem;
 }
 
-.nav-text-box::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+.nav-text-box::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
   color: $light-charcoal;
   font-size: 0.8em;
   padding-left: 10px;
 }
-.nav-text-box::-moz-placeholder { /* Firefox 19+ */
+.nav-text-box::-moz-placeholder {
+  /* Firefox 19+ */
   color: $light-charcoal;
   font-size: 0.8em;
   padding-left: 10px;
 }
-.nav-text-box:-ms-input-placeholder { /* IE 10+ */
+.nav-text-box:-ms-input-placeholder {
+  /* IE 10+ */
   color: $light-charcoal;
   font-size: 0.8em;
   padding-left: 10px;
 }
-.nav-text-box:-moz-placeholder { /* Firefox 18- */
+.nav-text-box:-moz-placeholder {
+  /* Firefox 18- */
   color: $light-charcoal;
   font-size: 0.8em;
   padding-left: 10px;
@@ -279,4 +292,8 @@ a.logout-link {
 
 .nav-auth-link {
   padding-top: 23px !important;
+}
+
+.navbar {
+  padding: 0px !important;
 }
