@@ -41,6 +41,7 @@ Rails.application.configure do
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   config.force_ssl = true
+  config.ssl_options = {  redirect: { status: 301 } }
 
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.
@@ -83,8 +84,6 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-  config.action_mailer.default_url_options = { :host => 'dailysmarty.herokuapp.com' }
-
   config.action_mailer.default_url_options = { :host => 'www.dailysmarty.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
