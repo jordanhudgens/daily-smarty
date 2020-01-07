@@ -29,4 +29,4 @@
 //= require popper
 //= require popover_config
 //= require bootstrap-sprockets
-//= require ckeditor/init
+//= require ckeditor/config

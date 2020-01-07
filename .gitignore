@@ -21,3 +21,7 @@
 
 # Ignore dump.rdb
 dump.rdb
+
+# Ignore other non essential files
+/.vscode
+.DS_Store

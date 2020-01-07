@@ -35,7 +35,6 @@ group :development do
   gem 'rubocop', require: false
 end
 
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'slim-rails', '3.1.1'
 gem 'friendly_id', '~> 5.2', '>= 5.2.1'
 gem 'devise', '~> 4.2', '>= 4.2.1'
