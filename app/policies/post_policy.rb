@@ -1,6 +1,6 @@
 class PostPolicy < ApplicationPolicy
   def update?
-    record.user_id == user.id
+    (record.user_id == user.id) || user.site_admin?
   end
 
   def destroy?
