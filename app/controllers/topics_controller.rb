@@ -10,9 +10,16 @@ class TopicsController < ApplicationController
     @topic = Topic.friendly.find(params[:id])
 
     if current_user && current_user.site_admin?
-      @topic_posts = @topic.posts
+      @topic_posts = @topic
+                       .posts
+                       .page(params[:page])
+                       .per(10)
     else
-      @topic_posts = @topic.posts.published
+      @topic_posts = @topic
+                       .posts
+                       .published
+                       .page(params[:page])
+                       .per(10)
     end
   end
 
