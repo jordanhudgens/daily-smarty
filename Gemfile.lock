@@ -157,6 +157,8 @@ GEM
     factory_bot_rails (4.11.1)
       factory_bot (~> 4.11.1)
       railties (>= 3.0.0)
+    faraday (1.0.0)
+      multipart-post (>= 1.2, < 3)
     ffi (1.11.3)
     font-awesome-rails (4.7.0.5)
       railties (>= 3.2, < 6.1)
@@ -226,6 +228,7 @@ GEM
     mini_portile2 (2.4.0)
     minitest (5.13.0)
     multi_json (1.14.1)
+    multipart-post (2.1.1)
     net-http-persistent (3.1.0)
       connection_pool (~> 2.2)
     net_http_timeout_errors (0.3.5)
@@ -412,6 +415,7 @@ DEPENDENCIES
   devise_invitable (~> 1.7, >= 1.7.2)
   dotenv-rails
   factory_bot_rails (~> 4.8, >= 4.8.2)
+  faraday (~> 1.0)
   font-awesome-rails
   foreman
   friendly_id (~> 5.2, >= 5.2.1)

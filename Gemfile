@@ -71,3 +71,4 @@ gem 'sanitize'
 gem "sprockets", ">= 3.7.2"
 gem "nokogiri", ">= 1.8.5"
 gem 'pg_search'
+gem 'faraday', '~> 1.0'
