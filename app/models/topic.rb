@@ -24,6 +24,6 @@ class Topic < ApplicationRecord
     select('topics.*, COUNT(posts.id) AS posts_count').
       joins(:posts).
       group('topics.id').
-      order('posts_count DESC')
+      order('posts_count ASC')
   end
 end
