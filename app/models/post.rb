@@ -1,7 +1,5 @@
 class Post < ApplicationRecord
   acts_as_paranoid
-  include Elasticsearch::Model
-  include Elasticsearch::Model::Callbacks
   is_impressionable counter_cache: true
   mount_uploader :img, ImageUploader
   belongs_to :user, counter_cache: true
@@ -11,6 +9,19 @@ class Post < ApplicationRecord
   has_many :votes, dependent: :destroy
   has_many :post_social_shares, inverse_of: :post
   has_one :vote_count, dependent: :destroy
+
+  include PgSearch::Model
+  pg_search_scope :search_by_term,
+    against: [:title, :content],
+    associated_against: {
+      topic: [:title],
+    },
+    using: {
+      tsearch: {
+        any_word: true,
+        prefix: true
+      }
+    }
 
   enum post_status: {
     draft: 0,
