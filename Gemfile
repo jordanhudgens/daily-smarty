@@ -58,10 +58,6 @@ gem 'ckeditor', github: 'galetahub/ckeditor'
 gem 'impressionist', git: 'https://github.com/jordanhudgens/impressionist'
 gem 'rack-mini-profiler', require: false
 gem 'memory_profiler'
-gem 'flamegraph'
-gem 'stackprof'
-gem 'elasticsearch-model'
-gem 'elasticsearch-rails'
 gem 'honeybadger', '~> 3.1'
 gem 'link_thumbnailer'
 gem "validate_url"
@@ -74,3 +70,4 @@ gem 'rack-cors', :require => 'rack/cors'
 gem 'sanitize'
 gem "sprockets", ">= 3.7.2"
 gem "nokogiri", ">= 1.8.5"
+gem 'pg_search'
