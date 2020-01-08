@@ -11,7 +11,7 @@ class Api::PostsController < ApplicationController
     if params[:q].blank?
       render json: { errors: 'You need to supply a valid query', status: :unprocessable_entity }
     else
-      @posts = Post.search(params[:q]).records.page(params[:page]).per(10)
+      @posts = Post.search_by_term(params[:q]).page(params[:page]).per(10)
       render json: @posts, adapter: :json
     end
   end
