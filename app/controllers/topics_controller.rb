@@ -8,7 +8,12 @@ class TopicsController < ApplicationController
 
   def show
     @topic = Topic.friendly.find(params[:id])
-    @topic_posts = @topic.posts.published
+
+    if @current_user && @current_user.site_admin?
+      @topic_posts = @topic.posts
+    else
+      @topic_posts = @topic.posts.published
+    end
   end
 
   def topic_follow_toggle
