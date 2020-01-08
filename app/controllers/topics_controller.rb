@@ -9,7 +9,7 @@ class TopicsController < ApplicationController
   def show
     @topic = Topic.friendly.find(params[:id])
 
-    if @current_user && @current_user.site_admin?
+    if current_user && current_user.site_admin?
       @topic_posts = @topic.posts
     else
       @topic_posts = @topic.posts.published
