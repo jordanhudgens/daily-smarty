@@ -21,9 +21,9 @@ class Topic < ApplicationRecord
   end
 
   def self.order_by_post_count
-    select('topics.*, COUNT(posts.id) AS posts_count').
-      joins(:posts).
-      group('topics.id').
-      order('posts_count ASC')
+    select('topics.*, COUNT(posts.id) AS posts_count')
+      .joins(:posts)
+      .group('topics.id')
+      .order('posts_count DESC')
   end
 end
