@@ -2,7 +2,7 @@ class User < ApplicationRecord
   acts_as_paranoid
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
-         :invitable, :omniauthable, omniauth_providers: [:facebook, :twitter]
+         :invitable
 
   enum role: { standard_user: 0, site_admin: 1 }
 
@@ -55,15 +55,6 @@ class User < ApplicationRecord
       if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
         user.email = data["email"] if user.email.blank?
       end
-    end
-  end
-
-  def self.from_omniauth(auth)
-    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-      user.email = auth.info.email
-      user.password = Devise.friendly_token[0,20]
-      user.full_name = auth.info.name   # assuming the user model has a name
-      user.image = auth.info.image # assuming the user model has an image
     end
   end
 

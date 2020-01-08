@@ -67,11 +67,7 @@ gem 'link_thumbnailer'
 gem "validate_url"
 gem 'render_async'
 gem "paranoia", "~> 2.2"
-gem "koala"
-gem 'omniauth-facebook'
 gem 'sidekiq'
-gem 'twitter', '~> 6.1'
-gem 'omniauth-twitter', '~> 1.4'
 gem 'inline_svg'
 gem 'active_model_serializers', '~> 0.10.7'
 gem 'rack-cors', :require => 'rack/cors'

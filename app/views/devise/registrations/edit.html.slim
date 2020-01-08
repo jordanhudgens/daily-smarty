@@ -26,22 +26,6 @@
                       = "Change your profile photo"
                   = user_image.file_field :img
               .col-md-10.social-link-wrapper
-                span.facebook
-                  - if current_user.social_connections.find_by_provider('facebook')
-                    = link_to "<i class='fa fa-facebook-official' aria-hidden='true'></i> Disconnect Facebook account".html_safe, disconnect_facebook_path
-                  - else
-                    = link_to "<i class='fa fa-facebook-official' aria-hidden='true'></i> Connect Facebook to share posts".html_safe, user_facebook_omniauth_authorize_path
-
-                br
-
-                span.twitter
-                  - if current_user.social_connections.find_by_provider('twitter')
-                    = link_to "<i class='fa fa-twitter-square' aria-hidden='true'></i> Disconnect Twitter account".html_safe, disconnect_twitter_path
-                  - else
-                    = link_to "<i class='fa fa-twitter-square' aria-hidden='true'></i> Connect Twitter to share posts".html_safe, user_twitter_omniauth_authorize_path
-
-                br
-
                 span.delete-account
                   = link_to "<i class='fa fa-times-circle' aria-hidden='true'></i> Cancel my account".html_safe, registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete
           .user-registration-form-fields

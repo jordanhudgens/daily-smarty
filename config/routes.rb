@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   get 'topic_follow_toggle/:id', to: 'topics#topic_follow_toggle', as: 'topic_follow_toggle'
   resources :topics, only: [:index, :show]
   get 'topic-autocomplete', to: 'topics#autocomplete'
-  devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
+  devise_for :users
   get 'social-connections/disconnect_facebook', to: 'users/social_disconnects#disconnect_facebook', as: :disconnect_facebook
   get 'social-connections/disconnect_twitter', to: 'users/social_disconnects#disconnect_twitter', as: :disconnect_twitter
   get 'smarties', to: 'users#index', as: 'smarties'
