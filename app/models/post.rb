@@ -13,9 +13,6 @@ class Post < ApplicationRecord
   include PgSearch::Model
   pg_search_scope :search_by_term,
     against: [:title, :content],
-    associated_against: {
-      topic: [:title],
-    },
     using: {
       tsearch: {
         any_word: true,
