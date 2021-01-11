@@ -43,7 +43,7 @@ gem 'pundit', '~> 1.1'
 gem 'cocoon', '~> 1.2', '>= 1.2.10'
 gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'popper_js'
-gem 'redcarpet', '~> 3.4'
+gem 'redcarpet', '~> 3.5'
 gem 'coderay', '~> 1.1', '>= 1.1.1'
 gem 'gritter', '~> 1.2'
 gem "font-awesome-rails"
