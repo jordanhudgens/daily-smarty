@@ -252,7 +252,8 @@ GEM
       activesupport (>= 4.2)
     popper_js (1.11.1)
     public_suffix (4.0.3)
-    puma (3.12.2)
+    puma (4.3.12)
+      nio4r (~> 2.0)
     pundit (1.1.0)
       activesupport (>= 3.0.0)
     rack (2.0.8)
@@ -436,7 +437,7 @@ DEPENDENCIES
   pg (~> 0.18)
   pg_search
   popper_js
-  puma (~> 3.12)
+  puma (~> 4.3)
   pundit (~> 1.1)
   rack-cors
   rack-mini-profiler
